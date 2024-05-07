@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import json
 import requests
 
-host_url = '183.133.106.249:8899'
+host_url = '221.220.108.96:4000'
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
@@ -50,7 +50,7 @@ for table in tables:
 if sources is not None and len(sources) > 0:
     # 保存json数据
     json_string = json.dumps(sources, ensure_ascii=False)
-    with open(f"{channel_name}.json", "w", encoding='utf-8') as file:
+    with open(f"sources/{channel_name}.json", "w", encoding='utf-8') as file:
         file.write(json_string)
 
     # 保存txt数据
@@ -58,7 +58,7 @@ if sources is not None and len(sources) > 0:
     for source in sources:
         txt_string += f"{source['name']},{source['url']}\n"
 
-    with open(f"{channel_name}.txt", "w", encoding='utf-8') as file:
+    with open(f"sources/{channel_name}.txt", "w", encoding='utf-8') as file:
         file.write(txt_string)
 
     # 保存m3u8数据
@@ -66,5 +66,5 @@ if sources is not None and len(sources) > 0:
     for source in sources:
         m3u8_string += f"#EXTINF:-1 ,{source['name']}\n{source['url']}\n"
 
-    with open(f"{channel_name}.m3u8", "w", encoding='utf-8') as file:
+    with open(f"sources/{channel_name}.m3u8", "w", encoding='utf-8') as file:
         file.write(m3u8_string)
