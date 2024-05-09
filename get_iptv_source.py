@@ -287,7 +287,7 @@ def get_channel_sources_by_province(province):
 
 def check_test(url):
     # ll是电视直播源的链接列表
-    ll = ['http://114.254.16.86:4000/rtp/239.3.1.152:8120']
+    ll = ['http://113.111.135.119:54321/udp/239.77.1.17:5146']
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     se = requests.Session()
@@ -299,23 +299,29 @@ def check_test(url):
             if res.status_code == 200:
                 # 多获取的视频数据进行5秒钟限制
                 start_time = time.time()
-                for content in res.iter_content(chunk_size=5*1024*1024):
+                test_counter = 1
+                for content in res.iter_content(chunk_size=1*1024*1024):
                     # 这里的chunk_size是1MB，每次读取1MB测试视频流
                     # 如果能获取视频流，则输出读取的时间以及链接
                     if content:
+
                         file_size = len(content)
                         end_time = time.time()
                         response_time = (end_time - start_time) * 1
-                        print(f"文件大小：{file_size} 字节")
-                        print(f"下载耗时：{response_time} s")
+                        print(f"{test_counter}文件大小：{file_size} 字节")
+                        print(f"{test_counter}下载耗时：{response_time} s")
                         download_speed = file_size / response_time / 1024
                         # print(f"下载速度：{download_speed:.3f} kB/s")
                         # 将速率从kB/s转换为MB/s并限制在1~100之间
                         normalized_speed = min(
                             max(download_speed / 1024, 0.001), 100)
-                        print(f"标准化后的速率：{normalized_speed:.3f} MB/s")
+                        print(
+                            f"{test_counter}标准化后的速率：{normalized_speed:.3f} MB/s")
+                        test_counter += 1
+                        start_time = time.time()
+                        if test_counter > 100:
+                            break
 
-                        break
         except Exception:
             # 无法连接并超时的情况下输出“X”
             print(f'X\t{i}')
