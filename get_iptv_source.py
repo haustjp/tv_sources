@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse, parse_qs
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
+from typing import Union, List
 import json
 import requests
 import re
@@ -94,7 +95,8 @@ def query_by_province(province, page=None, code=None):
 
     query_result['sources'] = sources
 
-    logger.info(f'{province}可用直播组:{json.dumps(query_result)}')
+    logger.info(
+        f'{province}可用直播组:{json.dumps(query_result,ensure_ascii=False)}')
 
     return query_result
 
@@ -147,7 +149,7 @@ def get_channel_sources(html):
                     'name': name,
                     'url': url
                 })
-        logger.info(f'{channel_name}:{json.dumps(sources)}')
+        logger.info(f'{channel_name}:{json.dumps(sources,ensure_ascii=False)}')
         return channel_name, sources
     except:
         logger.info(html)
@@ -277,6 +279,7 @@ def get_channel_sources_by_province(province):
         channel_name, channel_sources = get_channel_sources(html)
         if channel_sources is None:
             continue
+        channel_sources = check_url_available(province, channel_sources)
         province_channel_sources.extend(channel_sources)
 
     dict_sources = build_channel_sources(province_channel_sources)
@@ -285,58 +288,83 @@ def get_channel_sources_by_province(province):
     build_m3u8_file(province_code, dict_sources)
 
 
+def check_url_available(province, sources):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+    se = requests.Session()
+    available_sources = []
+    for i in sources:
+        try:
+            res = se.get(i['url'], headers=headers, timeout=8, stream=True)
+            if res.status_code == 200:
+                for content in res.iter_content(chunk_size=1*1024*1024):
+                    if content and len(content) > 0:
+                        logger.info(
+                            f"{province['province_name']}-可用-{i['name']}-{i['url']}")
+                        available_sources.append(i)
+                    else:
+                        logger.info(
+                            f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
+                    break
+            else:
+                logger.info(
+                    f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
+        except Exception as ex:
+            logger.error(
+                f"{province['province_name']}-出错-{i['name']}-{i['url']}{ex}")
+    return available_sources
+
+
 def check_test(url):
     # ll是电视直播源的链接列表
-    ll = ['http://113.111.135.119:54321/udp/239.77.1.17:5146']
+    ll = ['http://113.66.209.46:88/hls/215575592/index.m3u8']
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     se = requests.Session()
 
     for i in ll:
-
         try:
             res = se.get(i, headers=headers, timeout=5, stream=True)
             if res.status_code == 200:
                 # 多获取的视频数据进行5秒钟限制
                 start_time = time.time()
-                test_counter = 1
+                test_total_size = 1*1024*1024
+                total_size = 0
                 for content in res.iter_content(chunk_size=1*1024*1024):
                     # 这里的chunk_size是1MB，每次读取1MB测试视频流
                     # 如果能获取视频流，则输出读取的时间以及链接
                     if content:
-
                         file_size = len(content)
+                        total_size += file_size
                         end_time = time.time()
                         response_time = (end_time - start_time) * 1
-                        print(f"{test_counter}文件大小：{file_size} 字节")
-                        print(f"{test_counter}下载耗时：{response_time} s")
-                        download_speed = file_size / response_time / 1024
+                        # print(f"{test_counter}文件大小：{file_size} 字节")
+                        # print(f"{test_counter}下载耗时：{response_time} s")
+                        download_speed = total_size / response_time / 1024
                         # print(f"下载速度：{download_speed:.3f} kB/s")
                         # 将速率从kB/s转换为MB/s并限制在1~100之间
                         normalized_speed = min(
                             max(download_speed / 1024, 0.001), 100)
                         print(
-                            f"{test_counter}标准化后的速率：{normalized_speed:.3f} MB/s")
-                        test_counter += 1
-                        start_time = time.time()
-                        if test_counter > 100:
+                            f"标准化后的速率：{normalized_speed:.3f} MB/s")
+                        if total_size >= test_total_size:
                             break
 
-        except Exception:
+        except Exception as ex:
             # 无法连接并超时的情况下输出“X”
+            logger.error(f'出错-{ex}')
             print(f'X\t{i}')
 
 
 if __name__ == "__main__":
     host_url = '221.220.108.96:4000'
     logger = init_logger('logs/tv_sources.log')
-    check_test('')
-    exit(0)
     for province in province_dict:
         get_channel_sources_by_province(province)
-
+    exit(0)
     html = get_html_source(host_url)
     channel_name, channel_sources = get_channel_sources(html)
+
     dict_sources = build_channel_sources(channel_sources)
     build_json_file(channel_name, dict_sources)
     build_txt_file(channel_name, dict_sources)
