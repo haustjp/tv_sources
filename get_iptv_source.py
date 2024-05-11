@@ -115,12 +115,15 @@ def query_by_province(province, prev_url=None, page=None, code=None):
                 ip_port = channel.b.text.strip()
                 active_tag = result.find('div', style='float: right; ')
                 active_text = active_tag.text.replace("\n", "").strip()
+                number_tag = result.find('div', style='float: left').b
+                number_tag_text = number_tag.text.replace("\n", "").strip()
                 if active_text != '暂时失效':
                     active_day = get_numbers(active_text)
-                    logger.info(f'status：{active_text}')
-                    logger.info(f'channel：{ip_port}')
+                    channel_number = get_numbers(number_tag_text)
+                    logger.info(
+                        f'{province}-status：{active_text},channel：{ip_port},num：{channel_number}')
                     sources.append(
-                        {'ip_port': ip_port, 'active_day': active_day})
+                        {'ip_port': ip_port, 'active_day': active_day, 'channel_number': channel_number})
 
     query_result['sources'] = sources
     query_result['prev_url'] = curr_url
@@ -388,22 +391,25 @@ def check_test(url):
 if __name__ == "__main__":
     host_url = '221.220.108.96:4000'
     logger = init_logger('logs/tv_sources.log')
+    result_source = []
     for province in province_dict:
         province_name = province['province_name']
         province_code = province['province_code']
         prev_url = None
         page = None
         code = None
-        result_source = []
+
         for i in range(1, 3):
             query_result = query_by_province(
                 province_name, prev_url, page, code)
+            if query_result is None or len(query_result.keys()) == 0:
+                continue
             prev_url = query_result['prev_url']
             page = i+1
             code = query_result['code']
             result_source.extend(query_result['sources'])
         result_source = sorted(
-            result_source, key=lambda x: x['active_day'], reverse=True)
+            result_source, key=lambda x: (x['active_day'], x['channel_number']), reverse=True)
     exit(0)
 
     for province in province_dict:
