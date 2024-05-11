@@ -3,6 +3,7 @@ from urllib.parse import urlparse, parse_qs
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
 from typing import Union, List
+from requests import Response
 import json
 import requests
 import re
@@ -50,17 +51,43 @@ def init_logger(logPath: str):
     return logger
 
 
-def query_by_province(province, page=None, code=None):
+def get_numbers(text):
+    pattern = re.compile(r'\d+')
+    match = pattern.search(text)
+    if match:
+        number = match.group()
+        return int(number)
+    else:
+        return 0
+
+
+def query_by_province(province, prev_url=None, page=None, code=None):
     query_result = {}
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
-        'Referer': f'http://tonkiang.us/hoteliptv.php',
-        'Cookie': 'REFERER=15239974; ckip1=110.72.82.168%7C110.72.81.102%7C113.118.47.23%7C14.155.189.170%7C112.114.137.112%7C61.134.241.142%7C61.138.128.226%7C113.64.145.231; ckip2=183.153.89.133%7C218.88.103.176%7C58.48.199.92%7C222.141.135.44%7C171.109.211.31%7C118.79.112.201%7C118.113.235.79%7C223.10.39.217; _ga=GA1.1.1545478787.1715258144; HstCfa4853344=1715258161531; HstCmu4853344=1715258161531; HstCnv4853344=1; HstCns4853344=1; REFERER2=NzDbAr2aNbjcIO0O0O; REFERER1=MzjbMryaNbTcUO0O0O; HstCla4853344=1715258167679; HstPn4853344=2; HstPt4853344=2; _ga_JNMLRB3QLF=GS1.1.1715258144.1.1.1715258176.0.0.0',
-        'Content-Type': 'application/x-www-form-urlencoded'
-    }
-    data = {'saerch': province, 'Submit': None}
-    response = requests.post(
-        f'http://tonkiang.us/hoteliptv.php', data=data, headers=headers)
+    headers = {}
+    response: Response = None
+    curr_url = 'http://tonkiang.us/hoteliptv.php'
+    if page is None:
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+            'Referer': f'http://tonkiang.us/hoteliptv.php',
+            'Cookie': 'REFERER=15239974; ckip1=110.72.82.168%7C110.72.81.102%7C113.118.47.23%7C14.155.189.170%7C112.114.137.112%7C61.134.241.142%7C61.138.128.226%7C113.64.145.231; ckip2=183.153.89.133%7C218.88.103.176%7C58.48.199.92%7C222.141.135.44%7C171.109.211.31%7C118.79.112.201%7C118.113.235.79%7C223.10.39.217; _ga=GA1.1.1545478787.1715258144; HstCfa4853344=1715258161531; HstCmu4853344=1715258161531; HstCnv4853344=1; HstCns4853344=1; REFERER2=NzDbAr2aNbjcIO0O0O; REFERER1=MzjbMryaNbTcUO0O0O; HstCla4853344=1715258167679; HstPn4853344=2; HstPt4853344=2; _ga_JNMLRB3QLF=GS1.1.1715258144.1.1.1715258176.0.0.0',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        data = {'saerch': province, 'Submit': None}
+        response = requests.post(curr_url, data=data, headers=headers)
+    else:
+        curr_url = f'http://tonkiang.us/hoteliptv.php?page={page}&pv={province}&code={code}'
+        referer = 'http://tonkiang.us/hoteliptv.php'
+        if prev_url is not None:
+            referer = prev_url
+
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+            'Referer': referer,
+            'Cookie': 'REFERER=15239974; ckip1=110.72.82.168%7C110.72.81.102%7C113.118.47.23%7C14.155.189.170%7C112.114.137.112%7C61.134.241.142%7C61.138.128.226%7C113.64.145.231; ckip2=183.153.89.133%7C218.88.103.176%7C58.48.199.92%7C222.141.135.44%7C171.109.211.31%7C118.79.112.201%7C118.113.235.79%7C223.10.39.217; _ga=GA1.1.1545478787.1715258144; HstCfa4853344=1715258161531; HstCmu4853344=1715258161531; HstCnv4853344=1; HstCns4853344=1; REFERER2=NzDbAr2aNbjcIO0O0O; REFERER1=MzjbMryaNbTcUO0O0O; HstCla4853344=1715258167679; HstPn4853344=2; HstPt4853344=2; _ga_JNMLRB3QLF=GS1.1.1715258144.1.1.1715258176.0.0.0'
+        }
+
+        response = requests.get(curr_url, headers=headers)
 
     html = response.text
     if html is None or len(html) == 0:
@@ -89,12 +116,14 @@ def query_by_province(province, page=None, code=None):
                 active_tag = result.find('div', style='float: right; ')
                 active_text = active_tag.text.replace("\n", "").strip()
                 if active_text != '暂时失效':
+                    active_day = get_numbers(active_text)
                     logger.info(f'status：{active_text}')
                     logger.info(f'channel：{ip_port}')
-                    sources.append(ip_port)
+                    sources.append(
+                        {'ip_port': ip_port, 'active_day': active_day})
 
     query_result['sources'] = sources
-
+    query_result['prev_url'] = curr_url
     logger.info(
         f'{province}可用直播组:{json.dumps(query_result,ensure_ascii=False)}')
 
@@ -275,7 +304,7 @@ def get_channel_sources_by_province(province):
         return
     province_channel_sources = []
     for source in query_result['sources']:
-        html = get_html_source(source)
+        html = get_html_source(source['ip_port'])
         channel_name, channel_sources = get_channel_sources(html)
         if channel_sources is None:
             continue
@@ -360,8 +389,26 @@ if __name__ == "__main__":
     host_url = '221.220.108.96:4000'
     logger = init_logger('logs/tv_sources.log')
     for province in province_dict:
-        get_channel_sources_by_province(province)
+        province_name = province['province_name']
+        province_code = province['province_code']
+        prev_url = None
+        page = None
+        code = None
+        result_source = []
+        for i in range(1, 3):
+            query_result = query_by_province(
+                province_name, prev_url, page, code)
+            prev_url = query_result['prev_url']
+            page = i+1
+            code = query_result['code']
+            result_source.extend(query_result['sources'])
+        result_source = sorted(
+            result_source, key=lambda x: x['active_day'], reverse=True)
     exit(0)
+
+    for province in province_dict:
+        get_channel_sources_by_province(province)
+
     html = get_html_source(host_url)
     channel_name, channel_sources = get_channel_sources(html)
 
