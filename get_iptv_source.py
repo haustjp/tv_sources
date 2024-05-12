@@ -386,6 +386,16 @@ def check_url_available(province, sources):
     return available_sources
 
 
+def get_signal_sources(host_url):
+    html = get_html_source(host_url)
+    channel_name, channel_sources = get_channel_sources(html)
+
+    dict_sources = build_channel_sources(channel_sources)
+    build_json_file(channel_name, dict_sources)
+    build_txt_file(channel_name, dict_sources)
+    build_m3u8_file(channel_name, dict_sources)
+
+
 def check_test(url):
     # ll是电视直播源的链接列表
     ll = ['http://113.66.209.46:88/hls/215575592/index.m3u8']
@@ -428,41 +438,32 @@ def check_test(url):
 
 
 if __name__ == "__main__":
-    host_url = '221.220.108.96:4000'
+    host_url = '113.67.164.234:8889'
     logger = init_logger('logs/tv_sources.log')
 
-    for province in province_dict:
-        get_channel_sources_by_province1(province)
-    exit(0)
+    # for province in province_dict:
+    #     get_channel_sources_by_province1(province)
+    # exit(0)
 
-    for province in province_dict:
+    # for province in province_dict:
 
-        result_source = []
-        province_name = province['province_name']
-        province_code = province['province_code']
-        prev_url = None
-        page = None
-        code = None
-        for i in range(1, 3):
-            query_result = query_by_province(
-                province_name, prev_url, page, code)
-            if query_result is None or len(query_result.keys()) == 0:
-                continue
-            prev_url = query_result['prev_url']
-            page = i+1
-            code = query_result['code']
-            result_source.extend(query_result['sources'])
-        result_source = sorted(
-            result_source, key=lambda x: (x['active_day'], x['channel_number']), reverse=True)
-    exit(0)
+    #     result_source = []
+    #     province_name = province['province_name']
+    #     province_code = province['province_code']
+    #     prev_url = None
+    #     page = None
+    #     code = None
+    #     for i in range(1, 3):
+    #         query_result = query_by_province(
+    #             province_name, prev_url, page, code)
+    #         if query_result is None or len(query_result.keys()) == 0:
+    #             continue
+    #         prev_url = query_result['prev_url']
+    #         page = i+1
+    #         code = query_result['code']
+    #         result_source.extend(query_result['sources'])
+    #     result_source = sorted(
+    #         result_source, key=lambda x: (x['active_day'], x['channel_number']), reverse=True)
+    # exit(0)
 
-    for province in province_dict:
-        get_channel_sources_by_province1(province)
-
-    html = get_html_source(host_url)
-    channel_name, channel_sources = get_channel_sources(html)
-
-    dict_sources = build_channel_sources(channel_sources)
-    build_json_file(channel_name, dict_sources)
-    build_txt_file(channel_name, dict_sources)
-    build_m3u8_file(channel_name, dict_sources)
+    get_signal_sources(host_url)
