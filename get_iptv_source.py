@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, parse_qs
+from urllib import parse
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
 from typing import Union, List
@@ -76,7 +77,7 @@ def query_by_province(province, prev_url=None, page=None, code=None):
         data = {'saerch': province, 'Submit': None}
         response = requests.post(curr_url, data=data, headers=headers)
     else:
-        curr_url = f'http://tonkiang.us/hoteliptv.php?page={page}&pv={province}&code={code}'
+        curr_url = f'http://tonkiang.us/hoteliptv.php?page={page}&pv={parse.quote(province)}&code={code}'
         referer = 'http://tonkiang.us/hoteliptv.php'
         if prev_url is not None:
             referer = prev_url
@@ -320,6 +321,44 @@ def get_channel_sources_by_province(province):
     build_m3u8_file(province_code, dict_sources)
 
 
+def get_channel_sources_by_province1(province):
+    result_source = []
+    province_name = province['province_name']
+    province_code = province['province_code']
+    prev_url = None
+    page = None
+    code = None
+    for i in range(1, 4):
+        query_result = query_by_province(
+            province_name, prev_url, page, code)
+        if query_result is None or len(query_result.keys()) == 0:
+            continue
+        prev_url = query_result['prev_url']
+        page = i+1
+        code = query_result['code']
+        result_source.extend(query_result['sources'])
+
+    if result_source is None or len(result_source) == 0:
+        return
+    result_source = sorted(
+        result_source, key=lambda x: (-x['active_day'], x['channel_number']), reverse=True)
+
+    result_source = result_source[0:7]
+    province_channel_sources = []
+    for source in result_source:
+        html = get_html_source(source['ip_port'])
+        channel_name, channel_sources = get_channel_sources(html)
+        if channel_sources is None:
+            continue
+        channel_sources = check_url_available(province, channel_sources)
+        province_channel_sources.extend(channel_sources)
+
+    dict_sources = build_channel_sources(province_channel_sources)
+    build_json_file(province_code, dict_sources)
+    build_txt_file(province_code, dict_sources)
+    build_m3u8_file(province_code, dict_sources)
+
+
 def check_url_available(province, sources):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
@@ -391,14 +430,19 @@ def check_test(url):
 if __name__ == "__main__":
     host_url = '221.220.108.96:4000'
     logger = init_logger('logs/tv_sources.log')
-    result_source = []
+
     for province in province_dict:
+        get_channel_sources_by_province1(province)
+    exit(0)
+
+    for province in province_dict:
+
+        result_source = []
         province_name = province['province_name']
         province_code = province['province_code']
         prev_url = None
         page = None
         code = None
-
         for i in range(1, 3):
             query_result = query_by_province(
                 province_name, prev_url, page, code)
@@ -413,7 +457,7 @@ if __name__ == "__main__":
     exit(0)
 
     for province in province_dict:
-        get_channel_sources_by_province(province)
+        get_channel_sources_by_province1(province)
 
     html = get_html_source(host_url)
     channel_name, channel_sources = get_channel_sources(html)
