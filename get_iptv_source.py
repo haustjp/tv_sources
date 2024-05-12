@@ -389,7 +389,8 @@ def check_url_available(province, sources):
 def get_signal_sources(host_url):
     html = get_html_source(host_url)
     channel_name, channel_sources = get_channel_sources(html)
-
+    province = {'province_name': channel_name}
+    channel_sources = check_url_available(province, channel_sources)
     dict_sources = build_channel_sources(channel_sources)
     build_json_file(channel_name, dict_sources)
     build_txt_file(channel_name, dict_sources)
@@ -438,7 +439,7 @@ def check_test(url):
 
 
 if __name__ == "__main__":
-    host_url = '113.67.164.234:8889'
+    host_url = '182.148.14.215:8888'
     logger = init_logger('logs/tv_sources.log')
 
     # for province in province_dict:
