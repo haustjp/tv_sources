@@ -444,7 +444,7 @@ def check_test(url):
 
 if __name__ == "__main__":
     host_url = '182.148.14.215:8888'
-    logger = init_logger('logs/tv_sources.log')
+    logger = init_logger('/scripts/logs/tv_sources.log')
 
     for province in province_dict:
         get_channel_sources_by_province1(province)
