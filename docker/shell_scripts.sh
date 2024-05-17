@@ -4,6 +4,7 @@ gitPath='/scripts/tv_sources'
 
 function initTvSources() {
     ## 克隆tv_sources仓库
+    chmod 600 /root/.ssh/id_rsa_oracle
     if [ 1 -gt 0 ]; then
         if [ ! -d "$gitPath" ]; then
             echo "未检查到gitPath仓库脚本，初始化下载相关脚本..."
