@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+  oci:
+    image: hausthy/python:latest
+    container_name: python
+    labels:
+      - python
+    deploy:
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 400M
+    restart: always
+    volumes:
+      - /docker/python/logs:/scripts/logs
+      - /docker/python/scripts:/scripts/custom
+    environment:
+      - TZ=Asia/Shanghai
+      - DD_SECRET=666
+      - DD_TOKEN=666
+      - CUSTOM_LIST_MERGE_TYPE=overwrite
+      - CUSTOM_LIST_FILE=/scripts/custom/crontab_list.sh
+      - CUSTOM_SHELL_FILE=/scripts/custom/shell_scripts.sh
