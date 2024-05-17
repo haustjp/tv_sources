@@ -1,0 +1,21 @@
+{
+    "provinceDict": [
+        {
+            "province_name": "广东",
+            "province_code": "guangdong_iptv"
+        },
+        {
+            "province_name": "北京",
+            "province_code": "beijing_iptv"
+        },
+        {
+            "province_name": "四川",
+            "province_code": "sichuan_iptv"
+        },
+        {
+            "province_name": "河南",
+            "province_code": "henan_iptv"
+        }
+    ],
+    "logPath":"logs/tv_sources.log"
+}

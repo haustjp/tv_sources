@@ -5,13 +5,16 @@ gitPath='/scripts/tv_sources'
 function initTvSources() {
     ## 克隆tv_sources仓库
     chmod 600 /root/.ssh/id_rsa_oracle
+    git config --global user.name "haustjp"
+    git config --global user.email "haustjp@gmail.com"
+
     if [ 1 -gt 0 ]; then
         if [ ! -d "$gitPath" ]; then
             echo "未检查到gitPath仓库脚本，初始化下载相关脚本..."
-            git clone -b master https://github.com/haustjp/tv_sources.git $gitPath
+            git clone -b master git@github.com:haustjp/tv_sources.git $gitPath
         else
             echo "更新tv_sources脚本相关文件..."
-            git -C $gitPath remote set-url origin https://github.com/haustjp/tv_sources.git
+            git -C $gitPath remote set-url origin git@github.com:haustjp/tv_sources.git
             git -C $gitPath reset --hard
             git -C $gitPath pull origin master --rebase
         fi

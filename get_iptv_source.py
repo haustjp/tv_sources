@@ -14,26 +14,6 @@ import time
 import logging
 import platform
 
-
-province_dict = [{
-    'province_name': '广东',
-    'province_code': 'guangdong_iptv'
-}
-    # , {
-    #     'province_name': '北京',
-    #     'province_code': 'beijing_iptv'
-    # }
-    # , {
-    #     'province_name': '四川',
-    #     'province_code': 'sichuan_iptv'
-    # }
-    # , {
-    #     'province_name': '河南',
-    #     'province_code': 'henan_iptv'
-    # }
-]
-
-
 logger: Logger = None
 
 
@@ -460,11 +440,14 @@ def get_os():
 
 if __name__ == "__main__":
     host_url = '182.148.14.215:8888'
-    if get_os() != "Linux":
-        logger = init_logger('logs/tv_sources.log')
-    else:
-        logger = init_logger('/scripts/logs/tv_sources.log')
+    config = None
+    province_dict = None
+    with open('config/config.json', 'r', encoding='utf-8') as file:
+        config = json.load(file)
 
+    logger = init_logger(config['logPath'])
+
+    province_dict = config['provinceDict']
     for province in province_dict:
         get_channel_sources_by_province1(province)
     # exit(0)
