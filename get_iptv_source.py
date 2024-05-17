@@ -17,16 +17,20 @@ import logging
 province_dict = [{
     'province_name': '广东',
     'province_code': 'guangdong_iptv'
-}, {
-    'province_name': '北京',
-    'province_code': 'beijing_iptv'
-}, {
-    'province_name': '四川',
-    'province_code': 'sichuan_iptv'
-}, {
-    'province_name': '河南',
-    'province_code': 'henan_iptv'
-}]
+}
+# , {
+#     'province_name': '北京',
+#     'province_code': 'beijing_iptv'
+# }
+# , {
+#     'province_name': '四川',
+#     'province_code': 'sichuan_iptv'
+# }
+# , {
+#     'province_name': '河南',
+#     'province_code': 'henan_iptv'
+# }
+]
 
 
 logger: Logger = None
@@ -442,8 +446,8 @@ if __name__ == "__main__":
     host_url = '182.148.14.215:8888'
     logger = init_logger('logs/tv_sources.log')
 
-    # for province in province_dict:
-    #     get_channel_sources_by_province1(province)
+    for province in province_dict:
+        get_channel_sources_by_province1(province)
     # exit(0)
 
     # for province in province_dict:
@@ -467,4 +471,4 @@ if __name__ == "__main__":
     #         result_source, key=lambda x: (x['active_day'], x['channel_number']), reverse=True)
     # exit(0)
 
-    get_signal_sources(host_url)
+    # get_signal_sources(host_url)
