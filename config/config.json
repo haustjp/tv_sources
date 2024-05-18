@@ -17,5 +17,5 @@
             "province_code": "henan_iptv"
         }
     ],
-    "logPath":"logs/tv_sources.log"
+    "logPath": "logs/tv_sources.log"
 }
