@@ -2,6 +2,8 @@
 
 gitPath='/scripts/tv_sources'
 hh=$(date +%-H)
+mergedListFile="/scripts/docker/merged_list_file.sh"
+
 function initTvSources() {
     ## 克隆tv_sources仓库
     chmod 600 /root/.ssh/id_rsa_oracle
@@ -30,6 +32,14 @@ function initTvSources() {
         echo "本次不执行安装tv_sources依赖，跳过..."
     fi
      cp -rf /scripts/tv_sources/auto_run_iptv.sh /scripts/custom/auto_run_iptv.sh
+
+    # 清理日志
+    echo -e "\n# 每3天的23:50分清理一次日志" >>${mergedListFile}
+    echo "50 23 */3 * * rm -rf /scripts/logs/*.log" >>${mergedListFile}
+
+    # IPTV自动抓取
+    echo -e "\n# IPTV自动抓取脚本" >>${mergedListFile}
+    echo "30 0 * * * sh /scripts/custom/auto_run_iptv.sh >>/scripts/logs/auto_run_iptv.log 2>&1" >>${mergedListFile}
 }
 
 initTvSources
