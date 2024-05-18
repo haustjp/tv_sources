@@ -1,7 +1,7 @@
 #!/bin/sh
 
 gitPath='/scripts/tv_sources'
-
+hh=$(date +%-H)
 function initTvSources() {
     ## 克隆tv_sources仓库
     chmod 600 /root/.ssh/id_rsa_oracle
@@ -11,6 +11,9 @@ function initTvSources() {
     if [ 1 -gt 0 ]; then
         if [ ! -d "$gitPath" ]; then
             echo "未检查到gitPath仓库脚本，初始化下载相关脚本..."
+            chmod 600 /root/.ssh/id_rsa_oracle
+            git config --global user.name "haustjp"
+            git config --global user.email "haustjp@gmail.com"
             git clone -b master git@github.com:haustjp/tv_sources.git $gitPath
         else
             echo "更新tv_sources脚本相关文件..."
