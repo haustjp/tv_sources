@@ -2,7 +2,7 @@
 
 function main(){
    cd /scripts/tv_sources
-   git push
+   git pull
    python3 get_iptv_source.py -i '广东' -o 'guangdong'
 }
 
