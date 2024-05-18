@@ -19,5 +19,5 @@ services:
       - DD_SECRET=666
       - DD_TOKEN=666
       - CUSTOM_LIST_MERGE_TYPE=overwrite
-      - CUSTOM_LIST_FILE=/scripts/custom/crontab_list.sh
-      - CUSTOM_SHELL_FILE=/scripts/custom/shell_scripts.sh
+      # - CUSTOM_LIST_FILE=/scripts/custom/crontab_list.sh
+      - CUSTOM_SHELL_FILE=https://raw.githubusercontent.com/haustjp/tv_sources/master/docker/shell_scripts.sh

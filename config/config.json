@@ -1,3 +1,4 @@
 {
+    "isCheckUrlAvailable": true,
     "logPath": "logs/tv_sources.log"
 }

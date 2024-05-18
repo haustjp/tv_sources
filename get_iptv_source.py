@@ -17,6 +17,7 @@ import platform
 
 logger: Logger = None
 config_path = os.environ.get('CONFIG_PATH')
+is_check_url_available = False
 
 
 def init_logger(logPath: str):
@@ -349,6 +350,9 @@ def get_channel_sources_by_province1(province):
 
 
 def check_url_available(province, sources):
+    if not is_check_url_available:
+        return sources
+
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     se = requests.Session()
@@ -464,6 +468,7 @@ if __name__ == "__main__":
     with open(config_path, 'r', encoding='utf-8') as file:
         config = json.load(file)
 
+    is_check_url_available = config['isCheckUrlAvailable']
     logger = init_logger(config['logPath'])
 
     for province in province_dict_list:
