@@ -31,7 +31,7 @@ function initTvSources() {
     else
         echo "本次不执行安装tv_sources依赖，跳过..."
     fi
-     cp -rf /scripts/tv_sources/auto_run_iptv.sh /scripts/custom/auto_run_iptv.sh
+     cp -rf /scripts/tv_sources/docker/auto_run_iptv.sh /scripts/custom/auto_run_iptv.sh
 
     # 清理日志
     echo -e "\n# 每3天的23:50分清理一次日志" >>${mergedListFile}
