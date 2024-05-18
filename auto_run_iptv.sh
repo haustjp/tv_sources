@@ -2,6 +2,7 @@
 
 function main(){
    cd /scripts/tv_sources
+   git push
    python3 get_iptv_source.py
 }
 
