@@ -337,7 +337,8 @@ def get_channel_sources_by_province1(province):
     province_channel_sources = []
     for source in result_source:
         html = get_html_source(source['ip_port'])
-        channel_name, channel_sources = get_channel_sources(html)
+        channel_name, channel_sources = get_channel_sources(
+            html, province_name, source['ip_port'])
         if channel_sources is None:
             continue
         channel_sources = check_url_available(province, channel_sources)
