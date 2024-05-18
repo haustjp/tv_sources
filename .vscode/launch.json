@@ -11,8 +11,10 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
-                "active",
-                "2"
+                "-i",
+                "广东",
+                "-o",
+                "guangdong"
             ],
             "env": {
                 "CONFIG_PATH": "./config/config.json"

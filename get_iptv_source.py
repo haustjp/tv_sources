@@ -10,6 +10,7 @@ import requests
 import re
 import os
 import sys
+import getopt
 import time
 import logging
 import platform
@@ -116,8 +117,8 @@ def query_by_province(province, prev_url=None, page=None, code=None):
 
     query_result['sources'] = sources
     query_result['prev_url'] = curr_url
-    logger.info(
-        f'{province}可用直播组:{json.dumps(query_result,ensure_ascii=False)}')
+    # logger.info(
+    #     f'{province}可用直播组:{json.dumps(query_result,ensure_ascii=False)}')
 
     return query_result
 
@@ -137,7 +138,7 @@ def get_html_source(host_url):
     return html
 
 
-def get_channel_sources(html):
+def get_channel_sources(html, province_name=None, host_url=None):
     try:
         bs = BeautifulSoup(html, 'html.parser')
 
@@ -170,10 +171,10 @@ def get_channel_sources(html):
                     'name': name,
                     'url': url
                 })
-        logger.info(f'{channel_name}:{json.dumps(sources,ensure_ascii=False)}')
+        # logger.info(f'{channel_name}:{json.dumps(sources,ensure_ascii=False)}')
         return channel_name, sources
     except:
-        logger.info(html)
+        logger.info(f'{province_name}-{host_url}-获取直播源出错')
         return None, None
 
 
@@ -300,7 +301,7 @@ def get_channel_sources_by_province(province):
         channel_name, channel_sources = get_channel_sources(html)
         if channel_sources is None:
             continue
-        channel_sources = check_url_available(province, channel_sources)
+        # channel_sources = check_url_available(province, channel_sources)
         province_channel_sources.extend(channel_sources)
 
     dict_sources = build_channel_sources(province_channel_sources)
@@ -441,15 +442,31 @@ def get_os():
 
 if __name__ == "__main__":
     host_url = '182.148.14.215:8888'
+    argv = sys.argv[1:]
     config = None
-    province_dict = None
+    province_dict_list: List[dict[str, str]] = []
+    province_dict: dict[str, str] = {}
+    try:
+        opts, args = getopt.getopt(argv, "hi:o:")
+    except getopt.GetoptError:
+        print('test.py -i <input province> -o <output file>')
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            print('test.py -i <input province> -o <output file>')
+            sys.exit()
+        elif opt in ("-i"):
+            province_dict["province_name"] = arg
+        elif opt in ("-o"):
+            province_dict["province_code"] = f'{arg}_iptv'
+    province_dict_list.append(province_dict)
+
     with open(config_path, 'r', encoding='utf-8') as file:
         config = json.load(file)
 
     logger = init_logger(config['logPath'])
 
-    province_dict = config['provinceDict']
-    for province in province_dict:
+    for province in province_dict_list:
         get_channel_sources_by_province1(province)
     # exit(0)
 
