@@ -6,14 +6,17 @@
     "configurations": [
         {
             "name": "Python: 当前文件",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
                 "active",
                 "2"
-            ]           
+            ],
+            "env": {
+                "CONFIG_PATH": "./config/config.json"
+            }
         }
     ]
 }

@@ -15,6 +15,7 @@ import logging
 import platform
 
 logger: Logger = None
+config_path = os.environ.get('CONFIG_PATH')
 
 
 def init_logger(logPath: str):
@@ -442,7 +443,7 @@ if __name__ == "__main__":
     host_url = '182.148.14.215:8888'
     config = None
     province_dict = None
-    with open('config/config.json', 'r', encoding='utf-8') as file:
+    with open(config_path, 'r', encoding='utf-8') as file:
         config = json.load(file)
 
     logger = init_logger(config['logPath'])
