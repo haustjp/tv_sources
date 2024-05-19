@@ -196,13 +196,13 @@ def build_channel_sources(channel_sources):
 
     if channel_sources and len(channel_sources) > 0:
         for channel_source in channel_sources:
-            source_types['全部'].append(channel_source)
             if channel_source['ishdchannel']:
                 channel_source_copy = copy.deepcopy(channel_source)
                 source_types['高清频道'].append(channel_source_copy)
 
             channel_source['name'] = build_channel_name(
                 channel_source['name'])
+            source_types['全部'].append(channel_source)
             if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
                 source_types['央视频道'].append(channel_source)
             elif '卫视' in channel_source['name']:
