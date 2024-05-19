@@ -333,7 +333,9 @@ def get_channel_sources_by_province1(province):
     result_source = sorted(
         result_source, key=lambda x: (-x['active_day'], x['channel_number']), reverse=True)
 
-    result_source = result_source[0:7]
+    if len(result_source) > 7:
+        result_source = result_source[0:7]
+
     province_channel_sources = []
     for source in result_source:
         html = get_html_source(source['ip_port'])
