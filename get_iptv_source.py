@@ -162,15 +162,19 @@ def get_channel_sources(html, province_name=None, host_url=None):
                 channels = result.select('.channel')
                 if channels is None or len(channels) <= 0:
                     continue
-                name = channels[0].div.text.replace('\n', '')
+                name = str(channels[0].div.text.replace('\n', ''))
                 # logger.info(f'channel_name：{name}')
                 m3u8 = result.select('.m3u8')[0]
-                url = m3u8.select('td')[1].text.strip()
+                url = str(m3u8.select('td')[1].text.strip())
                 # logger.info(f'channel_url：{url}')
+                ishdchannel = False
+                if '高清' in name or 'hd' in name.lower():
+                    ishdchannel = True
 
                 sources.append({
                     'name': name,
-                    'url': url
+                    'url': url,
+                    'ishdchannel': ishdchannel
                 })
         # logger.info(f'{channel_name}:{json.dumps(sources,ensure_ascii=False)}')
         return channel_name, sources
@@ -187,20 +191,20 @@ def sort_key(item):
 
 
 def build_channel_sources(channel_sources):
-    source_types = {'央视频道': [], '卫视频道': [], '其他频道': []}
+    source_types = {'全部': [], '央视频道': [], '卫视频道': [], '高清频道': [], '其他频道': []}
 
     if channel_sources and len(channel_sources) > 0:
         for channel_source in channel_sources:
+            source_types['全部'].append(channel_source)
+            if channel_source['ishdchannel']:
+                source_types['高清频道'].append(channel_source)
             channel_source['name'] = build_channel_name(channel_source['name'])
-            if 'CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']:
+            if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']) and not channel_source['ishdchannel']:
                 source_types['央视频道'].append(channel_source)
-            elif '卫视' in channel_source['name']:
+            elif '卫视' in channel_source['name'] and not channel_source['ishdchannel']:
                 source_types['卫视频道'].append(channel_source)
             else:
                 source_types['其他频道'].append(channel_source)
-    # for key, value in source_types.items():
-    #     source_types[key] = sorted(value, key=sort_key)
-    #     # sorted(value, key=lambda x: x['name'])
 
     return source_types
 
