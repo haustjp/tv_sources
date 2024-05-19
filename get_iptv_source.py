@@ -14,6 +14,7 @@ import getopt
 import time
 import logging
 import platform
+import copy
 
 logger: Logger = None
 config_path = os.environ.get('CONFIG_PATH')
@@ -151,7 +152,7 @@ def get_channel_sources(html, province_name=None, host_url=None):
             channel_name = channel_results[0].b.text.replace(':', '_')
 
         tables = bs.select('div[class="tables"]')
-        logger.info(f'直播源_tables长度：{len(tables)}')
+        logger.info(f'{province_name}-{host_url}-直播源_tables长度：{len(tables)}')
 
         sources = []
 
@@ -168,7 +169,7 @@ def get_channel_sources(html, province_name=None, host_url=None):
                 url = str(m3u8.select('td')[1].text.strip())
                 # logger.info(f'channel_url：{url}')
                 ishdchannel = False
-                if '高清' in name or 'hd' in name.lower():
+                if '高清' in name or '超清' in name or 'hd' in name.lower():
                     ishdchannel = True
 
                 sources.append({
@@ -260,9 +261,14 @@ def build_channel_name(name):
 
 def build_json_file(channel_name, dict_sources):  # 保存json数据
     if dict_sources is not None and len(dict_sources) > 0:
-        json_string = json.dumps(dict_sources, ensure_ascii=False)
-        with open(f"sources/{channel_name}.json", "w", encoding='utf-8') as file:
-            file.write(json_string)
+        have_channel = False
+        for key, value in dict_sources.items():
+            for item in value:
+                have_channel = True
+        if have_channel:
+            json_string = json.dumps(dict_sources, ensure_ascii=False)
+            with open(f"sources/{channel_name}.json", "w", encoding='utf-8') as file:
+                file.write(json_string)
 
 
 def build_txt_file(channel_name, dict_sources):  # 保存txt数据
@@ -272,20 +278,22 @@ def build_txt_file(channel_name, dict_sources):  # 保存txt数据
             txt_string += f'{key},#genre#\n'
             for item in value:
                 txt_string += f"{item['name']},{item['url']}\n"
-
-        with open(f"sources/{channel_name}.txt", "w", encoding='utf-8') as file:
-            file.write(txt_string)
+        if len(txt_string) > 0:
+            with open(f"sources/{channel_name}.txt", "w", encoding='utf-8') as file:
+                file.write(txt_string)
 
 
 def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
     if dict_sources is not None and len(dict_sources) > 0:
         m3u8_string = '#EXTM3U\n'
+        have_channel = False
         for key, value in dict_sources.items():
             for item in value:
+                have_channel = True
                 m3u8_string += f"#EXTINF:-1 group-title=\"{key}\",{item['name']}\n{item['url']}\n"
-
-        with open(f"sources/{channel_name}.m3u8", "w", encoding='utf-8') as file:
-            file.write(m3u8_string)
+        if have_channel:
+            with open(f"sources/{channel_name}.m3u8", "w", encoding='utf-8') as file:
+                file.write(m3u8_string)
 
 
 def get_channel_sources_by_province(province):
@@ -480,6 +488,7 @@ if __name__ == "__main__":
 
     for province in province_dict_list:
         get_channel_sources_by_province1(province)
+        logger.info(f'{province["province_name"]}-直播源抓取结束')
     # exit(0)
 
     # for province in province_dict:
