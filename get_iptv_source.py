@@ -21,6 +21,7 @@ config_path = os.environ.get('CONFIG_PATH')
 is_check_url_available = bool(False)
 isTestSpeed = bool(False)
 timeout: int = int(5)
+hdkeyword = ['高清', '超清', 'hd', '4k']
 
 
 def init_logger(logPath: str):
@@ -170,9 +171,7 @@ def get_channel_sources(html, province_name=None, host_url=None):
                 m3u8 = result.select('.m3u8')[0]
                 url = str(m3u8.select('td')[1].text.strip())
                 # logger.info(f'channel_url：{url}')
-                ishdchannel = False
-                if '高清' in name or '超清' in name or 'hd' in name.lower():
-                    ishdchannel = True
+                ishdchannel = check_hd_channel(name)
 
                 sources.append({
                     'name': name,
@@ -199,19 +198,19 @@ def build_channel_sources(channel_sources):
     if channel_sources and len(channel_sources) > 0:
         for channel_source in channel_sources:
             if channel_source['ishdchannel']:
-                channel_source_copy = copy.deepcopy(channel_source)
-                source_types['高清频道'].append(channel_source_copy)
-
-            channel_source['name'] = build_channel_name(
-                channel_source['name'])
-            source_types['全部'].append(channel_source)
-            if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
-                source_types['央视频道'].append(channel_source)
-            elif '卫视' in channel_source['name']:
-                source_types['卫视频道'].append(channel_source)
+                # channel_source_copy = copy.deepcopy(channel_source)
+                source_types['高清频道'].append(channel_source)
             else:
-                source_types['其他频道'].append(channel_source)
+                channel_source['name'] = build_channel_name(
+                    channel_source['name'])
+                if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
+                    source_types['央视频道'].append(channel_source)
+                elif '卫视' in channel_source['name']:
+                    source_types['卫视频道'].append(channel_source)
+                else:
+                    source_types['其他频道'].append(channel_source)
 
+            source_types['全部'].append(channel_source)
     return source_types
 
 
@@ -435,6 +434,14 @@ def get_signal_sources(host_url):
     build_json_file(channel_name, dict_sources)
     build_txt_file(channel_name, dict_sources)
     build_m3u8_file(channel_name, dict_sources)
+
+
+def check_hd_channel(channel_name):
+    channel_name = channel_name.lower()
+    for keyword in hdkeyword:
+        if keyword in channel_name:
+            return True
+    return False
 
 
 def check_test(url):
