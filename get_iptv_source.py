@@ -411,7 +411,7 @@ def check_url_available(province, sources):
                 logger.info(
                     f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
         except requests.exceptions.Timeout:
-            if netloc in timeout_host.keys:
+            if netloc in timeout_host.keys():
                 timeout_host[netloc] += 1
             else:
                 timeout_host[netloc] = 1
