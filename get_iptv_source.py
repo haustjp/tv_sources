@@ -377,12 +377,12 @@ def check_url_available(province, sources):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     se = requests.Session()
     available_sources = []
-    timeout_host = []
+    timeout_host: dict[str, int] = {}
     for i in sources:
         try:
             parsed_url = urlparse(i['url'])
             netloc = parsed_url.netloc
-            if netloc in timeout_host:
+            if netloc in timeout_host.keys() and timeout_host[netloc] > 10:
                 continue
             res = se.get(i['url'], headers=headers,
                          timeout=timeout, stream=True)
@@ -390,6 +390,9 @@ def check_url_available(province, sources):
                 if isTestSpeed:
                     for content in res.iter_content(chunk_size=1*1024*1024):
                         if content and len(content) > 0:
+                            if netloc in timeout_host.keys():
+                                del timeout_host[netloc]
+
                             logger.info(
                                 f"{province['province_name']}-可用-{i['name']}-{i['url']}")
                             available_sources.append(i)
@@ -398,6 +401,9 @@ def check_url_available(province, sources):
                                 f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
                         break
                 else:
+                    if netloc in timeout_host.keys():
+                        del timeout_host[netloc]
+
                     logger.info(
                         f"{province['province_name']}-可用-{i['name']}-{i['url']}")
                     available_sources.append(i)
@@ -405,7 +411,10 @@ def check_url_available(province, sources):
                 logger.info(
                     f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
         except requests.exceptions.Timeout:
-            timeout_host.append(netloc)
+            if netloc in timeout_host.keys:
+                timeout_host[netloc] += 1
+            else:
+                timeout_host[netloc] = 1
             logger.error(
                 f"{province['province_name']}-{i['name']}-{i['url']}-请求超时，超时时间设置为{timeout}秒")
         except requests.exceptions.RequestException as ex:
