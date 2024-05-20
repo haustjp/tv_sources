@@ -18,7 +18,9 @@ import copy
 
 logger: Logger = None
 config_path = os.environ.get('CONFIG_PATH')
-is_check_url_available = False
+is_check_url_available = bool(False)
+isTestSpeed = bool(False)
+timeout: int = int(5)
 
 
 def init_logger(logPath: str):
@@ -375,22 +377,40 @@ def check_url_available(province, sources):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
     se = requests.Session()
     available_sources = []
+    timeout_host = []
     for i in sources:
         try:
-            res = se.get(i['url'], headers=headers, timeout=8, stream=True)
+            parsed_url = urlparse(i['url'])
+            netloc = parsed_url.netloc
+            if netloc in timeout_host:
+                continue
+            res = se.get(i['url'], headers=headers,
+                         timeout=timeout, stream=True)
             if res.status_code == 200:
-                for content in res.iter_content(chunk_size=1*1024*1024):
-                    if content and len(content) > 0:
-                        logger.info(
-                            f"{province['province_name']}-可用-{i['name']}-{i['url']}")
-                        available_sources.append(i)
-                    else:
-                        logger.info(
-                            f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
-                    break
+                if isTestSpeed:
+                    for content in res.iter_content(chunk_size=1*1024*1024):
+                        if content and len(content) > 0:
+                            logger.info(
+                                f"{province['province_name']}-可用-{i['name']}-{i['url']}")
+                            available_sources.append(i)
+                        else:
+                            logger.info(
+                                f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
+                        break
+                else:
+                    logger.info(
+                        f"{province['province_name']}-可用-{i['name']}-{i['url']}")
+                    available_sources.append(i)
             else:
                 logger.info(
                     f"{province['province_name']}-不可用-{i['name']}-{i['url']}")
+        except requests.exceptions.Timeout:
+            timeout_host.append(netloc)
+            logger.error(
+                f"{province['province_name']}-{i['name']}-{i['url']}-请求超时，超时时间设置为{timeout}秒")
+        except requests.exceptions.RequestException as ex:
+            logger.error(
+                f"{province['province_name']}-出错-{i['name']}-{i['url']}{ex}")
         except Exception as ex:
             logger.error(
                 f"{province['province_name']}-出错-{i['name']}-{i['url']}{ex}")
@@ -417,7 +437,7 @@ def check_test(url):
 
     for i in ll:
         try:
-            res = se.get(i, headers=headers, timeout=5, stream=True)
+            res = se.get(i, headers=headers, timeout=timeout, stream=True)
             if res.status_code == 200:
                 # 多获取的视频数据进行5秒钟限制
                 start_time = time.time()
@@ -485,8 +505,12 @@ if __name__ == "__main__":
 
     with open(config_path, 'r', encoding='utf-8') as file:
         config = json.load(file)
-
-    is_check_url_available = config['isCheckUrlAvailable']
+    if 'timeout' in config:
+        timeout = int(config['timeout'])
+    if 'isCheckUrlAvailable' in config:
+        is_check_url_available = config['isCheckUrlAvailable']
+    if 'isTestSpeed' in config:
+        isTestSpeed = config['isTestSpeed']
     logger = init_logger(config['logPath'])
 
     for province in province_dict_list:
