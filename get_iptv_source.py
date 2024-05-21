@@ -197,20 +197,21 @@ def build_channel_sources(channel_sources):
 
     if channel_sources and len(channel_sources) > 0:
         for channel_source in channel_sources:
+            channel_source_copy = copy.deepcopy(channel_source)
+            channel_source_copy['name'] = channel_source_copy['name'].replace(
+                "(", "").replace(")", "").replace("测试", "")
+            source_types['全部'].append(channel_source_copy)
+            channel_source['name'] = build_channel_name(
+                channel_source['name'])
             if channel_source['ishdchannel']:
-                # channel_source_copy = copy.deepcopy(channel_source)
                 source_types['高清频道'].append(channel_source)
+            if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
+                source_types['央视频道'].append(channel_source)
+            elif '卫视' in channel_source['name']:
+                source_types['卫视频道'].append(channel_source)
             else:
-                channel_source['name'] = build_channel_name(
-                    channel_source['name'])
-                if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
-                    source_types['央视频道'].append(channel_source)
-                elif '卫视' in channel_source['name']:
-                    source_types['卫视频道'].append(channel_source)
-                else:
-                    source_types['其他频道'].append(channel_source)
+                source_types['其他频道'].append(channel_source)
 
-            source_types['全部'].append(channel_source)
     return source_types
 
 
@@ -222,6 +223,7 @@ def build_channel_name(name):
         name = name.replace("央视", "CCTV")
         name = name.replace("高清", "")
         name = name.replace("超高", "")
+        name = name.replace("超清", "")
         name = name.replace("HD", "")
         name = name.replace("标清", "")
         name = name.replace("频道", "")
@@ -231,6 +233,7 @@ def build_channel_name(name):
         name = name.replace("＋", "+")
         name = name.replace("(", "")
         name = name.replace(")", "")
+        name = name.replace("测试", "")
         name = re.sub(r"CCTV(\d+)台", r"CCTV\1", name)
         name = name.replace("CCTV1综合", "CCTV1")
         name = name.replace("CCTV2财经", "CCTV2")
