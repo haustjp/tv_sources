@@ -6,6 +6,7 @@ import copy
 import logging
 import requests
 import platform
+from urllib import parse
 from logging import Logger
 from logging.handlers import TimedRotatingFileHandler
 
@@ -162,9 +163,20 @@ def query_source_by_keyword(keyword: str):
     iptv_urls = []
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+        'Host': 'www.zoomeye.org',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Firefox/108.0',
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+        'Accept-Encoding': 'gzip, deflate, br',
+        # 'Cube-Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImIwNmRiZTIwNjBmMSIsImVtYWlsIjoiaGF1c3RoeUBnbWFpbC5jb20iLCJleHAiOjE3MTY3Mjg1NDcuMH0.EFVokZoo3XFmexgej9JBIB4uSkC0qnMyDj5OGlbJ-TE',
+        'Connection': 'keep-alive',
         'Referer': f'https://www.zoomeye.org/searchResult?q={keyword}',
-        'Cookie': '__jsluid_s=6ecf48969682cfdc15275c2ca827f7ab; BMAP_SECKEY=1QgzU5ymsQghq3pY16JrA6aX-ai8gdjb_pOOVUXt9kbGcpQYs9QIRD1JxZhnUyVUJFpRfNAQRZqnOTXhE3MSMVBRSJ84nxXRu1VHspkCM0puf3pPg6UtnNPm2wF15HCMM6ZMD1FeEmJP-McY56lljtsmkdQbVUYcm4Z-mxj9DvM14j59qfplUBWs8dDdeblg; SECKEY_ABVK=j/VvC3OiYQfyy+dD4PSYtA9SUJkvsO7yLHbLphpYugU%3D'
+        'Cookie': '__jsluid_s=2dab5521061999688bbd2dff7d4bc624',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'Pragma': 'no-cache',
+        'Cache-Control': 'no-cache'
     }
 
     response = requests.get(
@@ -190,7 +202,7 @@ def query_source_by_keyword(keyword: str):
     return iptv_urls
 
 
-def query_channel(url):
+def query_channel(url, province_name):
     sources = []
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
@@ -199,10 +211,16 @@ def query_channel(url):
         response = requests.get(url, headers=headers, timeout=6)
         json_string = response.text
         datas = json.loads(json_string)
-        logger.info(f'{url}')
+        logger.info(f'{province_name}-{url}')
         for iptv_data in datas['data']:
-            iptv_data['url'] = f"{url.replace('/iptv/live/1000.json?key=txiptv','')}{iptv_data['url']}"
-        sources.extend(datas['data'])
+            item_url = iptv_data['url']
+            if item_url.startswith('rtp') or item_url.startswith('udp'):
+                continue
+            if item_url.startswith('http'):
+                iptv_data['url'] = item_url
+            else:
+                iptv_data['url'] = f"{url.replace('/iptv/live/1000.json?key=txiptv','')}{iptv_data['url']}"
+            sources.append(iptv_data)
     except Exception as ex:
         return sources
         # logger.error(f"{url}-出错-{ex}")
@@ -320,30 +338,20 @@ def build_m3u8_file(channel_name, dict_sources, path: str):  # 保存m3u8数据
                 file.write(m3u8_string)
 
 
-if __name__ == "__main__":
-    path = 'apisources'
-    province_code = 'guangdong'
-    key_word = '%2Fiptv%2Flive%2Fzh_cn.js%20%2Bcountry%3A%22CN%22%20%2Bsubdivisions%3A%22guangdong%22'
-    config = read_config(config_path)
-    if config is None or 'logPath' not in config:
-        exit(0)
+def get_channel_sources_by_province(keyword, province, path):
+    sources = []
+    province_name = province['province_name']
+    province_code = province['province_code']
+    query_code = parse.quote(province_name)
+    keyword = keyword.replace('guangdong', query_code)
 
-    logger = init_logger(config['logPath'])
-
-    if 'province' in config and len(config['province']) > 0:
-        province_code = config['province']
-        key_word = key_word.replace('guangdong', config['province'])
-
-    if 'path' in config and len(config['path']) > 0:
-        path = str(config['path'])
-
-    urls = query_source_by_keyword(key_word)
+    urls = query_source_by_keyword(keyword)
 
     if urls is None or len(urls) <= 0:
-        exit(0)
-    sources = []
+        return sources
+
     for url in urls:
-        channel_items = query_channel(url)
+        channel_items = query_channel(url, province_name)
         if channel_items is not None and len(channel_items) > 0:
             sources.extend(channel_items)
 
@@ -353,5 +361,31 @@ if __name__ == "__main__":
         build_txt_file(province_code, dict_sources, path)
         build_m3u8_file(province_code, dict_sources, path)
 
-        # for item in sources:
-        #     logger.info(f"{config['province']}-{json.dumps(item)}")
+
+if __name__ == "__main__":
+    path = 'apisources'
+    province_code = 'guangdong'
+
+    config = read_config(config_path)
+    if config is None or 'logPath' not in config:
+        exit(0)
+
+    logger = init_logger(config['logPath'])
+
+    if 'path' in config and len(config['path']) > 0:
+        path = str(config['path'])
+
+    key_word = '%2Fiptv%2Flive%2Fzh_cn.js%20%2Bcountry%3A%22CN%22%20%2Bsubdivisions%3A%22guangdong%22'
+    if 'keyword' in config and len(config['keyword']) > 0:
+        key_word = config['keyword']
+    province_map = read_config('config/province_map.json')
+    province_dict: dict[str, str] = {}
+    province_dict["province_name"] = '湖南'
+    province_dict["province_code"] = f'{"hunan".lower()}_iptv'
+    get_channel_sources_by_province(key_word, province_dict, path)
+    exit(0)
+    for key, value in province_map.items():
+        province_dict: dict[str, str] = {}
+        province_dict["province_name"] = key
+        province_dict["province_code"] = f'{value.lower()}_iptv'
+        get_channel_sources_by_province(key_word, province_dict, path)

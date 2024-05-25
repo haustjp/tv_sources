@@ -1,6 +1,6 @@
 {
     "path": "apisources",
-    "province": "sichuan",
+    "province": "guangdong",
     "logPath": "logs/api_sources.log",
-    "key_word": "%2Fiptv%2Flive%2Fzh_cn.js%20%2Bcountry%3A%22CN%22%20%2Bsubdivisions%3A%22guangdong%22"
+    "keyword": "%2Fiptv%2Flive%2Fzh_cn.js%20%2Bcountry%3A%22CN%22%20%2Bsubdivisions%3A%22guangdong%22%2Bafter%3A%222024-01-01%22"
 }

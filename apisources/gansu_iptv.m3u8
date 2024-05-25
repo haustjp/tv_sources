@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1 group-title="全部",礼宴中心直播
+http://124.152.247.189:2001http://gcbsc.v.live.baishancdnx.cn/gc/yxxdpf_1/index.m3u8
+#EXTINF:-1 group-title="全部",会议中心直播
+http://124.152.247.189:2001http://gcbsc.v.live.baishancdnx.cn/gc/taishan03_1/index.m3u8
+#EXTINF:-1 group-title="全部",商务中心直播
+http://124.152.247.189:2001http://gcbsc.v.live.baishancdnx.cn/gc/jhs02_1/index.m3u8
+#EXTINF:-1 group-title="其他频道",礼宴中心直播
+http://124.152.247.189:2001http://gcbsc.v.live.baishancdnx.cn/gc/yxxdpf_1/index.m3u8
+#EXTINF:-1 group-title="其他频道",会议中心直播
+http://124.152.247.189:2001http://gcbsc.v.live.baishancdnx.cn/gc/taishan03_1/index.m3u8
+#EXTINF:-1 group-title="其他频道",商务中心直播
+http://124.152.247.189:2001http://gcbsc.v.live.baishancdnx.cn/gc/jhs02_1/index.m3u8
