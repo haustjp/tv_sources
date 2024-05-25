@@ -17,7 +17,8 @@
                 "guangdong"
             ],
             "env": {
-                "CONFIG_PATH": "./config/config.json"
+                "CONFIG_PATH": "./config/config.json",
+                "API_CONFIG_PATH": "./config/apiconfig.json"
             }
         }
     ]
