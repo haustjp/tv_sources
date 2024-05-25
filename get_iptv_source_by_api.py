@@ -11,6 +11,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 logger: Logger = None
 config_path = os.environ.get('API_CONFIG_PATH')
+appkey = os.environ.get('APP_KEY')
 
 
 def test():

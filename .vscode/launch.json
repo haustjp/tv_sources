@@ -17,6 +17,7 @@
                 "guangdong"
             ],
             "env": {
+                "APP_KEY": "436c3907-4559-7087B-Ec0E-0fFd3526109",
                 "CONFIG_PATH": "./config/config.json",
                 "API_CONFIG_PATH": "./config/apiconfig.json"
             }
