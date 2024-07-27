@@ -56,6 +56,90 @@ def get_numbers(text):
         return 0
 
 
+def query_first_source():
+    query_result = []
+    # {'name': '', 'sources': []}
+    page_url = 'http://tonkiang.us/hoteliptv.php'
+    headers = {
+        'host': 'tonkiang.us',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+        'Referer': f'http://tonkiang.us/hoteliptv.php',
+        'Cookie': '_ga=GA1.1.2099312927.1722090046; HstCfa4853344=1722090047400; HstCmu4853344=1722090047400; HstCnv4853344=1; HstCfa4835429=1722090068116; HstCmu4835429=1722090068116; HstCnv4835429=1; HstCns4835429=1; HstCla4835429=1722090138767; HstPn4835429=2; HstPt4835429=2; _ga_8KY4MGK2FJ=GS1.1.1722090068.1.1.1722090810.0.0.0; ckip1=1.197.34.233%7C221.201.131.182%7C116.117.104.38%7C61.52.157.67%7C116.117.104.21%7C61.52.159.180%7C121.24.98.185%7C111.126.255.122; ckip2=113.101.245.212%7C14.115.91.149%7C183.48.127.174%7C27.10.77.23%7C27.10.76.217%7C14.178.139.67%7C114.243.98.40%7C27.10.208.176; HstCns4853344=3; REFERER2=MzzbUr4aObDcYO0O0O; REFERER1=OzTbkr3aNbTccO0O0O; _ga_JNMLRB3QLF=GS1.1.1722093437.2.1.1722094574.0.0.0; HstCla4853344=1722094577037; HstPn4853344=22; HstPt4853344=22',
+        'upgrade-insecure-requests': '1'
+    }
+    response = requests.get(page_url, headers=headers)
+    html = response.text
+    if html is None or len(html) == 0:
+        return query_result
+    bs = BeautifulSoup(html, 'html.parser')
+    boxs = bs.select('div[class="box"]')
+    if boxs is None or len(boxs) == 0:
+        return None
+    for box in boxs:
+        result = {'name': None, 'sources': []}
+        divs = box.select('div')
+        if divs is None or len(divs) == 0:
+            continue
+        result['name'] = divs[0].text.strip()
+        shs = box.select('span[class="sh"]')
+        if shs is None or len(shs) == 0:
+            continue
+        for sh in shs:
+            atags = sh.select('a')
+            if atags is None or len(atags) == 0:
+                continue
+            url = atags[0].attrs['href']
+            href = f'http://tonkiang.us/{url}'
+            result['sources'].append(href)
+
+        if result['name'] is not None or len(result['name']) > 0:
+            query_result.append(result)
+    return query_result
+
+
+def query_first_source_urls(query_request):
+    name = query_request['name']
+    urls = query_request['sources']
+    query_result = {}
+    headers = {
+        'host': 'tonkiang.us',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+        'Referer': f'http://tonkiang.us/hoteliptv.php',
+        'Cookie': '_ga=GA1.1.2099312927.1722090046; HstCfa4853344=1722090047400; HstCmu4853344=1722090047400; HstCnv4853344=1; HstCfa4835429=1722090068116; HstCmu4835429=1722090068116; HstCnv4835429=1; HstCns4835429=1; HstCla4835429=1722090138767; HstPn4835429=2; HstPt4835429=2; _ga_8KY4MGK2FJ=GS1.1.1722090068.1.1.1722090810.0.0.0; ckip1=1.197.34.233%7C221.201.131.182%7C116.117.104.38%7C61.52.157.67%7C116.117.104.21%7C61.52.159.180%7C121.24.98.185%7C111.126.255.122; ckip2=113.101.245.212%7C14.115.91.149%7C183.48.127.174%7C27.10.77.23%7C27.10.76.217%7C14.178.139.67%7C114.243.98.40%7C27.10.208.176; HstCns4853344=3; REFERER2=MzzbUr4aObDcYO0O0O; REFERER1=OzTbkr3aNbTccO0O0O; _ga_JNMLRB3QLF=GS1.1.1722093437.2.1.1722094574.0.0.0; HstCla4853344=1722094577037; HstPn4853344=22; HstPt4853344=22',
+        'upgrade-insecure-requests': '1'
+    }
+    sources = []
+    for url in urls:
+        response = requests.get(url,  headers=headers)
+        html = response.text
+        if html is None or len(html) == 0:
+            continue
+        bs = BeautifulSoup(html, 'html.parser')
+
+        tables = bs.select('div[class="tables"]')
+        logger.info(f'{name}_tables长度：{len(tables)}')
+        for table in tables:
+            results = table.select('div[class="result"]')
+            for result in results:
+                channel = result.find('div', class_='channel')
+                if channel:
+                    ip_port = channel.b.text.strip()
+                    active_tag = result.find('div', style='float: right; ')
+                    active_text = active_tag.text.replace("\n", "").strip()
+                    number_tag = result.find('div', style='float: left').b
+                    number_tag_text = number_tag.text.replace("\n", "").strip()
+                    if active_text != '暂时失效':
+                        active_day = get_numbers(active_text)
+                        channel_number = get_numbers(number_tag_text)
+                        logger.info(
+                            f'{name}-status：{active_text},channel：{ip_port},num：{channel_number}')
+                        sources.append(
+                            {'ip_port': ip_port, 'active_day': active_day, 'channel_number': channel_number})
+
+    query_result['sources'] = sources
+    return query_result
+
+
 def query_by_province(province, prev_url=None, page=None, code=None):
     query_result = {'url': '', 'code': ''}
     headers = {}
@@ -169,6 +253,9 @@ def get_channel_sources(html, province_name=None, host_url=None):
                 # logger.info(f'channel_name：{name}')
                 m3u8 = result.select('.m3u8')[0]
                 url = str(m3u8.select('td')[1].text.strip())
+                # 过滤组播地址
+                if url is None or not url.startswith('http'):
+                    continue
                 # logger.info(f'channel_url：{url}')
                 ishdchannel = check_hd_channel(name)
 
@@ -371,6 +458,45 @@ def get_channel_sources_by_province1(province):
     build_m3u8_file(province_code, dict_sources)
 
 
+def get_channel_sources_from_first_page():
+    result_source = []
+
+    query_result = query_first_source()
+    if query_result is None or len(query_result) == 0:
+        return
+
+    for item in query_result:
+        name = str(item['name']).split(' ')[0].lower()
+        query_result_urls = query_first_source_urls(item)
+        if query_result_urls is None or len(query_result_urls.keys()) == 0:
+            continue
+        result_source.extend(query_result_urls['sources'])
+        if result_source is None or len(result_source) == 0:
+            return
+        result_source = sorted(
+            result_source, key=lambda x: (-x['active_day'], x['channel_number']), reverse=True)
+
+        if len(result_source) > 7:
+            result_source = result_source[0:7]
+
+        province_channel_sources = []
+        for source in result_source:
+            html = get_html_source(source['ip_port'])
+            channel_name, channel_sources = get_channel_sources(
+                html, name, source['ip_port'])
+            if channel_sources is None:
+                continue
+            province = {'province_name': name}
+            channel_sources = check_url_available(
+                {'province_name': name}, channel_sources)
+            province_channel_sources.extend(channel_sources)
+
+        dict_sources = build_channel_sources(province_channel_sources)
+        build_json_file(name, dict_sources)
+        build_txt_file(name, dict_sources)
+        build_m3u8_file(name, dict_sources)
+
+
 def check_url_available(province, sources):
     if not is_check_url_available:
         return sources
@@ -505,10 +631,11 @@ if __name__ == "__main__":
     host_url = '182.148.14.215:8888'
     argv = sys.argv[1:]
     config = None
+    is_first_page = False
     province_dict_list: List[dict[str, str]] = []
     province_dict: dict[str, str] = {}
     try:
-        opts, args = getopt.getopt(argv, "hi:o:")
+        opts, args = getopt.getopt(argv, "hi:o:t:")
     except getopt.GetoptError:
         print('test.py -i <input province> -o <output file>')
         sys.exit(2)
@@ -520,6 +647,9 @@ if __name__ == "__main__":
             province_dict["province_name"] = arg
         elif opt in ("-o"):
             province_dict["province_code"] = f'{arg}_iptv'
+        elif opt in ("-t"):
+            if arg is not None and arg.lower() == 'first':
+                is_first_page = True
     province_dict_list.append(province_dict)
 
     with open(config_path, 'r', encoding='utf-8') as file:
@@ -532,9 +662,12 @@ if __name__ == "__main__":
         isTestSpeed = config['isTestSpeed']
     logger = init_logger(config['logPath'])
 
-    for province in province_dict_list:
-        get_channel_sources_by_province1(province)
-        logger.info(f'{province["province_name"]}-直播源抓取结束')
+    if is_first_page:
+        get_channel_sources_from_first_page()
+    else:
+        for province in province_dict_list:
+            get_channel_sources_by_province1(province)
+            logger.info(f'{province["province_name"]}-直播源抓取结束')
     # exit(0)
 
     # for province in province_dict:
