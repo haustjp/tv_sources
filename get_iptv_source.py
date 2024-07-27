@@ -57,7 +57,7 @@ def get_numbers(text):
 
 
 def query_by_province(province, prev_url=None, page=None, code=None):
-    query_result = {}
+    query_result = {'url': '', 'code': ''}
     headers = {}
     response: Response = None
     curr_url = 'http://tonkiang.us/hoteliptv.php'
@@ -89,7 +89,6 @@ def query_by_province(province, prev_url=None, page=None, code=None):
         return query_result
     bs = BeautifulSoup(html, 'html.parser')
     pagers = bs.select('a[href^="?page="]')
-
     if pagers and len(pagers) > 0:
         href = pagers[0].attrs['href']
         parsed_url = urlparse(href)
@@ -344,7 +343,8 @@ def get_channel_sources_by_province1(province):
             continue
         prev_url = query_result['prev_url']
         page = i+1
-        code = query_result['code']
+        if 'code' in query_result:
+            code = query_result['code']
         result_source.extend(query_result['sources'])
 
     if result_source is None or len(result_source) == 0:

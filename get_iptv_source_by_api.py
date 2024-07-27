@@ -380,8 +380,8 @@ if __name__ == "__main__":
         key_word = config['keyword']
     province_map = read_config('config/province_map.json')
     province_dict: dict[str, str] = {}
-    province_dict["province_name"] = '湖南'
-    province_dict["province_code"] = f'{"hunan".lower()}_iptv'
+    province_dict["province_name"] = '安徽'
+    province_dict["province_code"] = f'{"anhui".lower()}_iptv'
     get_channel_sources_by_province(key_word, province_dict, path)
     exit(0)
     for key, value in province_map.items():
