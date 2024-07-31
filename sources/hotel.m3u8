@@ -311,8 +311,6 @@ http://121.24.98.185:8090/hls/109/index.m3u8
 http://121.24.98.185:8090/hls/110/index.m3u8
 #EXTINF:-1 group-title="全部",-3
 http://121.24.98.185:8090/hls/111/index.m3u8
-#EXTINF:-1 group-title="全部",东方财经
-http://111.126.255.122:808/hls/61/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://116.117.104.38:8096/tsfile/live/0001_1.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV2
@@ -625,5 +623,3 @@ http://121.24.98.185:8090/hls/109/index.m3u8
 http://121.24.98.185:8090/hls/110/index.m3u8
 #EXTINF:-1 group-title="其他频道",3
 http://121.24.98.185:8090/hls/111/index.m3u8
-#EXTINF:-1 group-title="其他频道",东方财经
-http://111.126.255.122:808/hls/61/index.m3u8
