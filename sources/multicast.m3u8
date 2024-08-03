@@ -1,1323 +1,305 @@
 #EXTM3U
 #EXTINF:-1 group-title="全部",CCTV-1
-http://116.117.104.38:8096/tsfile/live/0001_1.m3u8
+http://121.24.98.185:8090/hls/9/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-2
-http://116.117.104.38:8096/tsfile/live/0002_1.m3u8
+http://121.24.98.185:8090/hls/10/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-3
-http://116.117.104.38:8096/tsfile/live/0003_1.m3u8
+http://121.24.98.185:8090/hls/11/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-4
-http://116.117.104.38:8096/tsfile/live/0004_1.m3u8
+http://121.24.98.185:8090/hls/12/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-5
-http://116.117.104.38:8096/tsfile/live/0005_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV6-电影
-http://116.117.104.38:8096/tsfile/live/0006_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-7
-http://116.117.104.38:8096/tsfile/live/0007_1.m3u8
+http://121.24.98.185:8090/hls/13/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-6
+http://121.24.98.185:8090/hls/14/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-17
+http://121.24.98.185:8090/hls/15/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-8
-http://116.117.104.38:8096/tsfile/live/0008_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV9-纪录
-http://116.117.104.38:8096/tsfile/live/0009_1.m3u8
+http://121.24.98.185:8090/hls/16/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-9
+http://121.24.98.185:8090/hls/17/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-10
-http://116.117.104.38:8096/tsfile/live/0010_1.m3u8
+http://121.24.98.185:8090/hls/18/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-11
-http://116.117.104.38:8096/tsfile/live/0011_1.m3u8
+http://121.24.98.185:8090/hls/19/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-12
-http://116.117.104.38:8096/tsfile/live/0012_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-13
-http://116.117.104.38:8096/tsfile/live/0013_1.m3u8
+http://121.24.98.185:8090/hls/20/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-14
-http://116.117.104.38:8096/tsfile/live/0014_1.m3u8
+http://121.24.98.185:8090/hls/22/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-15
-http://116.117.104.38:8096/tsfile/live/0014_2.m3u8
-#EXTINF:-1 group-title="全部",内蒙古
-http://116.117.104.38:8096/tsfile/live/0018_1.m3u8
-#EXTINF:-1 group-title="全部",浙江卫视
-http://116.117.104.38:8096/tsfile/live/0124_1.m3u8
-#EXTINF:-1 group-title="全部",江苏卫视
-http://116.117.104.38:8096/tsfile/live/0127_1.m3u8
-#EXTINF:-1 group-title="全部",湖北卫视
-http://116.117.104.38:8096/tsfile/live/0132_1.m3u8
-#EXTINF:-1 group-title="全部",广东卫视
-http://116.117.104.38:8096/tsfile/live/0125_1.m3u8
-#EXTINF:-1 group-title="全部",山西卫视
-http://116.117.104.38:8096/tsfile/live/0118_1.m3u8
-#EXTINF:-1 group-title="全部",贵州卫视
-http://116.117.104.38:8096/tsfile/live/0120_1.m3u8
-#EXTINF:-1 group-title="全部",上海卫视
-http://116.117.104.38:8096/tsfile/live/0107_1.m3u8
-#EXTINF:-1 group-title="全部",辽宁卫视
-http://116.117.104.38:8096/tsfile/live/0121_1.m3u8
-#EXTINF:-1 group-title="全部",山东卫视
-http://116.117.104.38:8096/tsfile/live/0131_1.m3u8
-#EXTINF:-1 group-title="全部",黑龙江卫视
-http://116.117.104.38:8096/tsfile/live/0143_1.m3u8
-#EXTINF:-1 group-title="全部",广西卫视
-http://116.117.104.38:8096/tsfile/live/0113_1.m3u8
-#EXTINF:-1 group-title="全部",兵团卫视
-http://116.117.104.38:8096/tsfile/live/0115_1.m3u8
-#EXTINF:-1 group-title="全部",安徽卫视
-http://116.117.104.38:8096/tsfile/live/0130_1.m3u8
+http://121.24.98.185:8090/hls/23/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-中学生
+http://121.24.98.185:8090/hls/24/index.m3u8
+#EXTINF:-1 group-title="全部",河北卫视
+http://121.24.98.185:8090/hls/25/index.m3u8
+#EXTINF:-1 group-title="全部",河北生活
+http://121.24.98.185:8090/hls/26/index.m3u8
+#EXTINF:-1 group-title="全部",河北农民
+http://121.24.98.185:8090/hls/27/index.m3u8
+#EXTINF:-1 group-title="全部",河北都市
+http://121.24.98.185:8090/hls/28/index.m3u8
+#EXTINF:-1 group-title="全部",河北影视
+http://121.24.98.185:8090/hls/29/index.m3u8
+#EXTINF:-1 group-title="全部",河北少儿科教
+http://121.24.98.185:8090/hls/30/index.m3u8
+#EXTINF:-1 group-title="全部",河北公共
+http://121.24.98.185:8090/hls/31/index.m3u8
 #EXTINF:-1 group-title="全部",北京卫视
-http://116.117.104.38:8096/tsfile/live/0122_1.m3u8
-#EXTINF:-1 group-title="全部",东南卫视
-http://116.117.104.38:8096/tsfile/live/0137_1.m3u8
+http://121.24.98.185:8090/hls/32/index.m3u8
 #EXTINF:-1 group-title="全部",天津卫视
-http://116.117.104.38:8096/tsfile/live/0135_1.m3u8
-#EXTINF:-1 group-title="全部",湖南卫视
-http://116.117.104.38:8096/tsfile/live/0128_1.m3u8
-#EXTINF:-1 group-title="全部",四川卫视
-http://116.117.104.38:8096/tsfile/live/0123_1.m3u8
-#EXTINF:-1 group-title="全部",深圳卫视
-http://116.117.104.38:8096/tsfile/live/0126_1.m3u8
-#EXTINF:-1 group-title="全部",宁夏卫视
-http://116.117.104.38:8096/tsfile/live/0112_1.m3u8
-#EXTINF:-1 group-title="全部",云南卫视
-http://116.117.104.38:8096/tsfile/live/0119_1.m3u8
+http://121.24.98.185:8090/hls/33/index.m3u8
 #EXTINF:-1 group-title="全部",河南卫视
-http://116.117.104.38:8096/tsfile/live/0139_1.m3u8
-#EXTINF:-1 group-title="全部",江西卫视
-http://116.117.104.38:8096/tsfile/live/0138_1.m3u8
-#EXTINF:-1 group-title="全部",IPTV 6+
-http://116.117.104.38:8096/tsfile/live/1010_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-1
-http://116.117.104.21:8096/tsfile/live/0001_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-2
-http://116.117.104.21:8096/tsfile/live/0002_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-3
-http://116.117.104.21:8096/tsfile/live/0003_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-4
-http://116.117.104.21:8096/tsfile/live/0004_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-5
-http://116.117.104.21:8096/tsfile/live/0005_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV6-电影
-http://116.117.104.21:8096/tsfile/live/0006_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-7
-http://116.117.104.21:8096/tsfile/live/0007_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-8
-http://116.117.104.21:8096/tsfile/live/0008_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV9-纪录
-http://116.117.104.21:8096/tsfile/live/0009_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-10
-http://116.117.104.21:8096/tsfile/live/0010_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-11
-http://116.117.104.21:8096/tsfile/live/0011_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-12
-http://116.117.104.21:8096/tsfile/live/0012_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-13
-http://116.117.104.21:8096/tsfile/live/0013_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-14
-http://116.117.104.21:8096/tsfile/live/0014_1.m3u8
-#EXTINF:-1 group-title="全部",CCTV-15
-http://116.117.104.21:8096/tsfile/live/0014_2.m3u8
-#EXTINF:-1 group-title="全部",内蒙古
-http://116.117.104.21:8096/tsfile/live/0018_1.m3u8
-#EXTINF:-1 group-title="全部",浙江卫视
-http://116.117.104.21:8096/tsfile/live/0124_1.m3u8
-#EXTINF:-1 group-title="全部",江苏卫视
-http://116.117.104.21:8096/tsfile/live/0127_1.m3u8
-#EXTINF:-1 group-title="全部",湖北卫视
-http://116.117.104.21:8096/tsfile/live/0132_1.m3u8
-#EXTINF:-1 group-title="全部",广东卫视
-http://116.117.104.21:8096/tsfile/live/0125_1.m3u8
+http://121.24.98.185:8090/hls/34/index.m3u8
 #EXTINF:-1 group-title="全部",山西卫视
-http://116.117.104.21:8096/tsfile/live/0118_1.m3u8
-#EXTINF:-1 group-title="全部",贵州卫视
-http://116.117.104.21:8096/tsfile/live/0120_1.m3u8
-#EXTINF:-1 group-title="全部",上海卫视
-http://116.117.104.21:8096/tsfile/live/0107_1.m3u8
-#EXTINF:-1 group-title="全部",辽宁卫视
-http://116.117.104.21:8096/tsfile/live/0121_1.m3u8
-#EXTINF:-1 group-title="全部",山东卫视
-http://116.117.104.21:8096/tsfile/live/0131_1.m3u8
-#EXTINF:-1 group-title="全部",黑龙江卫视
-http://116.117.104.21:8096/tsfile/live/0143_1.m3u8
-#EXTINF:-1 group-title="全部",广西卫视
-http://116.117.104.21:8096/tsfile/live/0113_1.m3u8
-#EXTINF:-1 group-title="全部",兵团卫视
-http://116.117.104.21:8096/tsfile/live/0115_1.m3u8
-#EXTINF:-1 group-title="全部",安徽卫视
-http://116.117.104.21:8096/tsfile/live/0130_1.m3u8
-#EXTINF:-1 group-title="全部",北京卫视
-http://116.117.104.21:8096/tsfile/live/0122_1.m3u8
+http://121.24.98.185:8090/hls/35/index.m3u8
 #EXTINF:-1 group-title="全部",东南卫视
-http://116.117.104.21:8096/tsfile/live/0137_1.m3u8
-#EXTINF:-1 group-title="全部",天津卫视
-http://116.117.104.21:8096/tsfile/live/0135_1.m3u8
-#EXTINF:-1 group-title="全部",湖南卫视
-http://116.117.104.21:8096/tsfile/live/0128_1.m3u8
-#EXTINF:-1 group-title="全部",四川卫视
-http://116.117.104.21:8096/tsfile/live/0123_1.m3u8
-#EXTINF:-1 group-title="全部",深圳卫视
-http://116.117.104.21:8096/tsfile/live/0126_1.m3u8
-#EXTINF:-1 group-title="全部",宁夏卫视
-http://116.117.104.21:8096/tsfile/live/0112_1.m3u8
+http://121.24.98.185:8090/hls/36/index.m3u8
+#EXTINF:-1 group-title="全部",吉林卫视
+http://121.24.98.185:8090/hls/37/index.m3u8
+#EXTINF:-1 group-title="全部",江苏卫视
+http://121.24.98.185:8090/hls/38/index.m3u8
+#EXTINF:-1 group-title="全部",山东卫视
+http://121.24.98.185:8090/hls/39/index.m3u8
+#EXTINF:-1 group-title="全部",贵州卫视
+http://121.24.98.185:8090/hls/40/index.m3u8
 #EXTINF:-1 group-title="全部",云南卫视
-http://116.117.104.21:8096/tsfile/live/0119_1.m3u8
-#EXTINF:-1 group-title="全部",河南卫视
-http://116.117.104.21:8096/tsfile/live/0139_1.m3u8
-#EXTINF:-1 group-title="全部",江西卫视
-http://116.117.104.21:8096/tsfile/live/0138_1.m3u8
-#EXTINF:-1 group-title="全部",IPTV 6+
-http://116.117.104.21:8096/tsfile/live/1010_1.m3u8
-#EXTINF:-1 group-title="全部",重庆新闻HD
-http://27.10.76.217:8006/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="全部",重庆社会与法HD
-http://27.10.76.217:8006/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="全部",重庆少儿HD
-http://27.10.76.217:8006/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="全部",重庆影视HD
-http://27.10.76.217:8006/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="全部",重庆科教HD
-http://27.10.76.217:8006/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="全部",重庆娱乐HD
-http://27.10.76.217:8006/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="全部",重庆汽摩HD
-http://27.10.76.217:8006/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="全部",重庆时尚生活HD
-http://27.10.76.217:8006/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="全部",重庆新农村HD
-http://27.10.76.217:8006/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="全部",CQTV移动HD
-http://27.10.76.217:8006/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="全部",时尚购物HD
-http://27.10.76.217:8006/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="全部",CCTV-1
-http://27.10.76.217:8006/udp/225.0.4.74:7980
-#EXTINF:-1 group-title="全部",CCTV-2
-http://27.10.76.217:8006/udp/225.0.4.132:7980
-#EXTINF:-1 group-title="全部",CCTV-3
-http://27.10.76.217:8006/udp/225.0.4.142:7980
-#EXTINF:-1 group-title="全部",CCTV-4
-http://27.10.76.217:8006/udp/225.0.4.176:7980
-#EXTINF:-1 group-title="全部",CCTV-5
-http://27.10.76.217:8006/udp/225.0.4.143:7980
-#EXTINF:-1 group-title="全部",CCTV5+
-http://27.10.76.217:8006/udp/225.0.4.73:7980
-#EXTINF:-1 group-title="全部",CCTV-6
-http://27.10.76.217:8006/udp/225.0.4.144:7980
-#EXTINF:-1 group-title="全部",CCTV-7
-http://27.10.76.217:8006/udp/225.0.4.127:7980
-#EXTINF:-1 group-title="全部",CCTV-8
-http://27.10.76.217:8006/udp/225.0.4.137:7980
-#EXTINF:-1 group-title="全部",CCTV-9
-http://27.10.76.217:8006/udp/225.0.4.131:7980
-#EXTINF:-1 group-title="全部",CCTV-10
-http://27.10.76.217:8006/udp/225.0.4.130:7980
-#EXTINF:-1 group-title="全部",CCTV-11
-http://27.10.76.217:8006/udp/225.0.4.218:7980
-#EXTINF:-1 group-title="全部",CCTV-12
-http://27.10.76.217:8006/udp/225.0.4.129:7980
-#EXTINF:-1 group-title="全部",CCTV-13
-http://27.10.76.217:8006/udp/225.0.4.219:7980
-#EXTINF:-1 group-title="全部",CCTV-14
-http://27.10.76.217:8006/udp/225.0.4.128:7980
-#EXTINF:-1 group-title="全部",CCTV-15
-http://27.10.76.217:8006/udp/225.0.4.220:7980
-#EXTINF:-1 group-title="全部",CCTV-17
-http://27.10.76.217:8006/udp/225.0.4.179:7980
-#EXTINF:-1 group-title="全部",CGTN
-http://27.10.76.217:8006/udp/225.0.4.12:7980
-#EXTINF:-1 group-title="全部",湖南卫视
-http://27.10.76.217:8006/udp/225.0.4.75:7980
-#EXTINF:-1 group-title="全部",浙江卫视
-http://27.10.76.217:8006/udp/225.0.4.81:7980
-#EXTINF:-1 group-title="全部",江苏卫视
-http://27.10.76.217:8006/udp/225.0.4.79:7980
-#EXTINF:-1 group-title="全部",安徽卫视
-http://27.10.76.217:8006/udp/225.0.4.133:7980
-#EXTINF:-1 group-title="全部",广东卫视
-http://27.10.76.217:8006/udp/225.0.4.84:7980
-#EXTINF:-1 group-title="全部",北京卫视
-http://27.10.76.217:8006/udp/225.0.4.78:7980
-#EXTINF:-1 group-title="全部",天津卫视
-http://27.10.76.217:8006/udp/225.0.4.82:7980
-#EXTINF:-1 group-title="全部",辽宁卫视
-http://27.10.76.217:8006/udp/225.0.4.98:7980
-#EXTINF:-1 group-title="全部",东方卫视
-http://27.10.76.217:8006/udp/225.0.4.80:7980
-#EXTINF:-1 group-title="全部",纪实HD
-http://27.10.76.217:8006/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="全部",河北卫视
-http://27.10.76.217:8006/udp/225.0.4.174:7980
-#EXTINF:-1 group-title="全部",贵州卫视
-http://27.10.76.217:8006/udp/225.0.4.175:7980
-#EXTINF:-1 group-title="全部",山东卫视
-http://27.10.76.217:8006/udp/225.0.4.199:7980
-#EXTINF:-1 group-title="全部",东南卫视
-http://27.10.76.217:8006/udp/225.0.4.200:7980
+http://121.24.98.185:8090/hls/41/index.m3u8
 #EXTINF:-1 group-title="全部",黑龙江卫视
-http://27.10.76.217:8006/udp/225.0.4.201:7980
-#EXTINF:-1 group-title="全部",深圳卫视
-http://27.10.76.217:8006/udp/225.0.4.202:7980
+http://121.24.98.185:8090/hls/42/index.m3u8
+#EXTINF:-1 group-title="全部",内蒙古卫视
+http://121.24.98.185:8090/hls/43/index.m3u8
+#EXTINF:-1 group-title="全部",梨园频道
+http://121.24.98.185:8090/hls/45/index.m3u8
+#EXTINF:-1 group-title="全部",文物宝库
+http://121.24.98.185:8090/hls/47/index.m3u8
+#EXTINF:-1 group-title="全部",青海卫视
+http://121.24.98.185:8090/hls/51/index.m3u8
+#EXTINF:-1 group-title="全部",旅游卫视
+http://121.24.98.185:8090/hls/52/index.m3u8
+#EXTINF:-1 group-title="全部",兵团卫视
+http://121.24.98.185:8090/hls/54/index.m3u8
 #EXTINF:-1 group-title="全部",江西卫视
-http://27.10.76.217:8006/udp/225.0.4.203:7980
-#EXTINF:-1 group-title="全部",四川卫视
-http://27.10.76.217:8006/udp/225.0.4.204:7980
-#EXTINF:-1 group-title="全部",重庆卫视
-http://27.10.76.217:8006/udp/225.0.4.187:7980
-#EXTINF:-1 group-title="全部",CQTV新闻
-http://27.10.76.217:8006/udp/225.0.4.59:7980
-#EXTINF:-1 group-title="全部",CQTV汽摩
-http://27.10.76.217:8006/udp/225.0.4.61:7980
-#EXTINF:-1 group-title="全部",CQTV影视
-http://27.10.76.217:8006/udp/225.0.4.62:7980
-#EXTINF:-1 group-title="全部",CQTV科教
-http://27.10.76.217:8006/udp/225.0.4.63:7980
-#EXTINF:-1 group-title="全部",CQTV社会与法
-http://27.10.76.217:8006/udp/225.0.4.64:7980
-#EXTINF:-1 group-title="全部",CQTV娱乐
-http://27.10.76.217:8006/udp/225.0.4.65:7980
-#EXTINF:-1 group-title="全部",CQTV移动
-http://27.10.76.217:8006/udp/225.0.4.68:7980
-#EXTINF:-1 group-title="全部",CQTV时尚生活
-http://27.10.76.217:8006/udp/225.0.4.69:7980
-#EXTINF:-1 group-title="全部",CQTV新农村
-http://27.10.76.217:8006/udp/225.0.4.70:7980
-#EXTINF:-1 group-title="全部",CQTV少儿
-http://27.10.76.217:8006/udp/225.0.4.71:7980
-#EXTINF:-1 group-title="全部",爱生活
-http://27.10.76.217:8006/udp/225.0.4.164:7980
-#EXTINF:-1 group-title="全部",IPTV相声小品
-http://27.10.76.217:8006/udp/225.0.4.56:7980
-#EXTINF:-1 group-title="全部",IPTV野外
-http://27.10.76.217:8006/udp/225.0.4.57:7980
-#EXTINF:-1 group-title="全部",IPTV3+
-http://27.10.76.217:8006/udp/225.0.4.51:7980
-#EXTINF:-1 group-title="全部",IPTV5+
-http://27.10.76.217:8006/udp/225.0.4.53:7980
-#EXTINF:-1 group-title="全部",IPTV6+
-http://27.10.76.217:8006/udp/225.0.4.50:7980
-#EXTINF:-1 group-title="全部",IPTV8+
-http://27.10.76.217:8006/udp/225.0.4.54:7980
-#EXTINF:-1 group-title="全部",经典电影
-http://27.10.76.217:8006/udp/225.0.4.48:7980
-#EXTINF:-1 group-title="全部",解密
-http://27.10.76.217:8006/udp/225.0.4.153:7980
-#EXTINF:-1 group-title="全部",全纪实
-http://27.10.76.217:8006/udp/225.0.4.113:7980
-#EXTINF:-1 group-title="全部",纪实HD
-http://27.10.76.217:8006/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="全部",地理
-http://27.10.76.217:8006/udp/225.0.4.149:7980
-#EXTINF:-1 group-title="全部",古装剧场
-http://27.10.76.217:8006/udp/225.0.4.147:7980
-#EXTINF:-1 group-title="全部",武侠剧场
-http://27.10.76.217:8006/udp/225.0.4.168:7980
-#EXTINF:-1 group-title="全部",军旅剧场
-http://27.10.76.217:8006/udp/225.0.4.146:7980
-#EXTINF:-1 group-title="全部",喜剧影院
-http://27.10.76.217:8006/udp/225.0.4.169:7980
-#EXTINF:-1 group-title="全部",动作影院
-http://27.10.76.217:8006/udp/225.0.4.170:7980
-#EXTINF:-1 group-title="全部",家庭影院
-http://27.10.76.217:8006/udp/225.0.4.171:7980
-#EXTINF:-1 group-title="全部",星影
-http://27.10.76.217:8006/udp/225.0.4.172:7980
-#EXTINF:-1 group-title="全部",重庆新闻HD
-http://27.10.76.217:8001/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="全部",重庆社会与法HD
-http://27.10.76.217:8001/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="全部",重庆少儿HD
-http://27.10.76.217:8001/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="全部",重庆影视HD
-http://27.10.76.217:8001/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="全部",重庆科教HD
-http://27.10.76.217:8001/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="全部",重庆娱乐HD
-http://27.10.76.217:8001/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="全部",重庆汽摩HD
-http://27.10.76.217:8001/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="全部",重庆时尚生活HD
-http://27.10.76.217:8001/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="全部",重庆新农村HD
-http://27.10.76.217:8001/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="全部",CQTV移动HD
-http://27.10.76.217:8001/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="全部",时尚购物HD
-http://27.10.76.217:8001/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="全部",CCTV-1
-http://27.10.76.217:8001/udp/225.0.4.74:7980
-#EXTINF:-1 group-title="全部",CCTV-2
-http://27.10.76.217:8001/udp/225.0.4.132:7980
-#EXTINF:-1 group-title="全部",CCTV-3
-http://27.10.76.217:8001/udp/225.0.4.142:7980
-#EXTINF:-1 group-title="全部",CCTV-4
-http://27.10.76.217:8001/udp/225.0.4.176:7980
-#EXTINF:-1 group-title="全部",CCTV-5
-http://27.10.76.217:8001/udp/225.0.4.143:7980
-#EXTINF:-1 group-title="全部",CCTV5+
-http://27.10.76.217:8001/udp/225.0.4.73:7980
-#EXTINF:-1 group-title="全部",CCTV-6
-http://27.10.76.217:8001/udp/225.0.4.144:7980
-#EXTINF:-1 group-title="全部",CCTV-7
-http://27.10.76.217:8001/udp/225.0.4.127:7980
-#EXTINF:-1 group-title="全部",CCTV-8
-http://27.10.76.217:8001/udp/225.0.4.137:7980
-#EXTINF:-1 group-title="全部",CCTV-9
-http://27.10.76.217:8001/udp/225.0.4.131:7980
-#EXTINF:-1 group-title="全部",CCTV-10
-http://27.10.76.217:8001/udp/225.0.4.130:7980
-#EXTINF:-1 group-title="全部",CCTV-11
-http://27.10.76.217:8001/udp/225.0.4.218:7980
-#EXTINF:-1 group-title="全部",CCTV-12
-http://27.10.76.217:8001/udp/225.0.4.129:7980
-#EXTINF:-1 group-title="全部",CCTV-13
-http://27.10.76.217:8001/udp/225.0.4.219:7980
-#EXTINF:-1 group-title="全部",CCTV-14
-http://27.10.76.217:8001/udp/225.0.4.128:7980
-#EXTINF:-1 group-title="全部",CCTV-15
-http://27.10.76.217:8001/udp/225.0.4.220:7980
-#EXTINF:-1 group-title="全部",CCTV-17
-http://27.10.76.217:8001/udp/225.0.4.179:7980
-#EXTINF:-1 group-title="全部",CGTN
-http://27.10.76.217:8001/udp/225.0.4.12:7980
+http://121.24.98.185:8090/hls/55/index.m3u8
 #EXTINF:-1 group-title="全部",湖南卫视
-http://27.10.76.217:8001/udp/225.0.4.75:7980
-#EXTINF:-1 group-title="全部",浙江卫视
-http://27.10.76.217:8001/udp/225.0.4.81:7980
-#EXTINF:-1 group-title="全部",江苏卫视
-http://27.10.76.217:8001/udp/225.0.4.79:7980
-#EXTINF:-1 group-title="全部",安徽卫视
-http://27.10.76.217:8001/udp/225.0.4.133:7980
-#EXTINF:-1 group-title="全部",广东卫视
-http://27.10.76.217:8001/udp/225.0.4.84:7980
-#EXTINF:-1 group-title="全部",北京卫视
-http://27.10.76.217:8001/udp/225.0.4.78:7980
-#EXTINF:-1 group-title="全部",天津卫视
-http://27.10.76.217:8001/udp/225.0.4.82:7980
-#EXTINF:-1 group-title="全部",辽宁卫视
-http://27.10.76.217:8001/udp/225.0.4.98:7980
-#EXTINF:-1 group-title="全部",东方卫视
-http://27.10.76.217:8001/udp/225.0.4.80:7980
-#EXTINF:-1 group-title="全部",纪实HD
-http://27.10.76.217:8001/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="全部",河北卫视
-http://27.10.76.217:8001/udp/225.0.4.174:7980
-#EXTINF:-1 group-title="全部",贵州卫视
-http://27.10.76.217:8001/udp/225.0.4.175:7980
-#EXTINF:-1 group-title="全部",山东卫视
-http://27.10.76.217:8001/udp/225.0.4.199:7980
-#EXTINF:-1 group-title="全部",东南卫视
-http://27.10.76.217:8001/udp/225.0.4.200:7980
-#EXTINF:-1 group-title="全部",黑龙江卫视
-http://27.10.76.217:8001/udp/225.0.4.201:7980
-#EXTINF:-1 group-title="全部",深圳卫视
-http://27.10.76.217:8001/udp/225.0.4.202:7980
-#EXTINF:-1 group-title="全部",江西卫视
-http://27.10.76.217:8001/udp/225.0.4.203:7980
+http://121.24.98.185:8090/hls/56/index.m3u8
+#EXTINF:-1 group-title="全部",湖北卫视
+http://121.24.98.185:8090/hls/57/index.m3u8
 #EXTINF:-1 group-title="全部",四川卫视
-http://27.10.76.217:8001/udp/225.0.4.204:7980
-#EXTINF:-1 group-title="全部",重庆卫视
-http://27.10.76.217:8001/udp/225.0.4.187:7980
-#EXTINF:-1 group-title="全部",CQTV新闻
-http://27.10.76.217:8001/udp/225.0.4.59:7980
-#EXTINF:-1 group-title="全部",CQTV汽摩
-http://27.10.76.217:8001/udp/225.0.4.61:7980
-#EXTINF:-1 group-title="全部",CQTV影视
-http://27.10.76.217:8001/udp/225.0.4.62:7980
-#EXTINF:-1 group-title="全部",CQTV科教
-http://27.10.76.217:8001/udp/225.0.4.63:7980
-#EXTINF:-1 group-title="全部",CQTV社会与法
-http://27.10.76.217:8001/udp/225.0.4.64:7980
-#EXTINF:-1 group-title="全部",CQTV娱乐
-http://27.10.76.217:8001/udp/225.0.4.65:7980
-#EXTINF:-1 group-title="全部",CQTV移动
-http://27.10.76.217:8001/udp/225.0.4.68:7980
-#EXTINF:-1 group-title="全部",CQTV时尚生活
-http://27.10.76.217:8001/udp/225.0.4.69:7980
-#EXTINF:-1 group-title="全部",CQTV新农村
-http://27.10.76.217:8001/udp/225.0.4.70:7980
-#EXTINF:-1 group-title="全部",CQTV少儿
-http://27.10.76.217:8001/udp/225.0.4.71:7980
-#EXTINF:-1 group-title="全部",爱生活
-http://27.10.76.217:8001/udp/225.0.4.164:7980
-#EXTINF:-1 group-title="全部",IPTV相声小品
-http://27.10.76.217:8001/udp/225.0.4.56:7980
-#EXTINF:-1 group-title="全部",IPTV野外
-http://27.10.76.217:8001/udp/225.0.4.57:7980
-#EXTINF:-1 group-title="全部",IPTV3+
-http://27.10.76.217:8001/udp/225.0.4.51:7980
-#EXTINF:-1 group-title="全部",IPTV5+
-http://27.10.76.217:8001/udp/225.0.4.53:7980
-#EXTINF:-1 group-title="全部",IPTV6+
-http://27.10.76.217:8001/udp/225.0.4.50:7980
-#EXTINF:-1 group-title="全部",IPTV8+
-http://27.10.76.217:8001/udp/225.0.4.54:7980
-#EXTINF:-1 group-title="全部",经典电影
-http://27.10.76.217:8001/udp/225.0.4.48:7980
-#EXTINF:-1 group-title="全部",解密
-http://27.10.76.217:8001/udp/225.0.4.153:7980
-#EXTINF:-1 group-title="全部",全纪实
-http://27.10.76.217:8001/udp/225.0.4.113:7980
-#EXTINF:-1 group-title="全部",纪实HD
-http://27.10.76.217:8001/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="全部",地理
-http://27.10.76.217:8001/udp/225.0.4.149:7980
-#EXTINF:-1 group-title="全部",古装剧场
-http://27.10.76.217:8001/udp/225.0.4.147:7980
-#EXTINF:-1 group-title="全部",武侠剧场
-http://27.10.76.217:8001/udp/225.0.4.168:7980
-#EXTINF:-1 group-title="全部",军旅剧场
-http://27.10.76.217:8001/udp/225.0.4.146:7980
-#EXTINF:-1 group-title="全部",喜剧影院
-http://27.10.76.217:8001/udp/225.0.4.169:7980
-#EXTINF:-1 group-title="全部",动作影院
-http://27.10.76.217:8001/udp/225.0.4.170:7980
-#EXTINF:-1 group-title="全部",家庭影院
-http://27.10.76.217:8001/udp/225.0.4.171:7980
-#EXTINF:-1 group-title="全部",星影
-http://27.10.76.217:8001/udp/225.0.4.172:7980
-#EXTINF:-1 group-title="全部",重庆新闻HD
-http://27.10.76.217:8003/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="全部",重庆社会与法HD
-http://27.10.76.217:8003/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="全部",重庆少儿HD
-http://27.10.76.217:8003/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="全部",重庆影视HD
-http://27.10.76.217:8003/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="全部",重庆科教HD
-http://27.10.76.217:8003/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="全部",重庆娱乐HD
-http://27.10.76.217:8003/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="全部",重庆汽摩HD
-http://27.10.76.217:8003/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="全部",重庆时尚生活HD
-http://27.10.76.217:8003/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="全部",重庆新农村HD
-http://27.10.76.217:8003/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="全部",CQTV移动HD
-http://27.10.76.217:8003/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="全部",时尚购物HD
-http://27.10.76.217:8003/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="全部",CCTV-1
-http://27.10.76.217:8003/udp/225.0.4.74:7980
-#EXTINF:-1 group-title="全部",CCTV-2
-http://27.10.76.217:8003/udp/225.0.4.132:7980
-#EXTINF:-1 group-title="全部",CCTV-3
-http://27.10.76.217:8003/udp/225.0.4.142:7980
-#EXTINF:-1 group-title="全部",CCTV-4
-http://27.10.76.217:8003/udp/225.0.4.176:7980
-#EXTINF:-1 group-title="全部",CCTV-5
-http://27.10.76.217:8003/udp/225.0.4.143:7980
-#EXTINF:-1 group-title="全部",CCTV5+
-http://27.10.76.217:8003/udp/225.0.4.73:7980
-#EXTINF:-1 group-title="全部",CCTV-6
-http://27.10.76.217:8003/udp/225.0.4.144:7980
-#EXTINF:-1 group-title="全部",CCTV-7
-http://27.10.76.217:8003/udp/225.0.4.127:7980
-#EXTINF:-1 group-title="全部",CCTV-8
-http://27.10.76.217:8003/udp/225.0.4.137:7980
-#EXTINF:-1 group-title="全部",CCTV-9
-http://27.10.76.217:8003/udp/225.0.4.131:7980
-#EXTINF:-1 group-title="全部",CCTV-10
-http://27.10.76.217:8003/udp/225.0.4.130:7980
-#EXTINF:-1 group-title="全部",CCTV-11
-http://27.10.76.217:8003/udp/225.0.4.218:7980
-#EXTINF:-1 group-title="全部",CCTV-12
-http://27.10.76.217:8003/udp/225.0.4.129:7980
-#EXTINF:-1 group-title="全部",CCTV-13
-http://27.10.76.217:8003/udp/225.0.4.219:7980
-#EXTINF:-1 group-title="全部",CCTV-14
-http://27.10.76.217:8003/udp/225.0.4.128:7980
-#EXTINF:-1 group-title="全部",CCTV-15
-http://27.10.76.217:8003/udp/225.0.4.220:7980
-#EXTINF:-1 group-title="全部",CCTV-17
-http://27.10.76.217:8003/udp/225.0.4.179:7980
-#EXTINF:-1 group-title="全部",CGTN
-http://27.10.76.217:8003/udp/225.0.4.12:7980
-#EXTINF:-1 group-title="全部",湖南卫视
-http://27.10.76.217:8003/udp/225.0.4.75:7980
-#EXTINF:-1 group-title="全部",浙江卫视
-http://27.10.76.217:8003/udp/225.0.4.81:7980
-#EXTINF:-1 group-title="全部",江苏卫视
-http://27.10.76.217:8003/udp/225.0.4.79:7980
-#EXTINF:-1 group-title="全部",安徽卫视
-http://27.10.76.217:8003/udp/225.0.4.133:7980
-#EXTINF:-1 group-title="全部",广东卫视
-http://27.10.76.217:8003/udp/225.0.4.84:7980
-#EXTINF:-1 group-title="全部",北京卫视
-http://27.10.76.217:8003/udp/225.0.4.78:7980
-#EXTINF:-1 group-title="全部",天津卫视
-http://27.10.76.217:8003/udp/225.0.4.82:7980
+http://121.24.98.185:8090/hls/58/index.m3u8
 #EXTINF:-1 group-title="全部",辽宁卫视
-http://27.10.76.217:8003/udp/225.0.4.98:7980
-#EXTINF:-1 group-title="全部",东方卫视
-http://27.10.76.217:8003/udp/225.0.4.80:7980
-#EXTINF:-1 group-title="全部",纪实HD
-http://27.10.76.217:8003/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="全部",河北卫视
-http://27.10.76.217:8003/udp/225.0.4.174:7980
-#EXTINF:-1 group-title="全部",贵州卫视
-http://27.10.76.217:8003/udp/225.0.4.175:7980
-#EXTINF:-1 group-title="全部",山东卫视
-http://27.10.76.217:8003/udp/225.0.4.199:7980
-#EXTINF:-1 group-title="全部",东南卫视
-http://27.10.76.217:8003/udp/225.0.4.200:7980
-#EXTINF:-1 group-title="全部",黑龙江卫视
-http://27.10.76.217:8003/udp/225.0.4.201:7980
-#EXTINF:-1 group-title="全部",深圳卫视
-http://27.10.76.217:8003/udp/225.0.4.202:7980
-#EXTINF:-1 group-title="全部",江西卫视
-http://27.10.76.217:8003/udp/225.0.4.203:7980
-#EXTINF:-1 group-title="全部",四川卫视
-http://27.10.76.217:8003/udp/225.0.4.204:7980
+http://121.24.98.185:8090/hls/59/index.m3u8
+#EXTINF:-1 group-title="全部",河北杂技
+http://121.24.98.185:8090/hls/60/index.m3u8
+#EXTINF:-1 group-title="全部",新疆卫视
+http://121.24.98.185:8090/hls/61/index.m3u8
+#EXTINF:-1 group-title="全部",永年新闻综合
+http://121.24.98.185:8090/hls/62/index.m3u8
+#EXTINF:-1 group-title="全部",陶瓷
+http://121.24.98.185:8090/hls/66/index.m3u8
+#EXTINF:-1 group-title="全部",CETV-1
+http://121.24.98.185:8090/hls/67/index.m3u8
+#EXTINF:-1 group-title="全部",三佳购物
+http://121.24.98.185:8090/hls/69/index.m3u8
+#EXTINF:-1 group-title="全部",金鹰卡通
+http://121.24.98.185:8090/hls/72/index.m3u8
+#EXTINF:-1 group-title="全部",中华美食
+http://121.24.98.185:8090/hls/73/index.m3u8
+#EXTINF:-1 group-title="全部",中国交通
+http://121.24.98.185:8090/hls/76/index.m3u8
+#EXTINF:-1 group-title="全部",上海东方
+http://121.24.98.185:8090/hls/77/index.m3u8
 #EXTINF:-1 group-title="全部",重庆卫视
-http://27.10.76.217:8003/udp/225.0.4.187:7980
-#EXTINF:-1 group-title="全部",CQTV新闻
-http://27.10.76.217:8003/udp/225.0.4.59:7980
-#EXTINF:-1 group-title="全部",CQTV汽摩
-http://27.10.76.217:8003/udp/225.0.4.61:7980
-#EXTINF:-1 group-title="全部",CQTV影视
-http://27.10.76.217:8003/udp/225.0.4.62:7980
-#EXTINF:-1 group-title="全部",CQTV科教
-http://27.10.76.217:8003/udp/225.0.4.63:7980
-#EXTINF:-1 group-title="全部",CQTV社会与法
-http://27.10.76.217:8003/udp/225.0.4.64:7980
-#EXTINF:-1 group-title="全部",CQTV娱乐
-http://27.10.76.217:8003/udp/225.0.4.65:7980
-#EXTINF:-1 group-title="全部",CQTV移动
-http://27.10.76.217:8003/udp/225.0.4.68:7980
-#EXTINF:-1 group-title="全部",CQTV时尚生活
-http://27.10.76.217:8003/udp/225.0.4.69:7980
-#EXTINF:-1 group-title="全部",CQTV新农村
-http://27.10.76.217:8003/udp/225.0.4.70:7980
-#EXTINF:-1 group-title="全部",CQTV少儿
-http://27.10.76.217:8003/udp/225.0.4.71:7980
-#EXTINF:-1 group-title="全部",爱生活
-http://27.10.76.217:8003/udp/225.0.4.164:7980
-#EXTINF:-1 group-title="全部",IPTV相声小品
-http://27.10.76.217:8003/udp/225.0.4.56:7980
-#EXTINF:-1 group-title="全部",IPTV野外
-http://27.10.76.217:8003/udp/225.0.4.57:7980
-#EXTINF:-1 group-title="全部",IPTV3+
-http://27.10.76.217:8003/udp/225.0.4.51:7980
-#EXTINF:-1 group-title="全部",IPTV5+
-http://27.10.76.217:8003/udp/225.0.4.53:7980
-#EXTINF:-1 group-title="全部",IPTV6+
-http://27.10.76.217:8003/udp/225.0.4.50:7980
-#EXTINF:-1 group-title="全部",IPTV8+
-http://27.10.76.217:8003/udp/225.0.4.54:7980
+http://121.24.98.185:8090/hls/78/index.m3u8
+#EXTINF:-1 group-title="全部",浙江卫视
+http://121.24.98.185:8090/hls/79/index.m3u8
+#EXTINF:-1 group-title="全部",安徽卫视
+http://121.24.98.185:8090/hls/81/index.m3u8
+#EXTINF:-1 group-title="全部",广东卫视
+http://121.24.98.185:8090/hls/82/index.m3u8
+#EXTINF:-1 group-title="全部",卡酷动画
+http://121.24.98.185:8090/hls/83/index.m3u8
+#EXTINF:-1 group-title="全部",深圳卫视
+http://121.24.98.185:8090/hls/84/index.m3u8
+#EXTINF:-1 group-title="全部",广西卫视
+http://121.24.98.185:8090/hls/85/index.m3u8
+#EXTINF:-1 group-title="全部",陕西卫视
+http://121.24.98.185:8090/hls/86/index.m3u8
+#EXTINF:-1 group-title="全部",邯郸新闻频道
+http://121.24.98.185:8090/hls/87/index.m3u8
+#EXTINF:-1 group-title="全部",邯郸公共
+http://121.24.98.185:8090/hls/88/index.m3u8
+#EXTINF:-1 group-title="全部",邯郸科教
+http://121.24.98.185:8090/hls/89/index.m3u8
+#EXTINF:-1 group-title="全部",相声小品
+http://121.24.98.185:8090/hls/101/index.m3u8
+#EXTINF:-1 group-title="全部",魅力时尚
+http://121.24.98.185:8090/hls/102/index.m3u8
 #EXTINF:-1 group-title="全部",经典电影
-http://27.10.76.217:8003/udp/225.0.4.48:7980
-#EXTINF:-1 group-title="全部",解密
-http://27.10.76.217:8003/udp/225.0.4.153:7980
-#EXTINF:-1 group-title="全部",全纪实
-http://27.10.76.217:8003/udp/225.0.4.113:7980
-#EXTINF:-1 group-title="全部",纪实HD
-http://27.10.76.217:8003/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="全部",地理
-http://27.10.76.217:8003/udp/225.0.4.149:7980
-#EXTINF:-1 group-title="全部",古装剧场
-http://27.10.76.217:8003/udp/225.0.4.147:7980
-#EXTINF:-1 group-title="全部",武侠剧场
-http://27.10.76.217:8003/udp/225.0.4.168:7980
-#EXTINF:-1 group-title="全部",军旅剧场
-http://27.10.76.217:8003/udp/225.0.4.146:7980
-#EXTINF:-1 group-title="全部",喜剧影院
-http://27.10.76.217:8003/udp/225.0.4.169:7980
-#EXTINF:-1 group-title="全部",动作影院
-http://27.10.76.217:8003/udp/225.0.4.170:7980
-#EXTINF:-1 group-title="全部",家庭影院
-http://27.10.76.217:8003/udp/225.0.4.171:7980
-#EXTINF:-1 group-title="全部",星影
-http://27.10.76.217:8003/udp/225.0.4.172:7980
+http://121.24.98.185:8090/hls/103/index.m3u8
+#EXTINF:-1 group-title="全部",热播剧场
+http://121.24.98.185:8090/hls/104/index.m3u8
+#EXTINF:-1 group-title="全部",少儿动画
+http://121.24.98.185:8090/hls/105/index.m3u8
+#EXTINF:-1 group-title="全部",野外
+http://121.24.98.185:8090/hls/106/index.m3u8
+#EXTINF:-1 group-title="全部",谍战剧场
+http://121.24.98.185:8090/hls/107/index.m3u8
+#EXTINF:-1 group-title="全部",纪实人文
+http://121.24.98.185:8090/hls/108/index.m3u8
+#EXTINF:-1 group-title="全部",-1
+http://121.24.98.185:8090/hls/109/index.m3u8
+#EXTINF:-1 group-title="全部",-2
+http://121.24.98.185:8090/hls/110/index.m3u8
+#EXTINF:-1 group-title="全部",-3
+http://121.24.98.185:8090/hls/111/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
-http://116.117.104.38:8096/tsfile/live/0001_1.m3u8
+http://121.24.98.185:8090/hls/9/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV2
-http://116.117.104.38:8096/tsfile/live/0002_1.m3u8
+http://121.24.98.185:8090/hls/10/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV3
-http://116.117.104.38:8096/tsfile/live/0003_1.m3u8
+http://121.24.98.185:8090/hls/11/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV4
-http://116.117.104.38:8096/tsfile/live/0004_1.m3u8
+http://121.24.98.185:8090/hls/12/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV5
-http://116.117.104.38:8096/tsfile/live/0005_1.m3u8
+http://121.24.98.185:8090/hls/13/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV6
-http://116.117.104.38:8096/tsfile/live/0006_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV7
-http://116.117.104.38:8096/tsfile/live/0007_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV8
-http://116.117.104.38:8096/tsfile/live/0008_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV9
-http://116.117.104.38:8096/tsfile/live/0009_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV10
-http://116.117.104.38:8096/tsfile/live/0010_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV11
-http://116.117.104.38:8096/tsfile/live/0011_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV12
-http://116.117.104.38:8096/tsfile/live/0012_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV13
-http://116.117.104.38:8096/tsfile/live/0013_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV14
-http://116.117.104.38:8096/tsfile/live/0014_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV15
-http://116.117.104.38:8096/tsfile/live/0014_2.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://116.117.104.21:8096/tsfile/live/0001_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV2
-http://116.117.104.21:8096/tsfile/live/0002_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV3
-http://116.117.104.21:8096/tsfile/live/0003_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV4
-http://116.117.104.21:8096/tsfile/live/0004_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV5
-http://116.117.104.21:8096/tsfile/live/0005_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV6
-http://116.117.104.21:8096/tsfile/live/0006_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV7
-http://116.117.104.21:8096/tsfile/live/0007_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV8
-http://116.117.104.21:8096/tsfile/live/0008_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV9
-http://116.117.104.21:8096/tsfile/live/0009_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV10
-http://116.117.104.21:8096/tsfile/live/0010_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV11
-http://116.117.104.21:8096/tsfile/live/0011_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV12
-http://116.117.104.21:8096/tsfile/live/0012_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV13
-http://116.117.104.21:8096/tsfile/live/0013_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV14
-http://116.117.104.21:8096/tsfile/live/0014_1.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV15
-http://116.117.104.21:8096/tsfile/live/0014_2.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://27.10.76.217:8006/udp/225.0.4.74:7980
-#EXTINF:-1 group-title="央视频道",CCTV2
-http://27.10.76.217:8006/udp/225.0.4.132:7980
-#EXTINF:-1 group-title="央视频道",CCTV3
-http://27.10.76.217:8006/udp/225.0.4.142:7980
-#EXTINF:-1 group-title="央视频道",CCTV4
-http://27.10.76.217:8006/udp/225.0.4.176:7980
-#EXTINF:-1 group-title="央视频道",CCTV5
-http://27.10.76.217:8006/udp/225.0.4.143:7980
-#EXTINF:-1 group-title="央视频道",CCTV5+
-http://27.10.76.217:8006/udp/225.0.4.73:7980
-#EXTINF:-1 group-title="央视频道",CCTV6
-http://27.10.76.217:8006/udp/225.0.4.144:7980
-#EXTINF:-1 group-title="央视频道",CCTV7
-http://27.10.76.217:8006/udp/225.0.4.127:7980
-#EXTINF:-1 group-title="央视频道",CCTV8
-http://27.10.76.217:8006/udp/225.0.4.137:7980
-#EXTINF:-1 group-title="央视频道",CCTV9
-http://27.10.76.217:8006/udp/225.0.4.131:7980
-#EXTINF:-1 group-title="央视频道",CCTV10
-http://27.10.76.217:8006/udp/225.0.4.130:7980
-#EXTINF:-1 group-title="央视频道",CCTV11
-http://27.10.76.217:8006/udp/225.0.4.218:7980
-#EXTINF:-1 group-title="央视频道",CCTV12
-http://27.10.76.217:8006/udp/225.0.4.129:7980
-#EXTINF:-1 group-title="央视频道",CCTV13
-http://27.10.76.217:8006/udp/225.0.4.219:7980
-#EXTINF:-1 group-title="央视频道",CCTV14
-http://27.10.76.217:8006/udp/225.0.4.128:7980
-#EXTINF:-1 group-title="央视频道",CCTV15
-http://27.10.76.217:8006/udp/225.0.4.220:7980
+http://121.24.98.185:8090/hls/14/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV17
-http://27.10.76.217:8006/udp/225.0.4.179:7980
-#EXTINF:-1 group-title="央视频道",CGTN
-http://27.10.76.217:8006/udp/225.0.4.12:7980
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://27.10.76.217:8001/udp/225.0.4.74:7980
-#EXTINF:-1 group-title="央视频道",CCTV2
-http://27.10.76.217:8001/udp/225.0.4.132:7980
-#EXTINF:-1 group-title="央视频道",CCTV3
-http://27.10.76.217:8001/udp/225.0.4.142:7980
-#EXTINF:-1 group-title="央视频道",CCTV4
-http://27.10.76.217:8001/udp/225.0.4.176:7980
-#EXTINF:-1 group-title="央视频道",CCTV5
-http://27.10.76.217:8001/udp/225.0.4.143:7980
-#EXTINF:-1 group-title="央视频道",CCTV5+
-http://27.10.76.217:8001/udp/225.0.4.73:7980
-#EXTINF:-1 group-title="央视频道",CCTV6
-http://27.10.76.217:8001/udp/225.0.4.144:7980
-#EXTINF:-1 group-title="央视频道",CCTV7
-http://27.10.76.217:8001/udp/225.0.4.127:7980
+http://121.24.98.185:8090/hls/15/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV8
-http://27.10.76.217:8001/udp/225.0.4.137:7980
+http://121.24.98.185:8090/hls/16/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV9
-http://27.10.76.217:8001/udp/225.0.4.131:7980
+http://121.24.98.185:8090/hls/17/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV10
-http://27.10.76.217:8001/udp/225.0.4.130:7980
+http://121.24.98.185:8090/hls/18/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV11
-http://27.10.76.217:8001/udp/225.0.4.218:7980
+http://121.24.98.185:8090/hls/19/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV12
-http://27.10.76.217:8001/udp/225.0.4.129:7980
-#EXTINF:-1 group-title="央视频道",CCTV13
-http://27.10.76.217:8001/udp/225.0.4.219:7980
+http://121.24.98.185:8090/hls/20/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV14
-http://27.10.76.217:8001/udp/225.0.4.128:7980
+http://121.24.98.185:8090/hls/22/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV15
-http://27.10.76.217:8001/udp/225.0.4.220:7980
-#EXTINF:-1 group-title="央视频道",CCTV17
-http://27.10.76.217:8001/udp/225.0.4.179:7980
-#EXTINF:-1 group-title="央视频道",CGTN
-http://27.10.76.217:8001/udp/225.0.4.12:7980
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://27.10.76.217:8003/udp/225.0.4.74:7980
-#EXTINF:-1 group-title="央视频道",CCTV2
-http://27.10.76.217:8003/udp/225.0.4.132:7980
-#EXTINF:-1 group-title="央视频道",CCTV3
-http://27.10.76.217:8003/udp/225.0.4.142:7980
-#EXTINF:-1 group-title="央视频道",CCTV4
-http://27.10.76.217:8003/udp/225.0.4.176:7980
-#EXTINF:-1 group-title="央视频道",CCTV5
-http://27.10.76.217:8003/udp/225.0.4.143:7980
-#EXTINF:-1 group-title="央视频道",CCTV5+
-http://27.10.76.217:8003/udp/225.0.4.73:7980
-#EXTINF:-1 group-title="央视频道",CCTV6
-http://27.10.76.217:8003/udp/225.0.4.144:7980
-#EXTINF:-1 group-title="央视频道",CCTV7
-http://27.10.76.217:8003/udp/225.0.4.127:7980
-#EXTINF:-1 group-title="央视频道",CCTV8
-http://27.10.76.217:8003/udp/225.0.4.137:7980
-#EXTINF:-1 group-title="央视频道",CCTV9
-http://27.10.76.217:8003/udp/225.0.4.131:7980
-#EXTINF:-1 group-title="央视频道",CCTV10
-http://27.10.76.217:8003/udp/225.0.4.130:7980
-#EXTINF:-1 group-title="央视频道",CCTV11
-http://27.10.76.217:8003/udp/225.0.4.218:7980
-#EXTINF:-1 group-title="央视频道",CCTV12
-http://27.10.76.217:8003/udp/225.0.4.129:7980
-#EXTINF:-1 group-title="央视频道",CCTV13
-http://27.10.76.217:8003/udp/225.0.4.219:7980
-#EXTINF:-1 group-title="央视频道",CCTV14
-http://27.10.76.217:8003/udp/225.0.4.128:7980
-#EXTINF:-1 group-title="央视频道",CCTV15
-http://27.10.76.217:8003/udp/225.0.4.220:7980
-#EXTINF:-1 group-title="央视频道",CCTV17
-http://27.10.76.217:8003/udp/225.0.4.179:7980
-#EXTINF:-1 group-title="央视频道",CGTN
-http://27.10.76.217:8003/udp/225.0.4.12:7980
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://116.117.104.38:8096/tsfile/live/0124_1.m3u8
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://116.117.104.38:8096/tsfile/live/0127_1.m3u8
-#EXTINF:-1 group-title="卫视频道",湖北卫视
-http://116.117.104.38:8096/tsfile/live/0132_1.m3u8
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://116.117.104.38:8096/tsfile/live/0125_1.m3u8
-#EXTINF:-1 group-title="卫视频道",山西卫视
-http://116.117.104.38:8096/tsfile/live/0118_1.m3u8
-#EXTINF:-1 group-title="卫视频道",贵州卫视
-http://116.117.104.38:8096/tsfile/live/0120_1.m3u8
-#EXTINF:-1 group-title="卫视频道",上海卫视
-http://116.117.104.38:8096/tsfile/live/0107_1.m3u8
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://116.117.104.38:8096/tsfile/live/0121_1.m3u8
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://116.117.104.38:8096/tsfile/live/0131_1.m3u8
-#EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://116.117.104.38:8096/tsfile/live/0143_1.m3u8
-#EXTINF:-1 group-title="卫视频道",广西卫视
-http://116.117.104.38:8096/tsfile/live/0113_1.m3u8
-#EXTINF:-1 group-title="卫视频道",兵团卫视
-http://116.117.104.38:8096/tsfile/live/0115_1.m3u8
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://116.117.104.38:8096/tsfile/live/0130_1.m3u8
+http://121.24.98.185:8090/hls/23/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV中学生
+http://121.24.98.185:8090/hls/24/index.m3u8
+#EXTINF:-1 group-title="卫视频道",河北卫视
+http://121.24.98.185:8090/hls/25/index.m3u8
 #EXTINF:-1 group-title="卫视频道",北京卫视
-http://116.117.104.38:8096/tsfile/live/0122_1.m3u8
-#EXTINF:-1 group-title="卫视频道",东南卫视
-http://116.117.104.38:8096/tsfile/live/0137_1.m3u8
+http://121.24.98.185:8090/hls/32/index.m3u8
 #EXTINF:-1 group-title="卫视频道",天津卫视
-http://116.117.104.38:8096/tsfile/live/0135_1.m3u8
-#EXTINF:-1 group-title="卫视频道",湖南卫视
-http://116.117.104.38:8096/tsfile/live/0128_1.m3u8
-#EXTINF:-1 group-title="卫视频道",四川卫视
-http://116.117.104.38:8096/tsfile/live/0123_1.m3u8
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://116.117.104.38:8096/tsfile/live/0126_1.m3u8
-#EXTINF:-1 group-title="卫视频道",宁夏卫视
-http://116.117.104.38:8096/tsfile/live/0112_1.m3u8
-#EXTINF:-1 group-title="卫视频道",云南卫视
-http://116.117.104.38:8096/tsfile/live/0119_1.m3u8
+http://121.24.98.185:8090/hls/33/index.m3u8
 #EXTINF:-1 group-title="卫视频道",河南卫视
-http://116.117.104.38:8096/tsfile/live/0139_1.m3u8
-#EXTINF:-1 group-title="卫视频道",江西卫视
-http://116.117.104.38:8096/tsfile/live/0138_1.m3u8
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://116.117.104.21:8096/tsfile/live/0124_1.m3u8
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://116.117.104.21:8096/tsfile/live/0127_1.m3u8
-#EXTINF:-1 group-title="卫视频道",湖北卫视
-http://116.117.104.21:8096/tsfile/live/0132_1.m3u8
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://116.117.104.21:8096/tsfile/live/0125_1.m3u8
+http://121.24.98.185:8090/hls/34/index.m3u8
 #EXTINF:-1 group-title="卫视频道",山西卫视
-http://116.117.104.21:8096/tsfile/live/0118_1.m3u8
-#EXTINF:-1 group-title="卫视频道",贵州卫视
-http://116.117.104.21:8096/tsfile/live/0120_1.m3u8
-#EXTINF:-1 group-title="卫视频道",上海卫视
-http://116.117.104.21:8096/tsfile/live/0107_1.m3u8
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://116.117.104.21:8096/tsfile/live/0121_1.m3u8
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://116.117.104.21:8096/tsfile/live/0131_1.m3u8
-#EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://116.117.104.21:8096/tsfile/live/0143_1.m3u8
-#EXTINF:-1 group-title="卫视频道",广西卫视
-http://116.117.104.21:8096/tsfile/live/0113_1.m3u8
-#EXTINF:-1 group-title="卫视频道",兵团卫视
-http://116.117.104.21:8096/tsfile/live/0115_1.m3u8
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://116.117.104.21:8096/tsfile/live/0130_1.m3u8
-#EXTINF:-1 group-title="卫视频道",北京卫视
-http://116.117.104.21:8096/tsfile/live/0122_1.m3u8
+http://121.24.98.185:8090/hls/35/index.m3u8
 #EXTINF:-1 group-title="卫视频道",东南卫视
-http://116.117.104.21:8096/tsfile/live/0137_1.m3u8
-#EXTINF:-1 group-title="卫视频道",天津卫视
-http://116.117.104.21:8096/tsfile/live/0135_1.m3u8
-#EXTINF:-1 group-title="卫视频道",湖南卫视
-http://116.117.104.21:8096/tsfile/live/0128_1.m3u8
-#EXTINF:-1 group-title="卫视频道",四川卫视
-http://116.117.104.21:8096/tsfile/live/0123_1.m3u8
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://116.117.104.21:8096/tsfile/live/0126_1.m3u8
-#EXTINF:-1 group-title="卫视频道",宁夏卫视
-http://116.117.104.21:8096/tsfile/live/0112_1.m3u8
+http://121.24.98.185:8090/hls/36/index.m3u8
+#EXTINF:-1 group-title="卫视频道",吉林卫视
+http://121.24.98.185:8090/hls/37/index.m3u8
+#EXTINF:-1 group-title="卫视频道",江苏卫视
+http://121.24.98.185:8090/hls/38/index.m3u8
+#EXTINF:-1 group-title="卫视频道",山东卫视
+http://121.24.98.185:8090/hls/39/index.m3u8
+#EXTINF:-1 group-title="卫视频道",贵州卫视
+http://121.24.98.185:8090/hls/40/index.m3u8
 #EXTINF:-1 group-title="卫视频道",云南卫视
-http://116.117.104.21:8096/tsfile/live/0119_1.m3u8
-#EXTINF:-1 group-title="卫视频道",河南卫视
-http://116.117.104.21:8096/tsfile/live/0139_1.m3u8
-#EXTINF:-1 group-title="卫视频道",江西卫视
-http://116.117.104.21:8096/tsfile/live/0138_1.m3u8
-#EXTINF:-1 group-title="卫视频道",湖南卫视
-http://27.10.76.217:8006/udp/225.0.4.75:7980
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://27.10.76.217:8006/udp/225.0.4.81:7980
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://27.10.76.217:8006/udp/225.0.4.79:7980
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://27.10.76.217:8006/udp/225.0.4.133:7980
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://27.10.76.217:8006/udp/225.0.4.84:7980
-#EXTINF:-1 group-title="卫视频道",北京卫视
-http://27.10.76.217:8006/udp/225.0.4.78:7980
-#EXTINF:-1 group-title="卫视频道",天津卫视
-http://27.10.76.217:8006/udp/225.0.4.82:7980
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://27.10.76.217:8006/udp/225.0.4.98:7980
-#EXTINF:-1 group-title="卫视频道",东方卫视
-http://27.10.76.217:8006/udp/225.0.4.80:7980
-#EXTINF:-1 group-title="卫视频道",河北卫视
-http://27.10.76.217:8006/udp/225.0.4.174:7980
-#EXTINF:-1 group-title="卫视频道",贵州卫视
-http://27.10.76.217:8006/udp/225.0.4.175:7980
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://27.10.76.217:8006/udp/225.0.4.199:7980
-#EXTINF:-1 group-title="卫视频道",东南卫视
-http://27.10.76.217:8006/udp/225.0.4.200:7980
+http://121.24.98.185:8090/hls/41/index.m3u8
 #EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://27.10.76.217:8006/udp/225.0.4.201:7980
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://27.10.76.217:8006/udp/225.0.4.202:7980
+http://121.24.98.185:8090/hls/42/index.m3u8
+#EXTINF:-1 group-title="卫视频道",内蒙古卫视
+http://121.24.98.185:8090/hls/43/index.m3u8
+#EXTINF:-1 group-title="卫视频道",青海卫视
+http://121.24.98.185:8090/hls/51/index.m3u8
+#EXTINF:-1 group-title="卫视频道",旅游卫视
+http://121.24.98.185:8090/hls/52/index.m3u8
+#EXTINF:-1 group-title="卫视频道",兵团卫视
+http://121.24.98.185:8090/hls/54/index.m3u8
 #EXTINF:-1 group-title="卫视频道",江西卫视
-http://27.10.76.217:8006/udp/225.0.4.203:7980
-#EXTINF:-1 group-title="卫视频道",四川卫视
-http://27.10.76.217:8006/udp/225.0.4.204:7980
-#EXTINF:-1 group-title="卫视频道",重庆卫视
-http://27.10.76.217:8006/udp/225.0.4.187:7980
+http://121.24.98.185:8090/hls/55/index.m3u8
 #EXTINF:-1 group-title="卫视频道",湖南卫视
-http://27.10.76.217:8001/udp/225.0.4.75:7980
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://27.10.76.217:8001/udp/225.0.4.81:7980
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://27.10.76.217:8001/udp/225.0.4.79:7980
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://27.10.76.217:8001/udp/225.0.4.133:7980
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://27.10.76.217:8001/udp/225.0.4.84:7980
-#EXTINF:-1 group-title="卫视频道",北京卫视
-http://27.10.76.217:8001/udp/225.0.4.78:7980
-#EXTINF:-1 group-title="卫视频道",天津卫视
-http://27.10.76.217:8001/udp/225.0.4.82:7980
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://27.10.76.217:8001/udp/225.0.4.98:7980
-#EXTINF:-1 group-title="卫视频道",东方卫视
-http://27.10.76.217:8001/udp/225.0.4.80:7980
-#EXTINF:-1 group-title="卫视频道",河北卫视
-http://27.10.76.217:8001/udp/225.0.4.174:7980
-#EXTINF:-1 group-title="卫视频道",贵州卫视
-http://27.10.76.217:8001/udp/225.0.4.175:7980
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://27.10.76.217:8001/udp/225.0.4.199:7980
-#EXTINF:-1 group-title="卫视频道",东南卫视
-http://27.10.76.217:8001/udp/225.0.4.200:7980
-#EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://27.10.76.217:8001/udp/225.0.4.201:7980
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://27.10.76.217:8001/udp/225.0.4.202:7980
-#EXTINF:-1 group-title="卫视频道",江西卫视
-http://27.10.76.217:8001/udp/225.0.4.203:7980
+http://121.24.98.185:8090/hls/56/index.m3u8
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+http://121.24.98.185:8090/hls/57/index.m3u8
 #EXTINF:-1 group-title="卫视频道",四川卫视
-http://27.10.76.217:8001/udp/225.0.4.204:7980
-#EXTINF:-1 group-title="卫视频道",重庆卫视
-http://27.10.76.217:8001/udp/225.0.4.187:7980
-#EXTINF:-1 group-title="卫视频道",湖南卫视
-http://27.10.76.217:8003/udp/225.0.4.75:7980
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://27.10.76.217:8003/udp/225.0.4.81:7980
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://27.10.76.217:8003/udp/225.0.4.79:7980
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://27.10.76.217:8003/udp/225.0.4.133:7980
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://27.10.76.217:8003/udp/225.0.4.84:7980
-#EXTINF:-1 group-title="卫视频道",北京卫视
-http://27.10.76.217:8003/udp/225.0.4.78:7980
-#EXTINF:-1 group-title="卫视频道",天津卫视
-http://27.10.76.217:8003/udp/225.0.4.82:7980
+http://121.24.98.185:8090/hls/58/index.m3u8
 #EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://27.10.76.217:8003/udp/225.0.4.98:7980
-#EXTINF:-1 group-title="卫视频道",东方卫视
-http://27.10.76.217:8003/udp/225.0.4.80:7980
-#EXTINF:-1 group-title="卫视频道",河北卫视
-http://27.10.76.217:8003/udp/225.0.4.174:7980
-#EXTINF:-1 group-title="卫视频道",贵州卫视
-http://27.10.76.217:8003/udp/225.0.4.175:7980
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://27.10.76.217:8003/udp/225.0.4.199:7980
-#EXTINF:-1 group-title="卫视频道",东南卫视
-http://27.10.76.217:8003/udp/225.0.4.200:7980
-#EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://27.10.76.217:8003/udp/225.0.4.201:7980
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://27.10.76.217:8003/udp/225.0.4.202:7980
-#EXTINF:-1 group-title="卫视频道",江西卫视
-http://27.10.76.217:8003/udp/225.0.4.203:7980
-#EXTINF:-1 group-title="卫视频道",四川卫视
-http://27.10.76.217:8003/udp/225.0.4.204:7980
+http://121.24.98.185:8090/hls/59/index.m3u8
+#EXTINF:-1 group-title="卫视频道",新疆卫视
+http://121.24.98.185:8090/hls/61/index.m3u8
 #EXTINF:-1 group-title="卫视频道",重庆卫视
-http://27.10.76.217:8003/udp/225.0.4.187:7980
-#EXTINF:-1 group-title="高清频道",重庆新闻
-http://27.10.76.217:8006/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="高清频道",重庆社会与法
-http://27.10.76.217:8006/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="高清频道",重庆少儿
-http://27.10.76.217:8006/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="高清频道",重庆影视
-http://27.10.76.217:8006/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="高清频道",重庆科教
-http://27.10.76.217:8006/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="高清频道",重庆娱乐
-http://27.10.76.217:8006/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="高清频道",重庆汽摩
-http://27.10.76.217:8006/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="高清频道",重庆时尚生活
-http://27.10.76.217:8006/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="高清频道",重庆新农村
-http://27.10.76.217:8006/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="高清频道",CQTV移动
-http://27.10.76.217:8006/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="高清频道",时尚购物
-http://27.10.76.217:8006/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="高清频道",纪实
-http://27.10.76.217:8006/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="高清频道",纪实
-http://27.10.76.217:8006/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="高清频道",重庆新闻
-http://27.10.76.217:8001/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="高清频道",重庆社会与法
-http://27.10.76.217:8001/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="高清频道",重庆少儿
-http://27.10.76.217:8001/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="高清频道",重庆影视
-http://27.10.76.217:8001/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="高清频道",重庆科教
-http://27.10.76.217:8001/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="高清频道",重庆娱乐
-http://27.10.76.217:8001/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="高清频道",重庆汽摩
-http://27.10.76.217:8001/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="高清频道",重庆时尚生活
-http://27.10.76.217:8001/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="高清频道",重庆新农村
-http://27.10.76.217:8001/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="高清频道",CQTV移动
-http://27.10.76.217:8001/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="高清频道",时尚购物
-http://27.10.76.217:8001/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="高清频道",纪实
-http://27.10.76.217:8001/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="高清频道",纪实
-http://27.10.76.217:8001/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="高清频道",重庆新闻
-http://27.10.76.217:8003/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="高清频道",重庆社会与法
-http://27.10.76.217:8003/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="高清频道",重庆少儿
-http://27.10.76.217:8003/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="高清频道",重庆影视
-http://27.10.76.217:8003/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="高清频道",重庆科教
-http://27.10.76.217:8003/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="高清频道",重庆娱乐
-http://27.10.76.217:8003/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="高清频道",重庆汽摩
-http://27.10.76.217:8003/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="高清频道",重庆时尚生活
-http://27.10.76.217:8003/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="高清频道",重庆新农村
-http://27.10.76.217:8003/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="高清频道",CQTV移动
-http://27.10.76.217:8003/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="高清频道",时尚购物
-http://27.10.76.217:8003/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="高清频道",纪实
-http://27.10.76.217:8003/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="高清频道",纪实
-http://27.10.76.217:8003/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="其他频道",内蒙古
-http://116.117.104.38:8096/tsfile/live/0018_1.m3u8
-#EXTINF:-1 group-title="其他频道",IPTV6+
-http://116.117.104.38:8096/tsfile/live/1010_1.m3u8
-#EXTINF:-1 group-title="其他频道",内蒙古
-http://116.117.104.21:8096/tsfile/live/0018_1.m3u8
-#EXTINF:-1 group-title="其他频道",IPTV6+
-http://116.117.104.21:8096/tsfile/live/1010_1.m3u8
-#EXTINF:-1 group-title="其他频道",重庆新闻
-http://27.10.76.217:8006/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="其他频道",重庆社会与法
-http://27.10.76.217:8006/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="其他频道",重庆少儿
-http://27.10.76.217:8006/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="其他频道",重庆影视
-http://27.10.76.217:8006/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="其他频道",重庆科教
-http://27.10.76.217:8006/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="其他频道",重庆娱乐
-http://27.10.76.217:8006/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="其他频道",重庆汽摩
-http://27.10.76.217:8006/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="其他频道",重庆时尚生活
-http://27.10.76.217:8006/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="其他频道",重庆新农村
-http://27.10.76.217:8006/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="其他频道",CQTV移动
-http://27.10.76.217:8006/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="其他频道",时尚购物
-http://27.10.76.217:8006/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="其他频道",纪实
-http://27.10.76.217:8006/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="其他频道",CQTV新闻
-http://27.10.76.217:8006/udp/225.0.4.59:7980
-#EXTINF:-1 group-title="其他频道",CQTV汽摩
-http://27.10.76.217:8006/udp/225.0.4.61:7980
-#EXTINF:-1 group-title="其他频道",CQTV影视
-http://27.10.76.217:8006/udp/225.0.4.62:7980
-#EXTINF:-1 group-title="其他频道",CQTV科教
-http://27.10.76.217:8006/udp/225.0.4.63:7980
-#EXTINF:-1 group-title="其他频道",CQTV社会与法
-http://27.10.76.217:8006/udp/225.0.4.64:7980
-#EXTINF:-1 group-title="其他频道",CQTV娱乐
-http://27.10.76.217:8006/udp/225.0.4.65:7980
-#EXTINF:-1 group-title="其他频道",CQTV移动
-http://27.10.76.217:8006/udp/225.0.4.68:7980
-#EXTINF:-1 group-title="其他频道",CQTV时尚生活
-http://27.10.76.217:8006/udp/225.0.4.69:7980
-#EXTINF:-1 group-title="其他频道",CQTV新农村
-http://27.10.76.217:8006/udp/225.0.4.70:7980
-#EXTINF:-1 group-title="其他频道",CQTV少儿
-http://27.10.76.217:8006/udp/225.0.4.71:7980
-#EXTINF:-1 group-title="其他频道",爱生活
-http://27.10.76.217:8006/udp/225.0.4.164:7980
-#EXTINF:-1 group-title="其他频道",IPTV相声小品
-http://27.10.76.217:8006/udp/225.0.4.56:7980
-#EXTINF:-1 group-title="其他频道",IPTV野外
-http://27.10.76.217:8006/udp/225.0.4.57:7980
-#EXTINF:-1 group-title="其他频道",IPTV3+
-http://27.10.76.217:8006/udp/225.0.4.51:7980
-#EXTINF:-1 group-title="其他频道",IPTV5+
-http://27.10.76.217:8006/udp/225.0.4.53:7980
-#EXTINF:-1 group-title="其他频道",IPTV6+
-http://27.10.76.217:8006/udp/225.0.4.50:7980
-#EXTINF:-1 group-title="其他频道",IPTV8+
-http://27.10.76.217:8006/udp/225.0.4.54:7980
+http://121.24.98.185:8090/hls/78/index.m3u8
+#EXTINF:-1 group-title="卫视频道",浙江卫视
+http://121.24.98.185:8090/hls/79/index.m3u8
+#EXTINF:-1 group-title="卫视频道",安徽卫视
+http://121.24.98.185:8090/hls/81/index.m3u8
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://121.24.98.185:8090/hls/82/index.m3u8
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+http://121.24.98.185:8090/hls/84/index.m3u8
+#EXTINF:-1 group-title="卫视频道",广西卫视
+http://121.24.98.185:8090/hls/85/index.m3u8
+#EXTINF:-1 group-title="卫视频道",陕西卫视
+http://121.24.98.185:8090/hls/86/index.m3u8
+#EXTINF:-1 group-title="其他频道",河北生活
+http://121.24.98.185:8090/hls/26/index.m3u8
+#EXTINF:-1 group-title="其他频道",河北农民
+http://121.24.98.185:8090/hls/27/index.m3u8
+#EXTINF:-1 group-title="其他频道",河北都市
+http://121.24.98.185:8090/hls/28/index.m3u8
+#EXTINF:-1 group-title="其他频道",河北影视
+http://121.24.98.185:8090/hls/29/index.m3u8
+#EXTINF:-1 group-title="其他频道",河北少儿科教
+http://121.24.98.185:8090/hls/30/index.m3u8
+#EXTINF:-1 group-title="其他频道",河北公共
+http://121.24.98.185:8090/hls/31/index.m3u8
+#EXTINF:-1 group-title="其他频道",梨园
+http://121.24.98.185:8090/hls/45/index.m3u8
+#EXTINF:-1 group-title="其他频道",文物宝库
+http://121.24.98.185:8090/hls/47/index.m3u8
+#EXTINF:-1 group-title="其他频道",河北杂技
+http://121.24.98.185:8090/hls/60/index.m3u8
+#EXTINF:-1 group-title="其他频道",永年新闻综合
+http://121.24.98.185:8090/hls/62/index.m3u8
+#EXTINF:-1 group-title="其他频道",陶瓷
+http://121.24.98.185:8090/hls/66/index.m3u8
+#EXTINF:-1 group-title="其他频道",CETV1
+http://121.24.98.185:8090/hls/67/index.m3u8
+#EXTINF:-1 group-title="其他频道",三佳购物
+http://121.24.98.185:8090/hls/69/index.m3u8
+#EXTINF:-1 group-title="其他频道",金鹰卡通
+http://121.24.98.185:8090/hls/72/index.m3u8
+#EXTINF:-1 group-title="其他频道",中华美食
+http://121.24.98.185:8090/hls/73/index.m3u8
+#EXTINF:-1 group-title="其他频道",中国交通
+http://121.24.98.185:8090/hls/76/index.m3u8
+#EXTINF:-1 group-title="其他频道",上海东方
+http://121.24.98.185:8090/hls/77/index.m3u8
+#EXTINF:-1 group-title="其他频道",卡酷动画
+http://121.24.98.185:8090/hls/83/index.m3u8
+#EXTINF:-1 group-title="其他频道",邯郸新闻
+http://121.24.98.185:8090/hls/87/index.m3u8
+#EXTINF:-1 group-title="其他频道",邯郸公共
+http://121.24.98.185:8090/hls/88/index.m3u8
+#EXTINF:-1 group-title="其他频道",邯郸科教
+http://121.24.98.185:8090/hls/89/index.m3u8
+#EXTINF:-1 group-title="其他频道",相声小品
+http://121.24.98.185:8090/hls/101/index.m3u8
+#EXTINF:-1 group-title="其他频道",魅力时尚
+http://121.24.98.185:8090/hls/102/index.m3u8
 #EXTINF:-1 group-title="其他频道",经典电影
-http://27.10.76.217:8006/udp/225.0.4.48:7980
-#EXTINF:-1 group-title="其他频道",解密
-http://27.10.76.217:8006/udp/225.0.4.153:7980
-#EXTINF:-1 group-title="其他频道",全纪实
-http://27.10.76.217:8006/udp/225.0.4.113:7980
-#EXTINF:-1 group-title="其他频道",纪实
-http://27.10.76.217:8006/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="其他频道",地理
-http://27.10.76.217:8006/udp/225.0.4.149:7980
-#EXTINF:-1 group-title="其他频道",古装剧场
-http://27.10.76.217:8006/udp/225.0.4.147:7980
-#EXTINF:-1 group-title="其他频道",武侠剧场
-http://27.10.76.217:8006/udp/225.0.4.168:7980
-#EXTINF:-1 group-title="其他频道",军旅剧场
-http://27.10.76.217:8006/udp/225.0.4.146:7980
-#EXTINF:-1 group-title="其他频道",喜剧影院
-http://27.10.76.217:8006/udp/225.0.4.169:7980
-#EXTINF:-1 group-title="其他频道",动作影院
-http://27.10.76.217:8006/udp/225.0.4.170:7980
-#EXTINF:-1 group-title="其他频道",家庭影院
-http://27.10.76.217:8006/udp/225.0.4.171:7980
-#EXTINF:-1 group-title="其他频道",星影
-http://27.10.76.217:8006/udp/225.0.4.172:7980
-#EXTINF:-1 group-title="其他频道",重庆新闻
-http://27.10.76.217:8001/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="其他频道",重庆社会与法
-http://27.10.76.217:8001/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="其他频道",重庆少儿
-http://27.10.76.217:8001/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="其他频道",重庆影视
-http://27.10.76.217:8001/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="其他频道",重庆科教
-http://27.10.76.217:8001/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="其他频道",重庆娱乐
-http://27.10.76.217:8001/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="其他频道",重庆汽摩
-http://27.10.76.217:8001/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="其他频道",重庆时尚生活
-http://27.10.76.217:8001/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="其他频道",重庆新农村
-http://27.10.76.217:8001/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="其他频道",CQTV移动
-http://27.10.76.217:8001/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="其他频道",时尚购物
-http://27.10.76.217:8001/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="其他频道",纪实
-http://27.10.76.217:8001/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="其他频道",CQTV新闻
-http://27.10.76.217:8001/udp/225.0.4.59:7980
-#EXTINF:-1 group-title="其他频道",CQTV汽摩
-http://27.10.76.217:8001/udp/225.0.4.61:7980
-#EXTINF:-1 group-title="其他频道",CQTV影视
-http://27.10.76.217:8001/udp/225.0.4.62:7980
-#EXTINF:-1 group-title="其他频道",CQTV科教
-http://27.10.76.217:8001/udp/225.0.4.63:7980
-#EXTINF:-1 group-title="其他频道",CQTV社会与法
-http://27.10.76.217:8001/udp/225.0.4.64:7980
-#EXTINF:-1 group-title="其他频道",CQTV娱乐
-http://27.10.76.217:8001/udp/225.0.4.65:7980
-#EXTINF:-1 group-title="其他频道",CQTV移动
-http://27.10.76.217:8001/udp/225.0.4.68:7980
-#EXTINF:-1 group-title="其他频道",CQTV时尚生活
-http://27.10.76.217:8001/udp/225.0.4.69:7980
-#EXTINF:-1 group-title="其他频道",CQTV新农村
-http://27.10.76.217:8001/udp/225.0.4.70:7980
-#EXTINF:-1 group-title="其他频道",CQTV少儿
-http://27.10.76.217:8001/udp/225.0.4.71:7980
-#EXTINF:-1 group-title="其他频道",爱生活
-http://27.10.76.217:8001/udp/225.0.4.164:7980
-#EXTINF:-1 group-title="其他频道",IPTV相声小品
-http://27.10.76.217:8001/udp/225.0.4.56:7980
-#EXTINF:-1 group-title="其他频道",IPTV野外
-http://27.10.76.217:8001/udp/225.0.4.57:7980
-#EXTINF:-1 group-title="其他频道",IPTV3+
-http://27.10.76.217:8001/udp/225.0.4.51:7980
-#EXTINF:-1 group-title="其他频道",IPTV5+
-http://27.10.76.217:8001/udp/225.0.4.53:7980
-#EXTINF:-1 group-title="其他频道",IPTV6+
-http://27.10.76.217:8001/udp/225.0.4.50:7980
-#EXTINF:-1 group-title="其他频道",IPTV8+
-http://27.10.76.217:8001/udp/225.0.4.54:7980
-#EXTINF:-1 group-title="其他频道",经典电影
-http://27.10.76.217:8001/udp/225.0.4.48:7980
-#EXTINF:-1 group-title="其他频道",解密
-http://27.10.76.217:8001/udp/225.0.4.153:7980
-#EXTINF:-1 group-title="其他频道",全纪实
-http://27.10.76.217:8001/udp/225.0.4.113:7980
-#EXTINF:-1 group-title="其他频道",纪实
-http://27.10.76.217:8001/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="其他频道",地理
-http://27.10.76.217:8001/udp/225.0.4.149:7980
-#EXTINF:-1 group-title="其他频道",古装剧场
-http://27.10.76.217:8001/udp/225.0.4.147:7980
-#EXTINF:-1 group-title="其他频道",武侠剧场
-http://27.10.76.217:8001/udp/225.0.4.168:7980
-#EXTINF:-1 group-title="其他频道",军旅剧场
-http://27.10.76.217:8001/udp/225.0.4.146:7980
-#EXTINF:-1 group-title="其他频道",喜剧影院
-http://27.10.76.217:8001/udp/225.0.4.169:7980
-#EXTINF:-1 group-title="其他频道",动作影院
-http://27.10.76.217:8001/udp/225.0.4.170:7980
-#EXTINF:-1 group-title="其他频道",家庭影院
-http://27.10.76.217:8001/udp/225.0.4.171:7980
-#EXTINF:-1 group-title="其他频道",星影
-http://27.10.76.217:8001/udp/225.0.4.172:7980
-#EXTINF:-1 group-title="其他频道",重庆新闻
-http://27.10.76.217:8003/udp/225.0.4.188:7980
-#EXTINF:-1 group-title="其他频道",重庆社会与法
-http://27.10.76.217:8003/udp/225.0.4.190:7980
-#EXTINF:-1 group-title="其他频道",重庆少儿
-http://27.10.76.217:8003/udp/225.0.4.191:7980
-#EXTINF:-1 group-title="其他频道",重庆影视
-http://27.10.76.217:8003/udp/225.0.4.192:7980
-#EXTINF:-1 group-title="其他频道",重庆科教
-http://27.10.76.217:8003/udp/225.0.4.193:7980
-#EXTINF:-1 group-title="其他频道",重庆娱乐
-http://27.10.76.217:8003/udp/225.0.4.194:7980
-#EXTINF:-1 group-title="其他频道",重庆汽摩
-http://27.10.76.217:8003/udp/225.0.4.195:7980
-#EXTINF:-1 group-title="其他频道",重庆时尚生活
-http://27.10.76.217:8003/udp/225.0.4.196:7980
-#EXTINF:-1 group-title="其他频道",重庆新农村
-http://27.10.76.217:8003/udp/225.0.4.189:7980
-#EXTINF:-1 group-title="其他频道",CQTV移动
-http://27.10.76.217:8003/udp/225.0.4.215:7980
-#EXTINF:-1 group-title="其他频道",时尚购物
-http://27.10.76.217:8003/udp/225.0.4.198:7980
-#EXTINF:-1 group-title="其他频道",纪实
-http://27.10.76.217:8003/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="其他频道",CQTV新闻
-http://27.10.76.217:8003/udp/225.0.4.59:7980
-#EXTINF:-1 group-title="其他频道",CQTV汽摩
-http://27.10.76.217:8003/udp/225.0.4.61:7980
-#EXTINF:-1 group-title="其他频道",CQTV影视
-http://27.10.76.217:8003/udp/225.0.4.62:7980
-#EXTINF:-1 group-title="其他频道",CQTV科教
-http://27.10.76.217:8003/udp/225.0.4.63:7980
-#EXTINF:-1 group-title="其他频道",CQTV社会与法
-http://27.10.76.217:8003/udp/225.0.4.64:7980
-#EXTINF:-1 group-title="其他频道",CQTV娱乐
-http://27.10.76.217:8003/udp/225.0.4.65:7980
-#EXTINF:-1 group-title="其他频道",CQTV移动
-http://27.10.76.217:8003/udp/225.0.4.68:7980
-#EXTINF:-1 group-title="其他频道",CQTV时尚生活
-http://27.10.76.217:8003/udp/225.0.4.69:7980
-#EXTINF:-1 group-title="其他频道",CQTV新农村
-http://27.10.76.217:8003/udp/225.0.4.70:7980
-#EXTINF:-1 group-title="其他频道",CQTV少儿
-http://27.10.76.217:8003/udp/225.0.4.71:7980
-#EXTINF:-1 group-title="其他频道",爱生活
-http://27.10.76.217:8003/udp/225.0.4.164:7980
-#EXTINF:-1 group-title="其他频道",IPTV相声小品
-http://27.10.76.217:8003/udp/225.0.4.56:7980
-#EXTINF:-1 group-title="其他频道",IPTV野外
-http://27.10.76.217:8003/udp/225.0.4.57:7980
-#EXTINF:-1 group-title="其他频道",IPTV3+
-http://27.10.76.217:8003/udp/225.0.4.51:7980
-#EXTINF:-1 group-title="其他频道",IPTV5+
-http://27.10.76.217:8003/udp/225.0.4.53:7980
-#EXTINF:-1 group-title="其他频道",IPTV6+
-http://27.10.76.217:8003/udp/225.0.4.50:7980
-#EXTINF:-1 group-title="其他频道",IPTV8+
-http://27.10.76.217:8003/udp/225.0.4.54:7980
-#EXTINF:-1 group-title="其他频道",经典电影
-http://27.10.76.217:8003/udp/225.0.4.48:7980
-#EXTINF:-1 group-title="其他频道",解密
-http://27.10.76.217:8003/udp/225.0.4.153:7980
-#EXTINF:-1 group-title="其他频道",全纪实
-http://27.10.76.217:8003/udp/225.0.4.113:7980
-#EXTINF:-1 group-title="其他频道",纪实
-http://27.10.76.217:8003/udp/225.0.4.99:7980
-#EXTINF:-1 group-title="其他频道",地理
-http://27.10.76.217:8003/udp/225.0.4.149:7980
-#EXTINF:-1 group-title="其他频道",古装剧场
-http://27.10.76.217:8003/udp/225.0.4.147:7980
-#EXTINF:-1 group-title="其他频道",武侠剧场
-http://27.10.76.217:8003/udp/225.0.4.168:7980
-#EXTINF:-1 group-title="其他频道",军旅剧场
-http://27.10.76.217:8003/udp/225.0.4.146:7980
-#EXTINF:-1 group-title="其他频道",喜剧影院
-http://27.10.76.217:8003/udp/225.0.4.169:7980
-#EXTINF:-1 group-title="其他频道",动作影院
-http://27.10.76.217:8003/udp/225.0.4.170:7980
-#EXTINF:-1 group-title="其他频道",家庭影院
-http://27.10.76.217:8003/udp/225.0.4.171:7980
-#EXTINF:-1 group-title="其他频道",星影
-http://27.10.76.217:8003/udp/225.0.4.172:7980
+http://121.24.98.185:8090/hls/103/index.m3u8
+#EXTINF:-1 group-title="其他频道",热播剧场
+http://121.24.98.185:8090/hls/104/index.m3u8
+#EXTINF:-1 group-title="其他频道",少儿动画
+http://121.24.98.185:8090/hls/105/index.m3u8
+#EXTINF:-1 group-title="其他频道",野外
+http://121.24.98.185:8090/hls/106/index.m3u8
+#EXTINF:-1 group-title="其他频道",谍战剧场
+http://121.24.98.185:8090/hls/107/index.m3u8
+#EXTINF:-1 group-title="其他频道",纪实人文
+http://121.24.98.185:8090/hls/108/index.m3u8
+#EXTINF:-1 group-title="其他频道",1
+http://121.24.98.185:8090/hls/109/index.m3u8
+#EXTINF:-1 group-title="其他频道",2
+http://121.24.98.185:8090/hls/110/index.m3u8
+#EXTINF:-1 group-title="其他频道",3
+http://121.24.98.185:8090/hls/111/index.m3u8
