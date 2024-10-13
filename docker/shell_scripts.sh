@@ -1,6 +1,7 @@
 #!/bin/sh
 
 gitPath='/scripts/tv_sources'
+gitLock='/root/tv_sources_git.lock'
 hh=$(date +%-H)
 mergedListFile="/scripts/docker/merged_list_file.sh"
 
@@ -11,12 +12,13 @@ function initTvSources() {
     git config --global user.email "haustjp@gmail.com"
 
     if [ 1 -gt 0 ]; then
-        if [ ! -d "$gitPath" ]; then
+        if [ ! -f "$gitLock" ]; then
             echo "未检查到gitPath仓库脚本，初始化下载相关脚本..."
             chmod 600 /root/.ssh/id_rsa_oracle
             git config --global user.name "haustjp"
             git config --global user.email "haustjp@gmail.com"
             git clone -b master git@github.com:haustjp/tv_sources.git $gitPath
+            echo '' >${gitLock}
         else
             echo "更新tv_sources脚本相关文件..."
             git -C $gitPath remote set-url origin git@github.com:haustjp/tv_sources.git
