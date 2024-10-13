@@ -12,8 +12,11 @@ services:
           memory: 400M
     restart: always
     volumes:
-      - /docker/python/logs:/scripts/logs
-      - /docker/python/scripts:/scripts/custom
+      - /docker/tv_sources/logs:/scripts/logs
+      - /docker/tv_sources/config:/scripts/config
+      - /docker/tv_sources/scripts:/scripts/custom
+      - /docker/tv_sources/ssh:/root/.ssh
+      - /docker/tv_sources/iptv:/scripts/iptv
     environment:
       - TZ=Asia/Shanghai
       - DD_SECRET=666
