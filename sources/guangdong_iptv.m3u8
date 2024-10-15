@@ -25,6 +25,8 @@ http://27.46.95.202:808/hls/11/index.m3u8
 http://27.46.95.202:808/hls/12/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV13
 http://27.46.95.202:808/hls/13/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV14
+http://27.46.95.202:808/hls/14/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV15
 http://27.46.95.202:808/hls/15/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV5+
@@ -403,6 +405,208 @@ http://113.101.119.146:808/hls/143/index.m3u8
 http://113.101.119.146:808/hls/200/index.m3u8
 #EXTINF:-1 group-title="全部",云浮公共
 http://113.101.119.146:808/hls/201/index.m3u8
+#EXTINF:-1 group-title="全部",广东珠江高清
+http://113.101.119.146:8090/hls/105/index.m3u8
+#EXTINF:-1 group-title="全部",湛江公共
+http://113.101.119.146:8090/hls/3/index.m3u8
+#EXTINF:-1 group-title="全部",广东经济科教
+http://113.101.119.146:8090/hls/129/index.m3u8
+#EXTINF:-1 group-title="全部",岭南戏曲
+http://113.101.119.146:8090/hls/22/index.m3u8
+#EXTINF:-1 group-title="全部",广东新闻
+http://113.101.119.146:8090/hls/106/index.m3u8
+#EXTINF:-1 group-title="全部",广东公共
+http://113.101.119.146:8090/hls/107/index.m3u8
+#EXTINF:-1 group-title="全部",南方卫视
+http://113.101.119.146:8090/hls/109/index.m3u8
+#EXTINF:-1 group-title="全部",广东体育
+http://113.101.119.146:8090/hls/108/index.m3u8
+#EXTINF:-1 group-title="全部",广东影视
+http://113.101.119.146:8090/hls/110/index.m3u8
+#EXTINF:-1 group-title="全部",广东少儿
+http://113.101.119.146:8090/hls/111/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-2高清
+http://113.101.119.146:8090/hls/114/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-3高清
+http://113.101.119.146:8090/hls/115/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-4高清
+http://113.101.119.146:8090/hls/116/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV5
+http://113.101.119.146:8090/hls/58/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-5+
+http://113.101.119.146:8090/hls/10/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-6高清
+http://113.101.119.146:8090/hls/118/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-7高清
+http://113.101.119.146:8090/hls/119/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-8高清
+http://113.101.119.146:8090/hls/120/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-9高清
+http://113.101.119.146:8090/hls/121/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-10高清
+http://113.101.119.146:8090/hls/122/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-11高清
+http://113.101.119.146:8090/hls/123/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-12高清
+http://113.101.119.146:8090/hls/124/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-13高清
+http://113.101.119.146:8090/hls/125/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-14
+http://113.101.119.146:8090/hls/5/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-15高清
+http://113.101.119.146:8090/hls/127/index.m3u8
+#EXTINF:-1 group-title="全部",湖南卫视
+http://113.101.119.146:8090/hls/130/index.m3u8
+#EXTINF:-1 group-title="全部",吉林卫视
+http://113.101.119.146:8090/hls/101/index.m3u8
+#EXTINF:-1 group-title="全部",东南卫视
+http://113.101.119.146:8090/hls/102/index.m3u8
+#EXTINF:-1 group-title="全部",天津卫视
+http://113.101.119.146:8090/hls/132/index.m3u8
+#EXTINF:-1 group-title="全部",山东卫视
+http://113.101.119.146:8090/hls/133/index.m3u8
+#EXTINF:-1 group-title="全部",江西卫视
+http://113.101.119.146:8090/hls/134/index.m3u8
+#EXTINF:-1 group-title="全部",深圳卫视
+http://113.101.119.146:8090/hls/135/index.m3u8
+#EXTINF:-1 group-title="全部",湖北卫视
+http://113.101.119.146:8090/hls/136/index.m3u8
+#EXTINF:-1 group-title="全部",江苏卫视
+http://113.101.119.146:8090/hls/17/index.m3u8
+#EXTINF:-1 group-title="全部",贵州卫视
+http://113.101.119.146:8090/hls/139/index.m3u8
+#EXTINF:-1 group-title="全部",四川卫视
+http://113.101.119.146:8090/hls/140/index.m3u8
+#EXTINF:-1 group-title="全部",重庆卫视
+http://113.101.119.146:8090/hls/143/index.m3u8
+#EXTINF:-1 group-title="全部",云浮综合
+http://113.101.119.146:8090/hls/200/index.m3u8
+#EXTINF:-1 group-title="全部",云浮公共
+http://113.101.119.146:8090/hls/201/index.m3u8
+#EXTINF:-1 group-title="全部",汕头一台
+http://120.238.53.230:2223/hls/76/index.m3u8
+#EXTINF:-1 group-title="全部",汕头二台
+http://120.238.53.230:2223/hls/69/index.m3u8
+#EXTINF:-1 group-title="全部",汕头三台
+http://120.238.53.230:2223/hls/62/index.m3u8
+#EXTINF:-1 group-title="全部",凤凰资讯
+http://120.238.53.230:2223/hls/10/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-5＋体育
+http://120.238.53.230:2223/hls/91/index.m3u8
+#EXTINF:-1 group-title="全部",优漫卡通
+http://120.238.53.230:2223/hls/77/index.m3u8
+#EXTINF:-1 group-title="全部",金鹰卡通
+http://120.238.53.230:2223/hls/83/index.m3u8
+#EXTINF:-1 group-title="全部",嘉佳卡通
+http://120.238.53.230:2223/hls/72/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-14少儿
+http://120.238.53.230:2223/hls/84/index.m3u8
+#EXTINF:-1 group-title="全部",少儿
+http://120.238.53.230:2223/hls/84/index.m3u8
+#EXTINF:-1 group-title="全部",广东新闻
+http://120.238.53.230:2223/hls/5/index.m3u8
+#EXTINF:-1 group-title="全部",TVS1
+http://120.238.53.230:2223/hls/1/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-1综合
+http://120.238.53.230:2223/hls/23/index.m3u8
+#EXTINF:-1 group-title="全部",综合
+http://120.238.53.230:2223/hls/23/index.m3u8
+#EXTINF:-1 group-title="全部",﻿CCTV-2财经
+http://120.238.53.230:2223/hls/73/index.m3u8
+#EXTINF:-1 group-title="全部",财经
+http://120.238.53.230:2223/hls/73/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-3综艺
+http://120.238.53.230:2223/hls/24/index.m3u8
+#EXTINF:-1 group-title="全部",综艺
+http://120.238.53.230:2223/hls/24/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-4国际
+http://120.238.53.230:2223/hls/74/index.m3u8
+#EXTINF:-1 group-title="全部",国际
+http://120.238.53.230:2223/hls/74/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-5体育
+http://120.238.53.230:2223/hls/89/index.m3u8
+#EXTINF:-1 group-title="全部",体育
+http://120.238.53.230:2223/hls/89/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-6电影
+http://120.238.53.230:2223/hls/75/index.m3u8
+#EXTINF:-1 group-title="全部",电影
+http://120.238.53.230:2223/hls/75/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-7军事农业
+http://120.238.53.230:2223/hls/79/index.m3u8
+#EXTINF:-1 group-title="全部",军事农业
+http://120.238.53.230:2223/hls/79/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-8电视剧
+http://120.238.53.230:2223/hls/80/index.m3u8
+#EXTINF:-1 group-title="全部",电视剧
+http://120.238.53.230:2223/hls/80/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-9记录
+http://120.238.53.230:2223/hls/90/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-10科教
+http://120.238.53.230:2223/hls/56/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-11戏曲
+http://120.238.53.230:2223/hls/60/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-12社会与法
+http://120.238.53.230:2223/hls/81/index.m3u8
+#EXTINF:-1 group-title="全部",社会与法
+http://120.238.53.230:2223/hls/81/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-13新闻
+http://120.238.53.230:2223/hls/65/index.m3u8
+#EXTINF:-1 group-title="全部",新闻
+http://120.238.53.230:2223/hls/65/index.m3u8
+#EXTINF:-1 group-title="全部",CCTV-15音乐
+http://120.238.53.230:2223/hls/70/index.m3u8
+#EXTINF:-1 group-title="全部",音乐
+http://120.238.53.230:2223/hls/70/index.m3u8
+#EXTINF:-1 group-title="全部",广东卫视
+http://120.238.53.230:2223/hls/14/index.m3u8
+#EXTINF:-1 group-title="全部",广东影视
+http://120.238.53.230:2223/hls/46/index.m3u8
+#EXTINF:-1 group-title="全部",深圳卫视
+http://120.238.53.230:2223/hls/82/index.m3u8
+#EXTINF:-1 group-title="全部",湖南卫视
+http://120.238.53.230:2223/hls/63/index.m3u8
+#EXTINF:-1 group-title="全部",浙江卫视
+http://120.238.53.230:2223/hls/29/index.m3u8
+#EXTINF:-1 group-title="全部",安徽卫视
+http://120.238.53.230:2223/hls/34/index.m3u8
+#EXTINF:-1 group-title="全部",南方卫视
+http://120.238.53.230:2223/hls/59/index.m3u8
+#EXTINF:-1 group-title="全部",江苏卫视
+http://120.238.53.230:2223/hls/71/index.m3u8
+#EXTINF:-1 group-title="全部",东南卫视
+http://120.238.53.230:2223/hls/37/index.m3u8
+#EXTINF:-1 group-title="全部",湖北卫视
+http://120.238.53.230:2223/hls/68/index.m3u8
+#EXTINF:-1 group-title="全部",深圳都市
+http://120.238.53.230:2223/hls/61/index.m3u8
+#EXTINF:-1 group-title="全部",云南卫视
+http://120.238.53.230:2223/hls/55/index.m3u8
+#EXTINF:-1 group-title="全部",河南卫视
+http://120.238.53.230:2223/hls/64/index.m3u8
+#EXTINF:-1 group-title="全部",山东卫视
+http://120.238.53.230:2223/hls/88/index.m3u8
+#EXTINF:-1 group-title="全部",四川卫视
+http://120.238.53.230:2223/hls/66/index.m3u8
+#EXTINF:-1 group-title="全部",北京卫视
+http://120.238.53.230:2223/hls/78/index.m3u8
+#EXTINF:-1 group-title="全部",河北卫视
+http://120.238.53.230:2223/hls/47/index.m3u8
+#EXTINF:-1 group-title="全部",东方卫视
+http://120.238.53.230:2223/hls/67/index.m3u8
+#EXTINF:-1 group-title="全部",江西卫视
+http://120.238.53.230:2223/hls/87/index.m3u8
+#EXTINF:-1 group-title="全部",天津卫视
+http://120.238.53.230:2223/hls/92/index.m3u8
+#EXTINF:-1 group-title="全部",重庆卫视
+http://120.238.53.230:2223/hls/93/index.m3u8
+#EXTINF:-1 group-title="全部",陕西卫视
+http://120.238.53.230:2223/hls/54/index.m3u8
+#EXTINF:-1 group-title="全部",内蒙古卫视
+http://120.238.53.230:2223/hls/57/index.m3u8
+#EXTINF:-1 group-title="全部",宁夏卫视
+http://120.238.53.230:2223/hls/58/index.m3u8
+#EXTINF:-1 group-title="全部",黑龙江卫视
+http://120.238.53.230:2223/hls/95/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV1
 http://27.46.95.202:808/hls/1/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV2
@@ -427,6 +631,8 @@ http://27.46.95.202:808/hls/11/index.m3u8
 http://27.46.95.202:808/hls/12/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV13
 http://27.46.95.202:808/hls/13/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV14
+http://27.46.95.202:808/hls/14/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV15
 http://27.46.95.202:808/hls/15/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV5+
@@ -557,6 +763,68 @@ http://113.101.119.146:808/hls/125/index.m3u8
 http://113.101.119.146:808/hls/5/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV15
 http://113.101.119.146:808/hls/127/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV2
+http://113.101.119.146:8090/hls/114/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV3
+http://113.101.119.146:8090/hls/115/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV4
+http://113.101.119.146:8090/hls/116/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV5
+http://113.101.119.146:8090/hls/58/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV5+
+http://113.101.119.146:8090/hls/10/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV6
+http://113.101.119.146:8090/hls/118/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV7
+http://113.101.119.146:8090/hls/119/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV8
+http://113.101.119.146:8090/hls/120/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV9
+http://113.101.119.146:8090/hls/121/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV10
+http://113.101.119.146:8090/hls/122/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV11
+http://113.101.119.146:8090/hls/123/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV12
+http://113.101.119.146:8090/hls/124/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV13
+http://113.101.119.146:8090/hls/125/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV14
+http://113.101.119.146:8090/hls/5/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV15
+http://113.101.119.146:8090/hls/127/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV5+
+http://120.238.53.230:2223/hls/91/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV14
+http://120.238.53.230:2223/hls/84/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV1
+http://120.238.53.230:2223/hls/23/index.m3u8
+#EXTINF:-1 group-title="央视频道",﻿CCTV2
+http://120.238.53.230:2223/hls/73/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV3
+http://120.238.53.230:2223/hls/24/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV4
+http://120.238.53.230:2223/hls/74/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV5
+http://120.238.53.230:2223/hls/89/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV6
+http://120.238.53.230:2223/hls/75/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV7
+http://120.238.53.230:2223/hls/79/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV8
+http://120.238.53.230:2223/hls/80/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV9
+http://120.238.53.230:2223/hls/90/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV10
+http://120.238.53.230:2223/hls/56/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV11
+http://120.238.53.230:2223/hls/60/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV12
+http://120.238.53.230:2223/hls/81/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV13
+http://120.238.53.230:2223/hls/65/index.m3u8
+#EXTINF:-1 group-title="央视频道",CCTV15
+http://120.238.53.230:2223/hls/70/index.m3u8
 #EXTINF:-1 group-title="卫视频道",广东卫视
 http://27.46.95.202:808/hls/19/index.m3u8
 #EXTINF:-1 group-title="卫视频道",湖南卫视
@@ -719,6 +987,78 @@ http://113.101.119.146:808/hls/139/index.m3u8
 http://113.101.119.146:808/hls/140/index.m3u8
 #EXTINF:-1 group-title="卫视频道",重庆卫视
 http://113.101.119.146:808/hls/143/index.m3u8
+#EXTINF:-1 group-title="卫视频道",南方卫视
+http://113.101.119.146:8090/hls/109/index.m3u8
+#EXTINF:-1 group-title="卫视频道",湖南卫视
+http://113.101.119.146:8090/hls/130/index.m3u8
+#EXTINF:-1 group-title="卫视频道",吉林卫视
+http://113.101.119.146:8090/hls/101/index.m3u8
+#EXTINF:-1 group-title="卫视频道",东南卫视
+http://113.101.119.146:8090/hls/102/index.m3u8
+#EXTINF:-1 group-title="卫视频道",天津卫视
+http://113.101.119.146:8090/hls/132/index.m3u8
+#EXTINF:-1 group-title="卫视频道",山东卫视
+http://113.101.119.146:8090/hls/133/index.m3u8
+#EXTINF:-1 group-title="卫视频道",江西卫视
+http://113.101.119.146:8090/hls/134/index.m3u8
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+http://113.101.119.146:8090/hls/135/index.m3u8
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+http://113.101.119.146:8090/hls/136/index.m3u8
+#EXTINF:-1 group-title="卫视频道",江苏卫视
+http://113.101.119.146:8090/hls/17/index.m3u8
+#EXTINF:-1 group-title="卫视频道",贵州卫视
+http://113.101.119.146:8090/hls/139/index.m3u8
+#EXTINF:-1 group-title="卫视频道",四川卫视
+http://113.101.119.146:8090/hls/140/index.m3u8
+#EXTINF:-1 group-title="卫视频道",重庆卫视
+http://113.101.119.146:8090/hls/143/index.m3u8
+#EXTINF:-1 group-title="卫视频道",广东卫视
+http://120.238.53.230:2223/hls/14/index.m3u8
+#EXTINF:-1 group-title="卫视频道",深圳卫视
+http://120.238.53.230:2223/hls/82/index.m3u8
+#EXTINF:-1 group-title="卫视频道",湖南卫视
+http://120.238.53.230:2223/hls/63/index.m3u8
+#EXTINF:-1 group-title="卫视频道",浙江卫视
+http://120.238.53.230:2223/hls/29/index.m3u8
+#EXTINF:-1 group-title="卫视频道",安徽卫视
+http://120.238.53.230:2223/hls/34/index.m3u8
+#EXTINF:-1 group-title="卫视频道",南方卫视
+http://120.238.53.230:2223/hls/59/index.m3u8
+#EXTINF:-1 group-title="卫视频道",江苏卫视
+http://120.238.53.230:2223/hls/71/index.m3u8
+#EXTINF:-1 group-title="卫视频道",东南卫视
+http://120.238.53.230:2223/hls/37/index.m3u8
+#EXTINF:-1 group-title="卫视频道",湖北卫视
+http://120.238.53.230:2223/hls/68/index.m3u8
+#EXTINF:-1 group-title="卫视频道",云南卫视
+http://120.238.53.230:2223/hls/55/index.m3u8
+#EXTINF:-1 group-title="卫视频道",河南卫视
+http://120.238.53.230:2223/hls/64/index.m3u8
+#EXTINF:-1 group-title="卫视频道",山东卫视
+http://120.238.53.230:2223/hls/88/index.m3u8
+#EXTINF:-1 group-title="卫视频道",四川卫视
+http://120.238.53.230:2223/hls/66/index.m3u8
+#EXTINF:-1 group-title="卫视频道",北京卫视
+http://120.238.53.230:2223/hls/78/index.m3u8
+#EXTINF:-1 group-title="卫视频道",河北卫视
+http://120.238.53.230:2223/hls/47/index.m3u8
+#EXTINF:-1 group-title="卫视频道",东方卫视
+http://120.238.53.230:2223/hls/67/index.m3u8
+#EXTINF:-1 group-title="卫视频道",江西卫视
+http://120.238.53.230:2223/hls/87/index.m3u8
+#EXTINF:-1 group-title="卫视频道",天津卫视
+http://120.238.53.230:2223/hls/92/index.m3u8
+#EXTINF:-1 group-title="卫视频道",重庆卫视
+http://120.238.53.230:2223/hls/93/index.m3u8
+#EXTINF:-1 group-title="卫视频道",陕西卫视
+http://120.238.53.230:2223/hls/54/index.m3u8
+#EXTINF:-1 group-title="卫视频道",内蒙古卫视
+http://120.238.53.230:2223/hls/57/index.m3u8
+#EXTINF:-1 group-title="卫视频道",宁夏卫视
+http://120.238.53.230:2223/hls/58/index.m3u8
+#EXTINF:-1 group-title="卫视频道",黑龙江卫视
+http://120.238.53.230:2223/hls/95/index.m3u8
 #EXTINF:-1 group-title="高清频道",广东卫视
 http://14.19.142.188:8089/hls/1/index.m3u8
 #EXTINF:-1 group-title="高清频道",广东珠江
@@ -821,6 +1161,32 @@ http://113.101.119.146:808/hls/124/index.m3u8
 http://113.101.119.146:808/hls/125/index.m3u8
 #EXTINF:-1 group-title="高清频道",CCTV15
 http://113.101.119.146:808/hls/127/index.m3u8
+#EXTINF:-1 group-title="高清频道",广东珠江
+http://113.101.119.146:8090/hls/105/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV2
+http://113.101.119.146:8090/hls/114/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV3
+http://113.101.119.146:8090/hls/115/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV4
+http://113.101.119.146:8090/hls/116/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV6
+http://113.101.119.146:8090/hls/118/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV7
+http://113.101.119.146:8090/hls/119/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV8
+http://113.101.119.146:8090/hls/120/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV9
+http://113.101.119.146:8090/hls/121/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV10
+http://113.101.119.146:8090/hls/122/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV11
+http://113.101.119.146:8090/hls/123/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV12
+http://113.101.119.146:8090/hls/124/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV13
+http://113.101.119.146:8090/hls/125/index.m3u8
+#EXTINF:-1 group-title="高清频道",CCTV15
+http://113.101.119.146:8090/hls/127/index.m3u8
 #EXTINF:-1 group-title="其他频道",CCVT5
 http://27.46.95.202:808/hls/5/index.m3u8
 #EXTINF:-1 group-title="其他频道",IPTV6+
@@ -909,3 +1275,71 @@ http://113.101.119.146:808/hls/111/index.m3u8
 http://113.101.119.146:808/hls/200/index.m3u8
 #EXTINF:-1 group-title="其他频道",云浮公共
 http://113.101.119.146:808/hls/201/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://113.101.119.146:8090/hls/105/index.m3u8
+#EXTINF:-1 group-title="其他频道",湛江公共
+http://113.101.119.146:8090/hls/3/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东经济科教
+http://113.101.119.146:8090/hls/129/index.m3u8
+#EXTINF:-1 group-title="其他频道",岭南戏曲
+http://113.101.119.146:8090/hls/22/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东新闻
+http://113.101.119.146:8090/hls/106/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东公共
+http://113.101.119.146:8090/hls/107/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东体育
+http://113.101.119.146:8090/hls/108/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东影视
+http://113.101.119.146:8090/hls/110/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东少儿
+http://113.101.119.146:8090/hls/111/index.m3u8
+#EXTINF:-1 group-title="其他频道",云浮综合
+http://113.101.119.146:8090/hls/200/index.m3u8
+#EXTINF:-1 group-title="其他频道",云浮公共
+http://113.101.119.146:8090/hls/201/index.m3u8
+#EXTINF:-1 group-title="其他频道",汕头一台
+http://120.238.53.230:2223/hls/76/index.m3u8
+#EXTINF:-1 group-title="其他频道",汕头二台
+http://120.238.53.230:2223/hls/69/index.m3u8
+#EXTINF:-1 group-title="其他频道",汕头三台
+http://120.238.53.230:2223/hls/62/index.m3u8
+#EXTINF:-1 group-title="其他频道",凤凰资讯
+http://120.238.53.230:2223/hls/10/index.m3u8
+#EXTINF:-1 group-title="其他频道",优漫卡通
+http://120.238.53.230:2223/hls/77/index.m3u8
+#EXTINF:-1 group-title="其他频道",金鹰卡通
+http://120.238.53.230:2223/hls/83/index.m3u8
+#EXTINF:-1 group-title="其他频道",嘉佳卡通
+http://120.238.53.230:2223/hls/72/index.m3u8
+#EXTINF:-1 group-title="其他频道",少儿
+http://120.238.53.230:2223/hls/84/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东新闻
+http://120.238.53.230:2223/hls/5/index.m3u8
+#EXTINF:-1 group-title="其他频道",TVS1
+http://120.238.53.230:2223/hls/1/index.m3u8
+#EXTINF:-1 group-title="其他频道",综合
+http://120.238.53.230:2223/hls/23/index.m3u8
+#EXTINF:-1 group-title="其他频道",财经
+http://120.238.53.230:2223/hls/73/index.m3u8
+#EXTINF:-1 group-title="其他频道",综艺
+http://120.238.53.230:2223/hls/24/index.m3u8
+#EXTINF:-1 group-title="其他频道",国际
+http://120.238.53.230:2223/hls/74/index.m3u8
+#EXTINF:-1 group-title="其他频道",体育
+http://120.238.53.230:2223/hls/89/index.m3u8
+#EXTINF:-1 group-title="其他频道",电影
+http://120.238.53.230:2223/hls/75/index.m3u8
+#EXTINF:-1 group-title="其他频道",军事农业
+http://120.238.53.230:2223/hls/79/index.m3u8
+#EXTINF:-1 group-title="其他频道",电视剧
+http://120.238.53.230:2223/hls/80/index.m3u8
+#EXTINF:-1 group-title="其他频道",社会与法
+http://120.238.53.230:2223/hls/81/index.m3u8
+#EXTINF:-1 group-title="其他频道",新闻
+http://120.238.53.230:2223/hls/65/index.m3u8
+#EXTINF:-1 group-title="其他频道",音乐
+http://120.238.53.230:2223/hls/70/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东影视
+http://120.238.53.230:2223/hls/46/index.m3u8
+#EXTINF:-1 group-title="其他频道",深圳都市
+http://120.238.53.230:2223/hls/61/index.m3u8
