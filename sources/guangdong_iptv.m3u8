@@ -7,8 +7,6 @@ http://113.101.119.119:808/hls/3/index.m3u8
 http://113.101.119.119:808/hls/129/index.m3u8
 #EXTINF:-1 group-title="全部",岭南戏曲
 http://113.101.119.119:808/hls/22/index.m3u8
-#EXTINF:-1 group-title="全部",广东公共
-http://113.101.119.119:808/hls/107/index.m3u8
 #EXTINF:-1 group-title="全部",南方卫视
 http://113.101.119.119:808/hls/109/index.m3u8
 #EXTINF:-1 group-title="全部",广东体育
@@ -75,8 +73,6 @@ http://113.101.119.104:8090/hls/3/index.m3u8
 http://113.101.119.104:8090/hls/129/index.m3u8
 #EXTINF:-1 group-title="全部",岭南戏曲
 http://113.101.119.104:8090/hls/22/index.m3u8
-#EXTINF:-1 group-title="全部",广东公共
-http://113.101.119.104:8090/hls/107/index.m3u8
 #EXTINF:-1 group-title="全部",南方卫视
 http://113.101.119.104:8090/hls/109/index.m3u8
 #EXTINF:-1 group-title="全部",广东体育
@@ -143,8 +139,6 @@ http://113.101.119.104:808/hls/3/index.m3u8
 http://113.101.119.104:808/hls/129/index.m3u8
 #EXTINF:-1 group-title="全部",岭南戏曲
 http://113.101.119.104:808/hls/22/index.m3u8
-#EXTINF:-1 group-title="全部",广东公共
-http://113.101.119.104:808/hls/107/index.m3u8
 #EXTINF:-1 group-title="全部",南方卫视
 http://113.101.119.104:808/hls/109/index.m3u8
 #EXTINF:-1 group-title="全部",广东体育
@@ -209,8 +203,14 @@ http://120.238.53.230:2223/hls/76/index.m3u8
 http://120.238.53.230:2223/hls/69/index.m3u8
 #EXTINF:-1 group-title="全部",汕头三台
 http://120.238.53.230:2223/hls/62/index.m3u8
+#EXTINF:-1 group-title="全部",揭阳综合
+http://120.238.53.230:2223/hls/11/index.m3u8
+#EXTINF:-1 group-title="全部",普宁台
+http://120.238.53.230:2223/hls/12/index.m3u8
 #EXTINF:-1 group-title="全部",凤凰资讯
 http://120.238.53.230:2223/hls/10/index.m3u8
+#EXTINF:-1 group-title="全部",广东体育
+http://120.238.53.230:2223/hls/13/index.m3u8
 #EXTINF:-1 group-title="全部",CCTV-5＋体育
 http://120.238.53.230:2223/hls/91/index.m3u8
 #EXTINF:-1 group-title="全部",优漫卡通
@@ -289,6 +289,8 @@ http://120.238.53.230:2223/hls/63/index.m3u8
 http://120.238.53.230:2223/hls/29/index.m3u8
 #EXTINF:-1 group-title="全部",安徽卫视
 http://120.238.53.230:2223/hls/34/index.m3u8
+#EXTINF:-1 group-title="全部",广东珠江
+http://120.238.53.230:2223/hls/15/index.m3u8
 #EXTINF:-1 group-title="全部",南方卫视
 http://120.238.53.230:2223/hls/59/index.m3u8
 #EXTINF:-1 group-title="全部",江苏卫视
@@ -333,218 +335,6 @@ https://newcntv.qcloudcdn.com/asp/hls/850/0303000a/3/default/c2e7e767f3144bed959
 https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/1d01816b5ae945bea728f10ee99d7c41/1200.m3u8
 #EXTINF:-1 group-title="全部",景区
 https://gctxyc.liveplay.myqcloud.com/gc/wygjt1_1/index.m3u8?contentid=2820180516001
-#EXTINF:-1 group-title="全部",CCTV-1综合
-http://183.11.239.36:808/hls/19/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-2财经
-http://183.11.239.36:808/hls/20/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-3高清
-http://183.11.239.36:808/hls/91/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-4中文国际
-http://183.11.239.36:808/hls/22/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-5高清
-http://183.11.239.36:808/hls/93/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-6高清
-http://183.11.239.36:808/hls/94/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-7国防军事
-http://183.11.239.36:808/hls/25/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-8
-http://183.11.239.36:808/hls/96/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-9纪录
-http://183.11.239.36:808/hls/27/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-10科教
-http://183.11.239.36:808/hls/28/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-11戏曲
-http://183.11.239.36:808/hls/29/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-12社会与法
-http://183.11.239.36:808/hls/30/index.m3u8
-#EXTINF:-1 group-title="全部",“CCTV-13新闻
-http://183.11.239.36:808/hls/31/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-14少儿
-http://183.11.239.36:808/hls/32/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-15高清
-http://183.11.239.36:808/hls/102/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-16奥林匹克
-http://183.11.239.36:808/hls/169/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-17农业
-http://183.11.239.36:808/hls/35/index.m3u8
-#EXTINF:-1 group-title="全部",金鹰卡通
-http://183.11.239.36:808/hls/69/index.m3u8
-#EXTINF:-1 group-title="全部",广东移动
-http://183.11.239.36:808/hls/14/index.m3u8
-#EXTINF:-1 group-title="全部",CETV-1
-http://183.11.239.36:808/hls/122/index.m3u8
-#EXTINF:-1 group-title="全部",广东大湾区卫视
-http://183.11.239.36:808/hls/132/index.m3u8
-#EXTINF:-1 group-title="全部",广东新闻
-http://183.11.239.36:808/hls/5/index.m3u8
-#EXTINF:-1 group-title="全部",风云足球
-http://183.11.239.36:808/hls/133/index.m3u8
-#EXTINF:-1 group-title="全部",岭南戏曲
-http://183.11.239.36:808/hls/16/index.m3u8
-#EXTINF:-1 group-title="全部",经济科教
-http://183.11.239.36:808/hls/4/index.m3u8
-#EXTINF:-1 group-title="全部",内蒙古卫视
-http://183.11.239.36:808/hls/60/index.m3u8
-#EXTINF:-1 group-title="全部",广东影视
-http://183.11.239.36:808/hls/6/index.m3u8
-#EXTINF:-1 group-title="全部",甘肃卫视
-http://183.11.239.36:808/hls/119/index.m3u8
-#EXTINF:-1 group-title="全部",广东少儿
-http://183.11.239.36:808/hls/175/index.m3u8
-#EXTINF:-1 group-title="全部",广东综艺4k
-http://183.11.239.36:808/hls/9/index.m3u8
-#EXTINF:-1 group-title="全部",湖南卫视
-http://183.11.239.36:808/hls/36/index.m3u8
-#EXTINF:-1 group-title="全部",江苏卫视
-http://183.11.239.36:808/hls/38/index.m3u8
-#EXTINF:-1 group-title="全部",浙江卫视高清
-http://183.11.239.36:808/hls/37/index.m3u8
-#EXTINF:-1 group-title="全部",兵团卫视
-http://183.11.239.36:808/hls/7/index.m3u8
-#EXTINF:-1 group-title="全部",安徽卫视
-http://183.11.239.36:808/hls/40/index.m3u8
-#EXTINF:-1 group-title="全部",北京卫视
-http://183.11.239.36:808/hls/41/index.m3u8
-#EXTINF:-1 group-title="全部",天津卫视
-http://183.11.239.36:808/hls/42/index.m3u8
-#EXTINF:-1 group-title="全部",山东卫视
-http://183.11.239.36:808/hls/43/index.m3u8
-#EXTINF:-1 group-title="全部",江西卫视
-http://183.11.239.36:808/hls/44/index.m3u8
-#EXTINF:-1 group-title="全部",深圳卫视
-http://183.11.239.36:808/hls/45/index.m3u8
-#EXTINF:-1 group-title="全部",湖北卫视
-http://183.11.239.36:808/hls/46/index.m3u8
-#EXTINF:-1 group-title="全部",辽宁卫视
-http://183.11.239.36:808/hls/47/index.m3u8
-#EXTINF:-1 group-title="全部",黑龙江卫视
-http://183.11.239.36:808/hls/48/index.m3u8
-#EXTINF:-1 group-title="全部",贵州卫视
-http://183.11.239.36:808/hls/49/index.m3u8
-#EXTINF:-1 group-title="全部",河北卫视
-http://183.11.239.36:808/hls/54/index.m3u8
-#EXTINF:-1 group-title="全部",广东体育
-http://183.11.239.36:808/hls/2/index.m3u8
-#EXTINF:-1 group-title="全部",东方卫视
-http://183.11.239.36:808/hls/114/index.m3u8
-#EXTINF:-1 group-title="全部",新疆卫视
-http://183.11.239.36:808/hls/65/index.m3u8
-#EXTINF:-1 group-title="全部",CETV2
-http://183.11.239.36:808/hls/78/index.m3u8
-#EXTINF:-1 group-title="全部",中国交通
-http://183.11.239.36:808/hls/172/index.m3u8
-#EXTINF:-1 group-title="全部",嘉佳卡通
-http://183.11.239.36:808/hls/8/index.m3u8
-#EXTINF:-1 group-title="全部",金鹰纪实
-http://183.11.239.36:808/hls/171/index.m3u8
-#EXTINF:-1 group-title="全部",青海卫视
-http://183.11.239.36:808/hls/61/index.m3u8
-#EXTINF:-1 group-title="全部",重庆卫视
-http://183.11.239.36:808/hls/53/index.m3u8
-#EXTINF:-1 group-title="全部",宁夏卫视
-http://183.11.239.36:808/hls/106/index.m3u8
-#EXTINF:-1 group-title="全部",吉林延边卫视
-http://183.11.239.36:808/hls/15/index.m3u8
-#EXTINF:-1 group-title="全部",河南卫视
-http://183.11.239.36:808/hls/51/index.m3u8
-#EXTINF:-1 group-title="全部",纪实人文
-http://183.11.239.36:808/hls/173/index.m3u8
-#EXTINF:-1 group-title="全部",厦门卫视
-http://183.11.239.36:808/hls/17/index.m3u8
-#EXTINF:-1 group-title="全部",广东民生
-http://183.11.239.36:808/hls/18/index.m3u8
-#EXTINF:-1 group-title="全部",世界地理
-http://183.11.239.36:808/hls/11/index.m3u8
-#EXTINF:-1 group-title="全部",女性时尚
-http://183.11.239.36:808/hls/12/index.m3u8
-#EXTINF:-1 group-title="全部",电视指南
-http://183.11.239.36:808/hls/13/index.m3u8
-#EXTINF:-1 group-title="全部",CGTN俄语
-http://183.11.239.36:808/hls/85/index.m3u8
-#EXTINF:-1 group-title="全部",CGTN阿拉伯语
-http://183.11.239.36:808/hls/84/index.m3u8
-#EXTINF:-1 group-title="全部",CGTN法语
-http://183.11.239.36:808/hls/82/index.m3u8
-#EXTINF:-1 group-title="全部",CGTN西班牙语
-http://183.11.239.36:808/hls/81/index.m3u8
-#EXTINF:-1 group-title="全部",CGTN英文记录
-http://183.11.239.36:808/hls/77/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV4中文国际美洲
-http://183.11.239.36:808/hls/77/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV4中文国际欧洲
-http://183.11.239.36:808/hls/67/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-NEWS
-http://183.11.239.36:808/hls/34/index.m3u8
-#EXTINF:-1 group-title="全部",兵器科技
-http://183.11.239.36:808/hls/21/index.m3u8
-#EXTINF:-1 group-title="全部",陕西卫视
-http://183.11.239.36:808/hls/58/index.m3u8
-#EXTINF:-1 group-title="全部",西藏卫视
-http://183.11.239.36:808/hls/64/index.m3u8
-#EXTINF:-1 group-title="全部",吉林卫视
-http://183.11.239.36:808/hls/10/index.m3u8
-#EXTINF:-1 group-title="全部",财富天下
-http://183.11.239.36:808/hls/75/index.m3u8
-#EXTINF:-1 group-title="全部",央视台球
-http://183.11.239.36:808/hls/73/index.m3u8
-#EXTINF:-1 group-title="全部",山东教育
-http://183.11.239.36:808/hls/72/index.m3u8
-#EXTINF:-1 group-title="全部",高尔夫，网球
-http://183.11.239.36:808/hls/174/index.m3u8
-#EXTINF:-1 group-title="全部",云南卫视
-http://183.11.239.36:808/hls/52/index.m3u8
-#EXTINF:-1 group-title="全部",风云音乐
-http://183.11.239.36:808/hls/99/index.m3u8
-#EXTINF:-1 group-title="全部",央视文化精品
-http://183.11.239.36:808/hls/97/index.m3u8
-#EXTINF:-1 group-title="全部",第一剧场
-http://183.11.239.36:808/hls/98/index.m3u8
-#EXTINF:-1 group-title="全部",山西卫视
-http://183.11.239.36:808/hls/59/index.m3u8
-#EXTINF:-1 group-title="全部",四川卫视
-http://183.11.239.36:808/hls/50/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-5高清
-http://183.11.239.36:808/hls/93/index.m3u8
-#EXTINF:-1 group-title="全部",CCTV-6高清
-http://183.11.239.36:808/hls/94/index.m3u8
-#EXTINF:-1 group-title="全部",CETV早教
-http://183.11.239.36:808/hls/100/index.m3u8
-#EXTINF:-1 group-title="全部",CETV4
-http://183.11.239.36:808/hls/79/index.m3u8
-#EXTINF:-1 group-title="全部",怀旧剧场
-http://183.11.239.36:808/hls/92/index.m3u8
-#EXTINF:-1 group-title="全部",风云剧场
-http://183.11.239.36:808/hls/95/index.m3u8
-#EXTINF:-1 group-title="全部",广东珠江
-http://183.11.239.36:808/hls/83/index.m3u8
-#EXTINF:-1 group-title="全部",广东卫视
-http://183.11.239.36:808/hls/80/index.m3u8
-#EXTINF:-1 group-title="全部",广西卫视
-http://183.11.239.36:808/hls/56/index.m3u8
-#EXTINF:-1 group-title="全部",海南卫视
-http://183.11.239.36:808/hls/124/index.m3u8
-#EXTINF:-1 group-title="全部",深圳都市
-http://183.11.239.36:808/hls/140/index.m3u8
-#EXTINF:-1 group-title="全部",深圳电视剧频道
-http://183.11.239.36:808/hls/141/index.m3u8
-#EXTINF:-1 group-title="全部",深圳财经生活
-http://183.11.239.36:808/hls/151/index.m3u8
-#EXTINF:-1 group-title="全部",深圳少儿
-http://183.11.239.36:808/hls/157/index.m3u8
-#EXTINF:-1 group-title="全部",深圳健康频道
-http://183.11.239.36:808/hls/158/index.m3u8
-#EXTINF:-1 group-title="全部",国学频道
-http://183.11.239.36:808/hls/23/index.m3u8
-#EXTINF:-1 group-title="全部",中学生
-http://183.11.239.36:808/hls/24/index.m3u8
-#EXTINF:-1 group-title="全部",老故事
-http://183.11.239.36:808/hls/26/index.m3u8
-#EXTINF:-1 group-title="全部",书画
-http://183.11.239.36:808/hls/33/index.m3u8
-#EXTINF:-1 group-title="全部",靓妆
-http://183.11.239.36:808/hls/12/index.m3u8
-#EXTINF:-1 group-title="全部",汽摩
-http://183.11.239.36:808/hls/66/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV2
 http://113.101.119.119:808/hls/114/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV3
@@ -643,64 +433,6 @@ http://120.238.53.230:2223/hls/81/index.m3u8
 http://120.238.53.230:2223/hls/65/index.m3u8
 #EXTINF:-1 group-title="央视频道",CCTV15
 http://120.238.53.230:2223/hls/70/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV1
-http://183.11.239.36:808/hls/19/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV2
-http://183.11.239.36:808/hls/20/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV3
-http://183.11.239.36:808/hls/91/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV4
-http://183.11.239.36:808/hls/22/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV5
-http://183.11.239.36:808/hls/93/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV6
-http://183.11.239.36:808/hls/94/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV7
-http://183.11.239.36:808/hls/25/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV8
-http://183.11.239.36:808/hls/96/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV9
-http://183.11.239.36:808/hls/27/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV10
-http://183.11.239.36:808/hls/28/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV11
-http://183.11.239.36:808/hls/29/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV12
-http://183.11.239.36:808/hls/30/index.m3u8
-#EXTINF:-1 group-title="央视频道",“CCTV13
-http://183.11.239.36:808/hls/31/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV14
-http://183.11.239.36:808/hls/32/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV15
-http://183.11.239.36:808/hls/102/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV16
-http://183.11.239.36:808/hls/169/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV17
-http://183.11.239.36:808/hls/35/index.m3u8
-#EXTINF:-1 group-title="央视频道",CGTN俄语
-http://183.11.239.36:808/hls/85/index.m3u8
-#EXTINF:-1 group-title="央视频道",CGTN阿拉伯语
-http://183.11.239.36:808/hls/84/index.m3u8
-#EXTINF:-1 group-title="央视频道",CGTN法语
-http://183.11.239.36:808/hls/82/index.m3u8
-#EXTINF:-1 group-title="央视频道",CGTN西班牙语
-http://183.11.239.36:808/hls/81/index.m3u8
-#EXTINF:-1 group-title="央视频道",CGTN英文记录
-http://183.11.239.36:808/hls/77/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV4美洲
-http://183.11.239.36:808/hls/77/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV4
-http://183.11.239.36:808/hls/67/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTVNEWS
-http://183.11.239.36:808/hls/34/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV台球
-http://183.11.239.36:808/hls/73/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV文化精品
-http://183.11.239.36:808/hls/97/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV5
-http://183.11.239.36:808/hls/93/index.m3u8
-#EXTINF:-1 group-title="央视频道",CCTV6
-http://183.11.239.36:808/hls/94/index.m3u8
 #EXTINF:-1 group-title="卫视频道",南方卫视
 http://113.101.119.119:808/hls/109/index.m3u8
 #EXTINF:-1 group-title="卫视频道",湖南卫视
@@ -825,76 +557,6 @@ http://120.238.53.230:2223/hls/57/index.m3u8
 http://120.238.53.230:2223/hls/58/index.m3u8
 #EXTINF:-1 group-title="卫视频道",黑龙江卫视
 http://120.238.53.230:2223/hls/95/index.m3u8
-#EXTINF:-1 group-title="卫视频道",广东大湾区卫视
-http://183.11.239.36:808/hls/132/index.m3u8
-#EXTINF:-1 group-title="卫视频道",内蒙古卫视
-http://183.11.239.36:808/hls/60/index.m3u8
-#EXTINF:-1 group-title="卫视频道",甘肃卫视
-http://183.11.239.36:808/hls/119/index.m3u8
-#EXTINF:-1 group-title="卫视频道",湖南卫视
-http://183.11.239.36:808/hls/36/index.m3u8
-#EXTINF:-1 group-title="卫视频道",江苏卫视
-http://183.11.239.36:808/hls/38/index.m3u8
-#EXTINF:-1 group-title="卫视频道",浙江卫视
-http://183.11.239.36:808/hls/37/index.m3u8
-#EXTINF:-1 group-title="卫视频道",兵团卫视
-http://183.11.239.36:808/hls/7/index.m3u8
-#EXTINF:-1 group-title="卫视频道",安徽卫视
-http://183.11.239.36:808/hls/40/index.m3u8
-#EXTINF:-1 group-title="卫视频道",北京卫视
-http://183.11.239.36:808/hls/41/index.m3u8
-#EXTINF:-1 group-title="卫视频道",天津卫视
-http://183.11.239.36:808/hls/42/index.m3u8
-#EXTINF:-1 group-title="卫视频道",山东卫视
-http://183.11.239.36:808/hls/43/index.m3u8
-#EXTINF:-1 group-title="卫视频道",江西卫视
-http://183.11.239.36:808/hls/44/index.m3u8
-#EXTINF:-1 group-title="卫视频道",深圳卫视
-http://183.11.239.36:808/hls/45/index.m3u8
-#EXTINF:-1 group-title="卫视频道",湖北卫视
-http://183.11.239.36:808/hls/46/index.m3u8
-#EXTINF:-1 group-title="卫视频道",辽宁卫视
-http://183.11.239.36:808/hls/47/index.m3u8
-#EXTINF:-1 group-title="卫视频道",黑龙江卫视
-http://183.11.239.36:808/hls/48/index.m3u8
-#EXTINF:-1 group-title="卫视频道",贵州卫视
-http://183.11.239.36:808/hls/49/index.m3u8
-#EXTINF:-1 group-title="卫视频道",河北卫视
-http://183.11.239.36:808/hls/54/index.m3u8
-#EXTINF:-1 group-title="卫视频道",东方卫视
-http://183.11.239.36:808/hls/114/index.m3u8
-#EXTINF:-1 group-title="卫视频道",新疆卫视
-http://183.11.239.36:808/hls/65/index.m3u8
-#EXTINF:-1 group-title="卫视频道",青海卫视
-http://183.11.239.36:808/hls/61/index.m3u8
-#EXTINF:-1 group-title="卫视频道",重庆卫视
-http://183.11.239.36:808/hls/53/index.m3u8
-#EXTINF:-1 group-title="卫视频道",宁夏卫视
-http://183.11.239.36:808/hls/106/index.m3u8
-#EXTINF:-1 group-title="卫视频道",吉林延边卫视
-http://183.11.239.36:808/hls/15/index.m3u8
-#EXTINF:-1 group-title="卫视频道",河南卫视
-http://183.11.239.36:808/hls/51/index.m3u8
-#EXTINF:-1 group-title="卫视频道",厦门卫视
-http://183.11.239.36:808/hls/17/index.m3u8
-#EXTINF:-1 group-title="卫视频道",陕西卫视
-http://183.11.239.36:808/hls/58/index.m3u8
-#EXTINF:-1 group-title="卫视频道",西藏卫视
-http://183.11.239.36:808/hls/64/index.m3u8
-#EXTINF:-1 group-title="卫视频道",吉林卫视
-http://183.11.239.36:808/hls/10/index.m3u8
-#EXTINF:-1 group-title="卫视频道",云南卫视
-http://183.11.239.36:808/hls/52/index.m3u8
-#EXTINF:-1 group-title="卫视频道",山西卫视
-http://183.11.239.36:808/hls/59/index.m3u8
-#EXTINF:-1 group-title="卫视频道",四川卫视
-http://183.11.239.36:808/hls/50/index.m3u8
-#EXTINF:-1 group-title="卫视频道",广东卫视
-http://183.11.239.36:808/hls/80/index.m3u8
-#EXTINF:-1 group-title="卫视频道",广西卫视
-http://183.11.239.36:808/hls/56/index.m3u8
-#EXTINF:-1 group-title="卫视频道",海南卫视
-http://183.11.239.36:808/hls/124/index.m3u8
 #EXTINF:-1 group-title="高清频道",广东珠江
 http://113.101.119.119:808/hls/105/index.m3u8
 #EXTINF:-1 group-title="高清频道",CCTV2
@@ -949,22 +611,6 @@ http://113.101.119.104:808/hls/124/index.m3u8
 http://113.101.119.104:808/hls/125/index.m3u8
 #EXTINF:-1 group-title="高清频道",CCTV15
 http://113.101.119.104:808/hls/127/index.m3u8
-#EXTINF:-1 group-title="高清频道",CCTV3
-http://183.11.239.36:808/hls/91/index.m3u8
-#EXTINF:-1 group-title="高清频道",CCTV5
-http://183.11.239.36:808/hls/93/index.m3u8
-#EXTINF:-1 group-title="高清频道",CCTV6
-http://183.11.239.36:808/hls/94/index.m3u8
-#EXTINF:-1 group-title="高清频道",CCTV15
-http://183.11.239.36:808/hls/102/index.m3u8
-#EXTINF:-1 group-title="高清频道",广东综艺4k
-http://183.11.239.36:808/hls/9/index.m3u8
-#EXTINF:-1 group-title="高清频道",浙江卫视
-http://183.11.239.36:808/hls/37/index.m3u8
-#EXTINF:-1 group-title="高清频道",CCTV5
-http://183.11.239.36:808/hls/93/index.m3u8
-#EXTINF:-1 group-title="高清频道",CCTV6
-http://183.11.239.36:808/hls/94/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东珠江
 http://113.101.119.119:808/hls/105/index.m3u8
 #EXTINF:-1 group-title="其他频道",湛江公共
@@ -973,8 +619,6 @@ http://113.101.119.119:808/hls/3/index.m3u8
 http://113.101.119.119:808/hls/129/index.m3u8
 #EXTINF:-1 group-title="其他频道",岭南戏曲
 http://113.101.119.119:808/hls/22/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东公共
-http://113.101.119.119:808/hls/107/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东体育
 http://113.101.119.119:808/hls/108/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东影视
@@ -993,8 +637,6 @@ http://113.101.119.104:8090/hls/3/index.m3u8
 http://113.101.119.104:8090/hls/129/index.m3u8
 #EXTINF:-1 group-title="其他频道",岭南戏曲
 http://113.101.119.104:8090/hls/22/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东公共
-http://113.101.119.104:8090/hls/107/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东体育
 http://113.101.119.104:8090/hls/108/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东影视
@@ -1013,8 +655,6 @@ http://113.101.119.104:808/hls/3/index.m3u8
 http://113.101.119.104:808/hls/129/index.m3u8
 #EXTINF:-1 group-title="其他频道",岭南戏曲
 http://113.101.119.104:808/hls/22/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东公共
-http://113.101.119.104:808/hls/107/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东体育
 http://113.101.119.104:808/hls/108/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东影视
@@ -1031,8 +671,14 @@ http://120.238.53.230:2223/hls/76/index.m3u8
 http://120.238.53.230:2223/hls/69/index.m3u8
 #EXTINF:-1 group-title="其他频道",汕头三台
 http://120.238.53.230:2223/hls/62/index.m3u8
+#EXTINF:-1 group-title="其他频道",揭阳综合
+http://120.238.53.230:2223/hls/11/index.m3u8
+#EXTINF:-1 group-title="其他频道",普宁台
+http://120.238.53.230:2223/hls/12/index.m3u8
 #EXTINF:-1 group-title="其他频道",凤凰资讯
 http://120.238.53.230:2223/hls/10/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东体育
+http://120.238.53.230:2223/hls/13/index.m3u8
 #EXTINF:-1 group-title="其他频道",优漫卡通
 http://120.238.53.230:2223/hls/77/index.m3u8
 #EXTINF:-1 group-title="其他频道",金鹰卡通
@@ -1069,6 +715,8 @@ http://120.238.53.230:2223/hls/65/index.m3u8
 http://120.238.53.230:2223/hls/70/index.m3u8
 #EXTINF:-1 group-title="其他频道",广东影视
 http://120.238.53.230:2223/hls/46/index.m3u8
+#EXTINF:-1 group-title="其他频道",广东珠江
+http://120.238.53.230:2223/hls/15/index.m3u8
 #EXTINF:-1 group-title="其他频道",深圳都市
 http://120.238.53.230:2223/hls/61/index.m3u8
 #EXTINF:-1 group-title="其他频道",狮子王国
@@ -1077,87 +725,3 @@ https://newcntv.qcloudcdn.com/asp/hls/850/0303000a/3/default/c2e7e767f3144bed959
 https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/1d01816b5ae945bea728f10ee99d7c41/1200.m3u8
 #EXTINF:-1 group-title="其他频道",景区
 https://gctxyc.liveplay.myqcloud.com/gc/wygjt1_1/index.m3u8?contentid=2820180516001
-#EXTINF:-1 group-title="其他频道",金鹰卡通
-http://183.11.239.36:808/hls/69/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东移动
-http://183.11.239.36:808/hls/14/index.m3u8
-#EXTINF:-1 group-title="其他频道",CETV1
-http://183.11.239.36:808/hls/122/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东新闻
-http://183.11.239.36:808/hls/5/index.m3u8
-#EXTINF:-1 group-title="其他频道",风云足球
-http://183.11.239.36:808/hls/133/index.m3u8
-#EXTINF:-1 group-title="其他频道",岭南戏曲
-http://183.11.239.36:808/hls/16/index.m3u8
-#EXTINF:-1 group-title="其他频道",经济科教
-http://183.11.239.36:808/hls/4/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东影视
-http://183.11.239.36:808/hls/6/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东少儿
-http://183.11.239.36:808/hls/175/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东综艺4k
-http://183.11.239.36:808/hls/9/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东体育
-http://183.11.239.36:808/hls/2/index.m3u8
-#EXTINF:-1 group-title="其他频道",CETV2
-http://183.11.239.36:808/hls/78/index.m3u8
-#EXTINF:-1 group-title="其他频道",中国交通
-http://183.11.239.36:808/hls/172/index.m3u8
-#EXTINF:-1 group-title="其他频道",嘉佳卡通
-http://183.11.239.36:808/hls/8/index.m3u8
-#EXTINF:-1 group-title="其他频道",金鹰纪实
-http://183.11.239.36:808/hls/171/index.m3u8
-#EXTINF:-1 group-title="其他频道",纪实人文
-http://183.11.239.36:808/hls/173/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东民生
-http://183.11.239.36:808/hls/18/index.m3u8
-#EXTINF:-1 group-title="其他频道",世界地理
-http://183.11.239.36:808/hls/11/index.m3u8
-#EXTINF:-1 group-title="其他频道",女性时尚
-http://183.11.239.36:808/hls/12/index.m3u8
-#EXTINF:-1 group-title="其他频道",电视指南
-http://183.11.239.36:808/hls/13/index.m3u8
-#EXTINF:-1 group-title="其他频道",兵器科技
-http://183.11.239.36:808/hls/21/index.m3u8
-#EXTINF:-1 group-title="其他频道",财富天下
-http://183.11.239.36:808/hls/75/index.m3u8
-#EXTINF:-1 group-title="其他频道",山东教育
-http://183.11.239.36:808/hls/72/index.m3u8
-#EXTINF:-1 group-title="其他频道",高尔夫，网球
-http://183.11.239.36:808/hls/174/index.m3u8
-#EXTINF:-1 group-title="其他频道",风云音乐
-http://183.11.239.36:808/hls/99/index.m3u8
-#EXTINF:-1 group-title="其他频道",第一剧场
-http://183.11.239.36:808/hls/98/index.m3u8
-#EXTINF:-1 group-title="其他频道",CETV早教
-http://183.11.239.36:808/hls/100/index.m3u8
-#EXTINF:-1 group-title="其他频道",CETV4
-http://183.11.239.36:808/hls/79/index.m3u8
-#EXTINF:-1 group-title="其他频道",怀旧剧场
-http://183.11.239.36:808/hls/92/index.m3u8
-#EXTINF:-1 group-title="其他频道",风云剧场
-http://183.11.239.36:808/hls/95/index.m3u8
-#EXTINF:-1 group-title="其他频道",广东珠江
-http://183.11.239.36:808/hls/83/index.m3u8
-#EXTINF:-1 group-title="其他频道",深圳都市
-http://183.11.239.36:808/hls/140/index.m3u8
-#EXTINF:-1 group-title="其他频道",深圳电视剧
-http://183.11.239.36:808/hls/141/index.m3u8
-#EXTINF:-1 group-title="其他频道",深圳财经生活
-http://183.11.239.36:808/hls/151/index.m3u8
-#EXTINF:-1 group-title="其他频道",深圳少儿
-http://183.11.239.36:808/hls/157/index.m3u8
-#EXTINF:-1 group-title="其他频道",深圳健康
-http://183.11.239.36:808/hls/158/index.m3u8
-#EXTINF:-1 group-title="其他频道",国学
-http://183.11.239.36:808/hls/23/index.m3u8
-#EXTINF:-1 group-title="其他频道",中学生
-http://183.11.239.36:808/hls/24/index.m3u8
-#EXTINF:-1 group-title="其他频道",老故事
-http://183.11.239.36:808/hls/26/index.m3u8
-#EXTINF:-1 group-title="其他频道",书画
-http://183.11.239.36:808/hls/33/index.m3u8
-#EXTINF:-1 group-title="其他频道",靓妆
-http://183.11.239.36:808/hls/12/index.m3u8
-#EXTINF:-1 group-title="其他频道",汽摩
-http://183.11.239.36:808/hls/66/index.m3u8
