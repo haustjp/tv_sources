@@ -1,5 +1,0 @@
-全部,#genre#
-央视频道,#genre#
-卫视频道,#genre#
-高清频道,#genre#
-其他频道,#genre#
