@@ -63,8 +63,9 @@ def get_all_channels():
     }
     response = requests.get(all_channels_url, headers=headers)
     all_channels_data = response.json()
-
-    with open('all_channels_data.json', 'w', encoding='UTF-8') as f:
+    if not os.path.exists('sources'):
+        os.mkdir('sources')
+    with open('sources/all_channels_data.json', 'w', encoding='UTF-8') as f:
         json.dump(all_channels_data, f, ensure_ascii=False)
 
     if all_channels_data['status'] != '200' or 'channels' not in all_channels_data:
@@ -119,9 +120,10 @@ def get_channel_list(access_token: str, channel_codes_str: str):
     if not channel_list_response.get('channellist'):
         logger.error('错误：channellist 数据为空')
         sys.exit(1)
-
+    if not os.path.exists('sources'):
+        os.mkdir('sources')
     # 保存响应数据到文件
-    with open('channel_list_data.json', 'w', encoding='UTF-8') as f:
+    with open('sources/channel_list_data.json', 'w', encoding='UTF-8') as f:
         json.dump(channel_list_response, f, ensure_ascii=False)
 
     return channel_list_response['channellist']
