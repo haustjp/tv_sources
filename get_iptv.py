@@ -129,6 +129,46 @@ def get_channel_list(access_token: str, channel_codes_str: str):
     return channel_list_response['channellist']
 
 
+def get_local_list():
+    sources = []
+    url = 'https://mi.azzf.eu.org/iptv/guangdong.m3u8'
+    response = requests.get(url)
+
+    # 检查请求是否成功
+    if response.status_code == 200:
+        with open('guangdong.txt', 'wb') as file:
+            file.write(response.content)
+        logger.info("文件下载成功！")
+    else:
+        logger.error(f"下载失败，状态码：{response.status_code}")
+        return sources
+
+    # 逐行读取文件
+    line_index: int = 0
+    line_type = 0
+
+    with open('guangdong.txt', 'r', encoding='utf-8') as file:
+        source = {}
+        for line in file:
+            if line.strip() == "":
+                continue
+            line_index = line_index+1
+            if line_index > 1:
+                line_type = line_type+1
+                if line_type == 1:
+                    line = line.strip().removeprefix('#EXTINF:-1 ,')
+                    source['name'] = line
+
+                if line_type == 2:
+                    line = line.strip()
+                    source['url'] = line
+                    line_type = 0
+                    sources.append(source)
+                    source = {}
+
+    return sources
+
+
 def build_channel_info(channel_list_data, all_channels_data):
     sources = []
     for item in channel_list_data:
@@ -282,6 +322,10 @@ if __name__ == "__main__":
     channels_list = get_channel_list(access_token, channel_codes_str)
 
     channels_sources = build_channel_info(channels_list, channels_data)
+
+    local_sources = get_local_list()
+
+    channels_sources.extend(local_sources)
 
     dict_sources = build_channel_sources(channels_sources)
 
