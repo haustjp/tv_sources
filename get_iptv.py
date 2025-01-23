@@ -157,7 +157,7 @@ def get_local_list():
                 line_type = line_type+1
                 if line_type == 1:
                     line = line.strip().removeprefix('#EXTINF:-1 ,')
-                    source['name'] = line
+                    source['name'] = line.replace(" ", "")
 
                 if line_type == 2:
                     line = line.strip()
@@ -181,7 +181,7 @@ def build_channel_info(channel_list_data, all_channels_data):
         channel_name = channel_info['title']
         timeshift_url = item['timeshifturl']
         sources.append({
-            'name': channel_name,
+            'name': channel_name.replace(" ", ""),
             'url': timeshift_url
         })
 
