@@ -10,6 +10,7 @@ function main(){
 #    python3 get_iptv_source.py -t 'first'
    cp -rf /scripts/tv_sources/sources/* /scripts/iptv/
    rm -rf /scripts/tv_sources/sources/* 
+   rm -rf /scripts/tv_sources/guangdong.txt
 }
 
 function commit(){
