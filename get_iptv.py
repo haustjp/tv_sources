@@ -208,7 +208,8 @@ def build_channel_name(name):
         name = name.replace(")", "")
         name = name.replace("测试", "")
         name = re.sub(r"CCTV(\d+)台", r"CCTV\1&", name)
-        name = re.sub(r'\d+', lambda x: x.group() + '&', name)
+        if 'CCTV' in name and '高清' in name:
+            name = re.sub(r'\d+', lambda x: x.group() + '&', name)
         name = name.replace("CCTV1综合", "CCTV1&")
         name = name.replace("CCTV2财经", "CCTV2&")
         name = name.replace("CCTV3综艺", "CCTV3&")
@@ -240,91 +241,109 @@ def build_channel_name(name):
         if "CCTV-1&" in name or "CCTV1&" in name:
             if "高清" in name:
                 name = "CCTV-1 综合 高清"
-            name = "CCTV-1 综合"
+            else:
+                name = "CCTV-1 综合"
 
         if "CCTV-2&" in name or "CCTV2&" in name:
             if "高清" in name:
                 name = "CCTV-2 财经 高清"
-            name = "CCTV-2 财经"
+            else:
+                name = "CCTV-2 财经"
 
         if "CCTV-3&" in name or "CCTV3&" in name:
             if "高清" in name:
                 name = "CCTV-3 综艺 高清"
-            name = "CCTV-3 综艺"
+            else:
+                name = "CCTV-3 综艺"
 
         if "CCTV-4&" in name or "CCTV4&" in name:
             if "高清" in name:
                 name = "CCTV-4 中文国际 高清"
-            name = "CCTV-4 中文国际"
+            else:
+                name = "CCTV-4 中文国际"
 
         if ("CCTV-5&" in name or "CCTV5&" in name) and not ("CCTV-5+&" in name or "CCTV5+&" in name):
             if "高清" in name:
                 name = "CCTV-5 体育 高清"
-            name = "CCTV-5 体育"
+            else:
+                name = "CCTV-5 体育"
         elif ("CCTV-5+&" in name or "CCTV5+&" in name):
             if "高清" in name:
                 name = "CCTV-5 体育赛事 高清"
-            name = "CCTV-5 体育赛事"
+            else:
+                name = "CCTV-5 体育赛事"
 
         if "CCTV-6&" in name or "CCTV6&" in name:
             if "高清" in name:
                 name = "CCTV-6 电影 高清"
-            name = "CCTV-6 电影"
+            else:
+                name = "CCTV-6 电影"
 
         if "CCTV-7&" in name or "CCTV7&" in name:
             if "高清" in name:
                 name = "CCTV-7 军事农业 高清"
-            name = "CCTV-7 军事农业"
+            else:
+                name = "CCTV-7 军事农业"
 
         if "CCTV-8&" in name or "CCTV8&" in name:
             if "高清" in name:
                 name = "CCTV-8 电视剧 高清"
-            name = "CCTV-8 电视剧"
+            else:
+                name = "CCTV-8 电视剧"
 
         if "CCTV-9&" in name or "CCTV9&" in name:
             if "高清" in name:
                 name = "CCTV-9 纪录 高清"
-            name = "CCTV-9 纪录"
+            else:
+                name = "CCTV-9 纪录"
 
         if "CCTV-10&" in name or "CCTV10&" in name:
             if "高清" in name:
                 name = "CCTV-10 科教 高清"
-            name = "CCTV-10 科教"
+            else:
+                name = "CCTV-10 科教"
 
         if "CCTV-11&" in name or "CCTV11&" in name:
             if "高清" in name:
                 name = "CCTV-11 戏曲 高清"
-            name = "CCTV-11 戏曲"
+            else:
+                name = "CCTV-11 戏曲"
 
         if "CCTV-12&" in name or "CCTV12&" in name:
             if "高清" in name:
                 name = "CCTV-12 社会与法 高清"
-            name = "CCTV-12 社会与法"
+            else:
+                name = "CCTV-12 社会与法"
 
         if "CCTV-13&" in name or "CCTV13&" in name:
             if "高清" in name:
                 name = "CCTV-13 新闻 高清"
-            name = "CCTV-13 新闻"
+            else:
+                name = "CCTV-13 新闻"
 
         if "CCTV-14&" in name or "CCTV14&" in name:
             if "高清" in name:
                 name = "CCTV-14 少儿 高清"
-            name = "CCTV-14 少儿"
+            else:
+                name = "CCTV-14 少儿"
 
         if "CCTV-15&" in name or "CCTV15&" in name:
             if "高清" in name:
                 name = "CCTV-15 音乐 高清"
-            name = "CCTV-15 音乐"
+            else:
+                name = "CCTV-15 音乐"
 
         if "CCTV-16&" in name or "CCTV16&" in name:
             if "高清" in name:
                 name = "CCTV-16 奥林匹克 高清"
-            name = "CCTV-16 奥林匹克"
+            else:
+                name = "CCTV-16 奥林匹克"
 
         if "CCTV-17&" in name or "CCTV17&" in name:
             if "高清" in name:
                 name = "CCTV-17 农业农村 高清"
-            name = "CCTV-17 农业农村"
+            else:
+                name = "CCTV-17 农业农村"
     return name
 
 
