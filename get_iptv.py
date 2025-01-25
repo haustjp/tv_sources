@@ -194,10 +194,10 @@ def build_channel_name(name):
         name = name.replace("cctv", "CCTV")
         name = name.replace("中央", "CCTV")
         name = name.replace("央视", "CCTV")
-        name = name.replace("高清", "")
-        name = name.replace("超高", "")
-        name = name.replace("超清", "")
-        name = name.replace("HD", "")
+        name = name.replace("测试", "")
+        name = name.replace("超高", "高清")
+        name = name.replace("超清", "高清")
+        name = name.replace("HD", "高清")
         name = name.replace("标清", "")
         name = name.replace("频道", "")
         name = name.replace("-", "")
@@ -236,6 +236,94 @@ def build_channel_name(name):
         name = name.replace("CCTV5+体育赛视", "CCTV5+")
         name = name.replace("CCTV5+体育赛事", "CCTV5+")
         name = name.replace("CCTV5+体育", "CCTV5+")
+        if "CCTV-1" in name or "CCTV1" in name:
+            if "高清" in name:
+                name = "CCTV-1 综合 高清"
+            name = "CCTV-1 综合"
+
+        if "CCTV-2" in name or "CCTV2" in name:
+            if "高清" in name:
+                name = "CCTV-2 财经 高清"
+            name = "CCTV-2 财经"
+
+        if "CCTV-3" in name or "CCTV3" in name:
+            if "高清" in name:
+                name = "CCTV-3 综艺 高清"
+            name = "CCTV-3 综艺"
+
+        if "CCTV-4" in name or "CCTV4" in name:
+            if "高清" in name:
+                name = "CCTV-4 中文国际 高清"
+            name = "CCTV-4 中文国际"
+
+        if ("CCTV-5" in name or "CCTV5" in name) and not ("CCTV-5+" in name or "CCTV5+" in name):
+            if "高清" in name:
+                name = "CCTV-5 体育 高清"
+            name = "CCTV-5 体育"
+        elif ("CCTV-5+" in name or "CCTV5+" in name):
+            if "高清" in name:
+                name = "CCTV-5 体育赛事 高清"
+            name = "CCTV-5 体育赛事"
+
+        if "CCTV-6" in name or "CCTV6" in name:
+            if "高清" in name:
+                name = "CCTV-6 电影 高清"
+            name = "CCTV-6 电影"
+
+        if "CCTV-7" in name or "CCTV7" in name:
+            if "高清" in name:
+                name = "CCTV-7 军事农业 高清"
+            name = "CCTV-7 军事农业"
+
+        if "CCTV-8" in name or "CCTV8" in name:
+            if "高清" in name:
+                name = "CCTV-8 电视剧 高清"
+            name = "CCTV-8 电视剧"
+
+        if "CCTV-9" in name or "CCTV9" in name:
+            if "高清" in name:
+                name = "CCTV-9 纪录 高清"
+            name = "CCTV-9 纪录"
+
+        if "CCTV-10" in name or "CCTV10" in name:
+            if "高清" in name:
+                name = "CCTV-10 科教 高清"
+            name = "CCTV-10 科教"
+
+        if "CCTV-11" in name or "CCTV11" in name:
+            if "高清" in name:
+                name = "CCTV-11 戏曲 高清"
+            name = "CCTV-11 戏曲"
+
+        if "CCTV-12" in name or "CCTV12" in name:
+            if "高清" in name:
+                name = "CCTV-12 社会与法 高清"
+            name = "CCTV-12 社会与法"
+
+        if "CCTV-13" in name or "CCTV13" in name:
+            if "高清" in name:
+                name = "CCTV-13 新闻 高清"
+            name = "CCTV-13 新闻"
+
+        if "CCTV-14" in name or "CCTV14" in name:
+            if "高清" in name:
+                name = "CCTV-14 少儿 高清"
+            name = "CCTV-14 少儿"
+
+        if "CCTV-15" in name or "CCTV15" in name:
+            if "高清" in name:
+                name = "CCTV-15 音乐 高清"
+            name = "CCTV-15 音乐"
+
+        if "CCTV-16" in name or "CCTV16" in name:
+            if "高清" in name:
+                name = "CCTV-16 奥林匹克 高清"
+            name = "CCTV-16 奥林匹克"
+
+        if "CCTV-17" in name or "CCTV17" in name:
+            if "高清" in name:
+                name = "CCTV-17 农业农村 高清"
+            name = "CCTV-17 农业农村"
     return name
 
 
@@ -244,11 +332,9 @@ def build_channel_sources(channel_sources):
 
     if channel_sources and len(channel_sources) > 0:
         for channel_source in channel_sources:
+            channel_source['name'] = build_channel_name(channel_source['name'])
             channel_source_copy = copy.deepcopy(channel_source)
-            channel_source_copy['name'] = channel_source_copy['name'].replace(
-                "(", "").replace(")", "").replace("测试", "")
             source_types['全部'].append(channel_source_copy)
-            # channel_source['name'] = build_channel_name(channel_source['name'])
             if '高清' in channel_source['name']:
                 source_types['高清频道'].append(channel_source)
             if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
