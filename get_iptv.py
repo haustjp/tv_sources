@@ -208,8 +208,7 @@ def build_channel_name(name):
         name = name.replace(")", "")
         name = name.replace("测试", "")
         name = re.sub(r"CCTV(\d+)台", r"CCTV\1&", name)
-        if 'CCTV' in name and '高清' in name:
-            name = re.sub(r'\d+', lambda x: x.group() + '&', name)
+        name = re.sub(r'\d+', lambda x: x.group() + '&', name)
         name = name.replace("CCTV1综合", "CCTV1&")
         name = name.replace("CCTV2财经", "CCTV2&")
         name = name.replace("CCTV3综艺", "CCTV3&")
