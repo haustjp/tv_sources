@@ -1,6 +1,8 @@
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
 from requests import Response
+from urllib.parse import urlparse, parse_qs
+from urllib import parse
 import json
 import requests
 import re
@@ -18,6 +20,9 @@ config_path = os.environ.get('CONFIG_PATH')
 authUrl: str = None
 host_url: str = '120.87.11.25:33200'
 all_channels_url: str = 'http://120.87.12.38:8083/epg/api/custom/getAllChannel.json'
+is_check_url_available = bool(False)
+timeout: int = int(5)
+isTestSpeed = bool(False)
 
 
 def get_os():
@@ -148,6 +153,46 @@ def get_local_list():
     line_type = 0
 
     with open('guangdong.txt', 'r', encoding='utf-8') as file:
+        source = {}
+        for line in file:
+            if line.strip() == "":
+                continue
+            line_index = line_index+1
+            if line_index > 1:
+                line_type = line_type+1
+                if line_type == 1:
+                    line = line.strip().removeprefix('#EXTINF:-1 ,')
+                    source['name'] = line.replace(" ", "")
+
+                if line_type == 2:
+                    line = line.strip()
+                    source['url'] = line
+                    line_type = 0
+                    sources.append(source)
+                    source = {}
+
+    return sources
+
+
+def get_double_list():
+    sources = []
+    url = 'http://iptv.shabb.cn/Sub?type=m3u'
+    response = requests.get(url)
+
+    # 检查请求是否成功
+    if response.status_code == 200:
+        with open('double.txt', 'wb') as file:
+            file.write(response.content)
+        logger.info("double-文件下载成功！")
+    else:
+        logger.error(f"double-下载失败，状态码：{response.status_code}")
+        return sources
+
+    # 逐行读取文件
+    line_index: int = 0
+    line_type = 0
+
+    with open('double.txt', 'r', encoding='utf-8') as file:
         source = {}
         for line in file:
             if line.strip() == "":
@@ -409,6 +454,63 @@ def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
                 file.write(m3u8_string)
 
 
+def check_url_available(source_name, sources):
+    if not is_check_url_available:
+        return sources
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'}
+    se = requests.Session()
+    available_sources = []
+    timeout_host: dict[str, int] = {}
+    for i in sources:
+        try:
+            parsed_url = urlparse(i['url'])
+            netloc = parsed_url.netloc
+            if netloc in timeout_host.keys() and timeout_host[netloc] > 10:
+                continue
+            res = se.get(i['url'], headers=headers,
+                         timeout=timeout, stream=True)
+            if res.status_code == 200:
+                if isTestSpeed:
+                    for content in res.iter_content(chunk_size=1*1024*1024):
+                        if content and len(content) > 0:
+                            if netloc in timeout_host.keys():
+                                del timeout_host[netloc]
+
+                            logger.info(
+                                f"{source_name}-可用-{i['name']}-{i['url']}")
+                            available_sources.append(i)
+                        else:
+                            logger.info(
+                                f"{source_name}-不可用-{i['name']}-{i['url']}")
+                        break
+                else:
+                    if netloc in timeout_host.keys():
+                        del timeout_host[netloc]
+
+                    logger.info(
+                        f"{source_name}-可用-{i['name']}-{i['url']}")
+                    available_sources.append(i)
+            else:
+                logger.info(
+                    f"{source_name}-不可用-{i['name']}-{i['url']}")
+        except requests.exceptions.Timeout:
+            if netloc in timeout_host.keys():
+                timeout_host[netloc] += 1
+            else:
+                timeout_host[netloc] = 1
+            logger.error(
+                f"{source_name}-{i['name']}-{i['url']}-请求超时，超时时间设置为{timeout}秒")
+        except requests.exceptions.RequestException as ex:
+            logger.error(
+                f"{source_name}-出错-{i['name']}-{i['url']}{ex}")
+        except Exception as ex:
+            logger.error(
+                f"{source_name}-出错-{i['name']}-{i['url']}{ex}")
+    return available_sources
+
+
 if __name__ == "__main__":
     province_code = 'guangdong'
     host_url = '120.87.11.25'
@@ -417,6 +519,12 @@ if __name__ == "__main__":
         config = json.load(file)
     if 'authUrl' in config:
         authUrl = str(config['authUrl'])
+    if 'timeout' in config:
+        timeout = int(config['timeout'])
+    if 'isCheckUrlAvailable' in config:
+        is_check_url_available = bool(config['isCheckUrlAvailable'])
+    if 'isTestSpeed' in config:
+        isTestSpeed = bool(config['isTestSpeed'])
 
     logger = init_logger(config['logPath'])
 
