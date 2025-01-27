@@ -261,16 +261,16 @@ def build_channel_name(name):
             else:
                 name = "CCTV-4 中文国际"
 
-        if ("CCTV-5&" in name or "CCTV5&" in name) and not ("CCTV-5+&" in name or "CCTV5+&" in name):
+        if ("CCTV-5&" in name or "CCTV5&" in name) and not ("CCTV-5&+" in name or "CCTV5&+" in name):
             if "高清" in name:
                 name = "CCTV-5 体育 高清"
             else:
                 name = "CCTV-5 体育"
-        elif ("CCTV-5+&" in name or "CCTV5+&" in name):
+        elif ("CCTV-5&+" in name or "CCTV5&+" in name):
             if "高清" in name:
-                name = "CCTV-5 体育赛事 高清"
+                name = "CCTV-5+ 体育赛事 高清"
             else:
-                name = "CCTV-5 体育赛事"
+                name = "CCTV-5+ 体育赛事"
 
         if "CCTV-6&" in name or "CCTV6&" in name:
             if "高清" in name:
