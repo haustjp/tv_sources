@@ -23,6 +23,8 @@ all_channels_url: str = 'http://120.87.12.38:8083/epg/api/custom/getAllChannel.j
 is_check_url_available = bool(False)
 timeout: int = int(5)
 isTestSpeed = bool(False)
+onlyHd = bool(False)
+localUrl: str = None
 
 
 def get_os():
@@ -136,7 +138,10 @@ def get_channel_list(access_token: str, channel_codes_str: str):
 
 def get_local_list():
     sources = []
-    url = 'https://mi.azzf.eu.org/iptv/guangdong.m3u8'
+    if localUrl is None or len(localUrl) == 0:
+        return sources
+
+    url = localUrl
     response = requests.get(url)
 
     # 检查请求是否成功
@@ -170,6 +175,8 @@ def get_local_list():
                     line_type = 0
                     sources.append(source)
                     source = {}
+    if onlyHd:
+        sources = [item for item in sources if '高清' in item['name']]
 
     return sources
 
@@ -229,6 +236,8 @@ def build_channel_info(channel_list_data, all_channels_data):
             'name': channel_name.replace(" ", ""),
             'url': timeshift_url
         })
+    if onlyHd:
+        sources = [item for item in sources if '高清' in item['name']]
 
     return sources
 
@@ -391,15 +400,38 @@ def build_channel_name(name):
     return name
 
 
+def build_channel_name_hd(name):
+    name = re.sub(r'高清', '', name)
+    name = re.findall(r'(CCTV\d+\+)', name)
+    return name
+
+
 def build_channel_sources(channel_sources):
-    source_types = {'全部': [], '央视频道': [], '卫视频道': [], '高清频道': [], '其他频道': []}
+    # new_key_value = {'a': 1}
+    # original_dict = {**new_key_value, **original_dict}
+    source_types = {
+        '央视频道': [],
+        '卫视频道': [],
+        '高清频道': [],
+        '其他频道': []}
+    if onlyHd:
+        source_types = {
+            '央视频道': [],
+            '卫视频道': [],
+            '其他频道': []}
 
     if channel_sources and len(channel_sources) > 0:
         for channel_source in channel_sources:
-            channel_source['name'] = build_channel_name(channel_source['name'])
-            channel_source_copy = copy.deepcopy(channel_source)
-            source_types['全部'].append(channel_source_copy)
-            if '高清' in channel_source['name']:
+            if onlyHd:
+                channel_source['name'] = build_channel_name_hd(
+                    channel_source['name'])
+            else:
+                channel_source['name'] = build_channel_name(
+                    channel_source['name'])
+            # channel_source_copy = copy.deepcopy(channel_source)
+            # source_types['全部'].append(channel_source_copy)
+
+            if '高清' in channel_source['name'] and not onlyHd:
                 source_types['高清频道'].append(channel_source)
             if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
                 source_types['央视频道'].append(channel_source)
@@ -515,6 +547,7 @@ if __name__ == "__main__":
     province_code = 'guangdong'
     host_url = '120.87.11.25'
     config = None
+    onlyHd = False
     with open(config_path, 'r', encoding='utf-8') as file:
         config = json.load(file)
     if 'authUrl' in config:
@@ -525,6 +558,10 @@ if __name__ == "__main__":
         is_check_url_available = bool(config['isCheckUrlAvailable'])
     if 'isTestSpeed' in config:
         isTestSpeed = bool(config['isTestSpeed'])
+    if 'onlyHd' in config:
+        onlyHd = bool(config['onlyHd'])
+    if 'localUrl' in config:
+        localUrl = str(config['localUrl'])
 
     logger = init_logger(config['logPath'])
 
