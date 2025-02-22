@@ -403,6 +403,7 @@ def build_channel_name(name):
 def build_channel_name_hd(name):
     name = re.sub(r'高清', '', name)
     name = re.sub(r'-', '', name)
+    name = name.replace('福建东南卫视', '东南卫视')
     if 'CCTV' in name:
         result = re.findall(r'(CCTV\d+\+?)', name)
         name = ''.join(result)
