@@ -402,7 +402,11 @@ def build_channel_name(name):
 
 def build_channel_name_hd(name):
     name = re.sub(r'高清', '', name)
-    name = re.findall(r'(CCTV\d+\+)', name)
+    name = re.sub(r'-', '', name)
+    if 'CCTV' in name:
+        result = re.findall(r'(CCTV\d+\+?)', name)
+        name = ''.join(result)
+
     return name
 
 
@@ -473,16 +477,16 @@ def build_txt_file(channel_name, dict_sources):  # 保存txt数据
 
 def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
     if dict_sources is not None and len(dict_sources) > 0:
-        m3u8_string = '#EXTM3U\n'
+        m3u8_string = '#EXTM3U x-tvg-url="https://epg.zsdc.eu.org/t.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"\n'
         have_channel = False
         for key, value in dict_sources.items():
             for item in value:
                 have_channel = True
-                m3u8_string += f"#EXTINF:-1 group-title=\"{key}\",{item['name']}\n{item['url']}\n"
+                m3u8_string += f'#EXTINF:-1 tvg-id="{item["name"]}" tvg-name="{item["name"]}" tvg-logo="https://epg.112114.xyz/logo/{item["name"]}.png" group-title="{key}",{item["name"]}\n{item["url"]}\n'
         if have_channel:
             if not os.path.exists('sources'):
                 os.mkdir('sources')
-            with open(f"sources/{channel_name}.m3u8", "w", encoding='utf-8') as file:
+            with open(f"sources/{channel_name}.m3u", "w", encoding='utf-8') as file:
                 file.write(m3u8_string)
 
 

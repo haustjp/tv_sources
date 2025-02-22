@@ -1,6 +1,0 @@
-{
-    "timeout": 5,
-    "isTestSpeed": false,
-    "isCheckUrlAvailable": true,
-    "logPath": "logs/tv_sources.log"
-}
