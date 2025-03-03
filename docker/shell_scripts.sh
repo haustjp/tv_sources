@@ -37,11 +37,11 @@ function initTvSources() {
 
     # 清理日志
     echo -e "\n# 每3天的23:50分清理一次日志" >>${mergedListFile}
-    echo "50 23 */3 * * rm -rf /scripts/logs/*.log" >>${mergedListFile}
+    echo "50 23 */6 * * rm -rf /scripts/logs/*.log" >>${mergedListFile}
 
     # IPTV自动抓取
     echo -e "\n# IPTV自动抓取脚本" >>${mergedListFile}
-    echo "30 0 */6 * * sh /scripts/custom/auto_run_iptv.sh >>/scripts/logs/auto_run_iptv.log 2>&1" >>${mergedListFile}
+    echo "30 0 */3 * * sh /scripts/custom/auto_run_iptv.sh >>/scripts/logs/auto_run_iptv.log 2>&1" >>${mergedListFile}
 }
 
 initTvSources

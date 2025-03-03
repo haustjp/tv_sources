@@ -159,8 +159,13 @@ if __name__ == "__main__":
     dict_sources = read_channel_sources_form_txt(
         'D:\\iptvcheck\\live\\bjyd_20250223103700\\bjyd_20250223103700.txt')
 
+    dict_sources1 = read_channel_sources_form_txt(
+        'D:\\iptvcheck\\live\\北京移动IPTV.txt')
+
+    dict_sources.extend(dict_sources1)
+
     source_types = build_channel_sources(dict_sources)
 
-    build_json_file('chinaunionm', source_types)
-    build_txt_file('chinaunionm', source_types)
-    build_m3u8_file('chinaunionm', source_types)
+    build_json_file('bptv', source_types)
+    build_txt_file('bptv', source_types)
+    build_m3u8_file('bptv', source_types)
