@@ -479,7 +479,7 @@ def build_txt_file(channel_name, dict_sources):  # 保存txt数据
 
 def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
     if dict_sources is not None and len(dict_sources) > 0:
-        m3u8_string = '#EXTM3U x-tvg-url="https://epg.112114.xyz/pp.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"\n'
+        m3u8_string = '#EXTM3U x-tvg-url="https://epg.zsdc.eu.org/t.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"\n'
         have_channel = False
         for key, value in dict_sources.items():
             for item in value:
