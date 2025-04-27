@@ -13,6 +13,7 @@ import time
 import logging
 import platform
 import copy
+import cv2
 
 
 logger: Logger = None
@@ -173,10 +174,9 @@ def get_local_list():
                     line = line.strip()
                     source['url'] = line
                     line_type = 0
+                    source['is_hd'] = check_source_ishd(source['url'])
                     sources.append(source)
                     source = {}
-    if onlyHd:
-        sources = [item for item in sources if '高清' in item['name']]
 
     return sources
 
@@ -232,12 +232,12 @@ def build_channel_info(channel_list_data, all_channels_data):
 
         channel_name = channel_info['title']
         timeshift_url = item['timeshifturl']
+        is_hd = check_source_ishd(timeshift_url)
         sources.append({
             'name': channel_name.replace(" ", ""),
-            'url': timeshift_url
+            'url': timeshift_url,
+            'is_hd': is_hd
         })
-    if onlyHd:
-        sources = [item for item in sources if '高清' in item['name']]
 
     return sources
 
@@ -404,6 +404,7 @@ def build_channel_name_hd(name):
     name = re.sub(r'4K超高清', '', name)
     name = re.sub(r'高清', '', name)
     name = re.sub(r'-', '', name)
+    name = re.sub(r'超清', '', name)
     name = name.replace('福建东南卫视', '东南卫视')
     if 'CCTV' in name:
         result = re.findall(r'(CCTV\d+\+?)', name)
@@ -413,8 +414,8 @@ def build_channel_name_hd(name):
 
 
 def build_channel_sources(channel_sources):
-    # new_key_value = {'a': 1}
-    # original_dict = {**new_key_value, **original_dict}
+    if onlyHd:
+        channel_sources = [item for item in channel_sources if item['is_hd']]
     source_types = {
         '央视频道': [],
         '卫视频道': [],
@@ -437,7 +438,7 @@ def build_channel_sources(channel_sources):
             # channel_source_copy = copy.deepcopy(channel_source)
             # source_types['全部'].append(channel_source_copy)
 
-            if '高清' in channel_source['name'] and not onlyHd:
+            if channel_source['is_hd'] and not onlyHd:
                 source_types['高清频道'].append(channel_source)
             if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
                 source_types['央视频道'].append(channel_source)
@@ -547,6 +548,27 @@ def check_url_available(source_name, sources):
             logger.error(
                 f"{source_name}-出错-{i['name']}-{i['url']}{ex}")
     return available_sources
+
+
+def check_source_ishd(url):
+    width, height = get_video_resolution(url)
+
+    if not width or not height or int(height) < 1080:
+        return False
+
+    return True
+
+
+def get_video_resolution(url):
+    cap = cv2.VideoCapture(url)
+    if not cap.isOpened():
+        return None, None
+
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    cap.release()
+
+    return width, height
 
 
 if __name__ == "__main__":
