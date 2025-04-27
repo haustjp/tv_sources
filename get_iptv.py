@@ -483,7 +483,7 @@ def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
         for key, value in dict_sources.items():
             for item in value:
                 have_channel = True
-                m3u8_string += f'#EXTINF:-1 tvg-id="{item["name"]}" tvg-name="{item["name"]}" tvg-logo="https://epg.112114.xyz/logo/{item["name"]}.png" group-title="{key}",{item["name"]}\n{item["url"]}\n'
+                m3u8_string += f'#EXTINF:-1 tvg-id="{item["name"]}" tvg-name="{item["name"]}" tvg-logo="https://live.fanmingming.cn/tv/{item["name"]}.png" group-title="{key}",{item["name"]}\n{item["url"]}\n'
         if have_channel:
             if not os.path.exists('sources'):
                 os.mkdir('sources')
