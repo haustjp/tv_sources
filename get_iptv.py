@@ -401,6 +401,7 @@ def build_channel_name(name):
 
 
 def build_channel_name_hd(name):
+    name = re.sub(r'4K超高清', '', name)
     name = re.sub(r'高清', '', name)
     name = re.sub(r'-', '', name)
     name = name.replace('福建东南卫视', '东南卫视')
