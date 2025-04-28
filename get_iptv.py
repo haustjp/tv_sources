@@ -569,6 +569,10 @@ def check_source_ishd(channel_source):
 
     channel_source['is_hd'] = isHd
     channel_source['resolution'] = f'{width}x{height}'
+
+    logger.info(
+        f"{channel_source['name']}-{channel_source['is_hd']}-{channel_source['resolution']}")
+
     return channel_source
 
 
