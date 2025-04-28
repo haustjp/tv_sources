@@ -1,6 +1,4 @@
 beautifulsoup4==4.13.4
-opencv_python==4.11.0.86
-opencv_python_headless==4.8.1.78
 pycryptodome==3.18.0
 Requests==2.32.3
 urllib3==2.4.0

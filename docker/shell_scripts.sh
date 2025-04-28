@@ -28,11 +28,9 @@ function initTvSources() {
     fi
 
     if [ $hh -eq 11 ] || [ $hh -eq 23 ] || [ ! -f "/root/tv_sources.lock" ]; then
-        # 安装OpenCV
-        apk add --no-cache build-base cmake linux-headers jpeg-dev zlib-dev
-        apk add --no-cache libjpeg-turbo-dev libpng-dev tiff-dev libwebp-dev
-        apk add --no-cache openblas-dev libffi-dev ffmpeg-dev python3-dev
-        pip3 install -r /scripts/tv_sources/requirements.txt --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple
+        # 安装ffmpeg
+        apk add --no-cache ffmpeg
+        pip3 install -r /scripts/tv_sources/requirements.txt
         echo '' >/root/tv_sources.lock
     else
         echo "本次不执行安装tv_sources依赖，跳过..."
