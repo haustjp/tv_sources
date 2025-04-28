@@ -1,19 +1,15 @@
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
-from requests import Response
-from urllib.parse import urlparse, parse_qs
-from urllib import parse
+from urllib.parse import urlparse
 import json
 import requests
 import re
 import os
 import sys
-import getopt
-import time
 import logging
 import platform
-import copy
-import cv2
+import subprocess
+import concurrent.futures
 
 
 logger: Logger = None
@@ -174,7 +170,7 @@ def get_local_list():
                     line = line.strip()
                     source['url'] = line
                     line_type = 0
-                    source['is_hd'] = check_source_ishd(source['url'])
+                    # source['is_hd'] = check_source_ishd(source['url'])
                     sources.append(source)
                     source = {}
 
@@ -232,11 +228,11 @@ def build_channel_info(channel_list_data, all_channels_data):
 
         channel_name = channel_info['title']
         timeshift_url = item['timeshifturl']
-        is_hd = check_source_ishd(timeshift_url)
+        # is_hd = check_source_ishd(timeshift_url)
         sources.append({
             'name': channel_name.replace(" ", ""),
             'url': timeshift_url,
-            'is_hd': is_hd
+            'is_hd': False
         })
 
     return sources
@@ -550,25 +546,63 @@ def check_url_available(source_name, sources):
     return available_sources
 
 
-def check_source_ishd(url):
+def check_sources_ishd(channel_sources):
+    if not channels_sources or len(channels_sources) <= 0:
+        return channels_sources
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        tasks = []
+        for channel_source in channel_sources:
+            future = executor.submit(check_source_ishd, channel_source)
+            tasks.append(future)
+        for future in concurrent.futures.as_completed(tasks):
+            result = future.result()
+
+
+def check_source_ishd(channel_source):
+    if not channel_source or len(channel_source) <= 0:
+        return channel_source
+    url = channel_source['url']
     width, height = get_video_resolution(url)
+    isHd = False
+    if width and height and int(height) >= 1080:
+        isHd = True
 
-    if not width or not height or int(height) < 1080:
-        return False
+    channel_source['is_hd'] = isHd
+    channel_source['resolution'] = f'{width}x{height}'
+    return channel_source
 
-    return True
 
+def get_video_resolution(url: str, headers: dict = None) -> str | None:
+    """
+    Get the resolution of the url by ffprobe
+    """
+    width = None
+    height = None
+    try:
+        probe_args = [
+            'ffprobe',
+            '-v', 'error',
+            '-headers', ''.join(f'{k}: {v}\r\n' for k,
+                                v in headers.items()) if headers else '',
+            '-select_streams', 'v:0',
+            '-show_entries', 'stream=width,height',
+            "-of", 'json',
+            url
+        ]
+        result = subprocess.run(
+            probe_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if result.returncode != 0:
+            print("Error:", result.stderr.decode())
+            return None
 
-def get_video_resolution(url):
-    cap = cv2.VideoCapture(url)
-    if not cap.isOpened():
-        return None, None
+        info = json.loads(result.stdout)
+        width = info['streams'][0]['width']
+        height = info['streams'][0]['height']
 
-    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    cap.release()
-
-    return width, height
+    except Exception as ex:
+        print(f'出错-{ex}')
+    finally:
+        return width, height
 
 
 if __name__ == "__main__":
@@ -604,6 +638,8 @@ if __name__ == "__main__":
     local_sources = get_local_list()
 
     channels_sources.extend(local_sources)
+
+    check_sources_ishd(channels_sources)
 
     dict_sources = build_channel_sources(channels_sources)
 
