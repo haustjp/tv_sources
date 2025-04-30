@@ -594,7 +594,7 @@ def get_video_resolution(url: str, headers: dict = None) -> str | None:
             url
         ]
         result = subprocess.run(
-            probe_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            probe_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10)
         if result.returncode != 0:
             print("Error:", result.stderr.decode())
             return None
