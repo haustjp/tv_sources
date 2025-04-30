@@ -170,7 +170,6 @@ def get_local_list():
                     line = line.strip()
                     source['url'] = line
                     line_type = 0
-                    # source['is_hd'] = check_source_ishd(source['url'])
                     sources.append(source)
                     source = {}
 
@@ -228,7 +227,6 @@ def build_channel_info(channel_list_data, all_channels_data):
 
         channel_name = channel_info['title']
         timeshift_url = item['timeshifturl']
-        # is_hd = check_source_ishd(timeshift_url)
         sources.append({
             'name': channel_name.replace(" ", ""),
             'url': timeshift_url,
@@ -546,14 +544,24 @@ def check_url_available(source_name, sources):
     return available_sources
 
 
+def check_source_ishd_by_name(channel_source):
+    name = channel_source['name']
+    is_hd = False
+    if '4K' in name or '超高清' in name or '超清' in name or '高清' in name:
+        is_hd = True
+
+    return is_hd
+
+
 def check_sources_ishd(channel_sources):
     if not channels_sources or len(channels_sources) <= 0:
         return channels_sources
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         tasks = []
         for channel_source in channel_sources:
-            future = executor.submit(check_source_ishd, channel_source)
-            tasks.append(future)
+            if channel_source['is_hd']:
+                future = executor.submit(check_source_ishd, channel_source)
+                tasks.append(future)
         for future in concurrent.futures.as_completed(tasks):
             result = future.result()
 
@@ -643,6 +651,7 @@ if __name__ == "__main__":
 
     channels_sources.extend(local_sources)
 
+    check_source_ishd_by_name(channels_sources)
     check_sources_ishd(channels_sources)
 
     dict_sources = build_channel_sources(channels_sources)
