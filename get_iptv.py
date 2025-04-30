@@ -547,6 +547,7 @@ def check_url_available(source_name, sources):
 def check_source_ishd_by_name(channel_sources):
     for channel_source in channel_sources:
         name = channel_source['name']
+        channel_source['is_hd'] = False
         if '4K' in name or '超高清' in name or '超清' in name or '高清' in name:
             channel_source['is_hd'] = True
 
