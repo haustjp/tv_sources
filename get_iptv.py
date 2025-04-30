@@ -557,7 +557,7 @@ def check_sources_ishd(channel_sources):
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         tasks = []
         for channel_source in channel_sources:
-            if channel_source['is_hd']:
+            if not channel_source['is_hd']:
                 future = executor.submit(check_source_ishd, channel_source)
                 tasks.append(future)
         for future in concurrent.futures.as_completed(tasks):
