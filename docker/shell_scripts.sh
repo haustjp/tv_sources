@@ -44,6 +44,10 @@ function initTvSources() {
     # IPTV自动抓取
     echo -e "\n# IPTV自动抓取脚本" >>${mergedListFile}
     echo "30 0 */3 * * sh /scripts/custom/auto_run_iptv.sh >>/scripts/logs/auto_run_iptv.log 2>&1" >>${mergedListFile}
+
+    # llb
+    echo -e "\n# 签到脚本" >>${mergedListFile}
+    echo "15 8 * * * python /scripts/custom/sign_task.py >>/scripts/logs/sign_task.log 2>&1" >>${mergedListFile}
 }
 
 initTvSources
