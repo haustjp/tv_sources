@@ -17,11 +17,18 @@ config_path = os.environ.get('CONFIG_PATH')
 authUrl: str = None
 host_url: str = '120.87.11.25:33200'
 all_channels_url: str = 'http://120.87.12.38:8083/epg/api/custom/getAllChannel.json'
+channelIndex_url: str = 'http://120.87.12.38:8083/epg/api/custom/channelIndex.json'
 is_check_url_available = bool(False)
 timeout: int = int(5)
 isTestSpeed = bool(False)
 onlyHd = bool(False)
 localUrl: str = None
+
+headers = {
+    'host': '120.87.12.38:8083',
+    'User-Agent': 'okhttp/3.10.0',
+    'Content-Type': f'application/json'
+}
 
 
 def get_os():
@@ -59,31 +66,106 @@ def init_logger(logPath: str):
     return logger
 
 
-def get_all_channels():
-    headers = {
-        'host': '120.87.12.38:8083',
-        'User-Agent': 'okhttp/3.10.0',
-        'Content-Type': f'application/json'
-    }
-    response = requests.get(all_channels_url, headers=headers)
-    all_channels_data = response.json()
-    if not os.path.exists('sources'):
-        os.mkdir('sources')
-    with open('sources/all_channels_data.json', 'w', encoding='UTF-8') as f:
-        json.dump(all_channels_data, f, ensure_ascii=False)
+def get_channelIndex(useRemote: bool = False):
+    file_path = 'sources/channelIndex.json'
+    channel_index_data = None
+    target_item_list = []
+    all_channel_list = []
+    all_channel_params = []
 
-    if all_channels_data['status'] != '200' or 'channels' not in all_channels_data:
-        logger.error('错误：无法获取频道列表或频道列表格式错误')
-        sys.exit(1)
+    if useRemote:
+        response = requests.get(channelIndex_url, headers=headers)
+        channel_index_data = response.json()
+        if not os.path.exists('sources'):
+            os.mkdir('sources')
+        with open(file_path, 'w', encoding='UTF-8') as f:
+            json.dump(channel_index_data, f, ensure_ascii=False)
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        channel_index_data = json.load(f)
+
+    if channel_index_data is not None:
+        area_datas_list = channel_index_data.get("areaDatas", [])
+        target_obj_list = [
+            item for item in area_datas_list if item.get("areaCode") == "1"]
+        if target_obj_list is not None and len(target_obj_list) > 0:
+            for obj in target_obj_list:
+                target_item_list.extend(obj.get("items", []))
+
+    # 遍历处理频道分类
+    for target_item in target_item_list:
+        biz_items = []
+        biz_path = target_item.get("dataLink", None)
+        biz_item_code = target_item.get("itemCode", None)
+        biz_item_title = target_item.get("itemTitle", None)
+        channel_list = {
+            "channel_type_title": biz_item_title,
+            "channel_type_url": biz_path,
+            "channel_type_code": biz_item_code,
+            "channel_list": [],
+        }
+        if biz_path is None:
+            continue
+        biz_data = None
+        response = requests.get(url=biz_path, headers=headers, timeout=10)
+        if response.status_code == 200:
+            biz_data = response.json()
+            # with open(f'sources/{biz_item_code}.json', 'w', encoding='UTF-8') as f:
+            #     json.dump(biz_data, f, ensure_ascii=False)
+
+        if biz_data is not None:
+            for obj in biz_data.get("areaDatas", []):
+                biz_items.extend(obj.get("items", []))
+            # logger.info(
+            #     f'{biz_item_code}_items-{json.dumps(biz_items, ensure_ascii=False)}')
+
+        # 处理分类下频道
+        for item in biz_items:
+            dataLink = item.get('dataLink', None)
+            itemCode = item.get('itemCode', None)
+            itemTitle = item.get('itemTitle', None)
+
+            target_item = [
+                item for item in all_channel_params if item.get("itemId") == itemCode]
+
+            if target_item and len(target_item) > 0:
+                channel_list["channel_list"].append(target_item[0])
+                continue
+
+            response = requests.get(
+                url=dataLink, headers=headers, timeout=10)
+            if response.status_code == 200:
+                res_json = response.json()
+                hwcode = res_json.get("channel", {}).get(
+                    "params", {}).get("hwcode")
+                if hwcode:
+                    channel_item = {
+                        "itemId": itemCode,
+                        "itemTitle": itemTitle,
+                        "dataLink": dataLink,
+                        "hwcode": hwcode
+                    }
+                    all_channel_params.append(channel_item)
+                    channel_list["channel_list"].append(channel_item)
+
+        # with open(f'sources/{biz_item_code}_hwcode.json', 'w', encoding='UTF-8') as f:
+        #     json.dump(channel_list, f, ensure_ascii=False)
+        # logger.info(
+        #     f'hwcode_list-{json.dumps(channel_list, ensure_ascii=False)}')
+
+        all_channel_list.append(channel_list)
+
+    with open(f'sources/all_channel_list.json', 'w', encoding='UTF-8') as f:
+        json.dump(all_channel_list, f, ensure_ascii=False)
 
     # 提取频道代码
-    channel_codes = [channel['params']['hwcode'] for channel in all_channels_data['channels']
-                     if 'params' in channel and 'hwcode' in channel['params']]
-    channel_codes_str = ','.join(channel_codes)
+    channel_codes = [item.get(
+        "hwcode") for obj in all_channel_list for item in obj.get("channel_list", [])]
 
-    channels_data = all_channels_data['channels']
+    # 去重
+    channel_codes = list(set(channel_codes))
 
-    return channels_data, channel_codes_str
+    return channel_codes, all_channel_list
 
 
 def get_access_token():
@@ -102,7 +184,7 @@ def get_access_token():
     return access_token
 
 
-def get_channel_list(access_token: str, channel_codes_str: str):
+def get_channel_list(access_token: str, channel_codes: list):
     # 使用访问令牌请求数据
     headers = {
         'Authorization': access_token,
@@ -110,27 +192,29 @@ def get_channel_list(access_token: str, channel_codes_str: str):
         'Connection': 'Keep-Alive',
         'Content-Type': 'application/json;charset=utf-8'
     }
-    data = json.dumps({"channelcodes": channel_codes_str})
-    # 请修改此处IP，确保与鉴权URL的IP一致
-    response = requests.post(
-        "http://120.87.11.25:33200/EPG/interEpg/channellist/batch", headers=headers, data=data)
 
-    channel_list_response = response.json()
+    batch_size = 50
+    channel_list = []
+    for i in range(0, len(channel_codes), batch_size):
+        batch = channel_codes[i:i+batch_size]
+        channel_codes_str = ','.join(batch)
+        data = json.dumps({"channelcodes": channel_codes_str})
+        # 请修改此处IP，确保与鉴权URL的IP一致
+        response = requests.post(
+            "http://120.87.11.25:33200/EPG/interEpg/channellist/batch", headers=headers, data=data)
+        if response.status_code == 200:
+            channel_list_response = response.json()
 
-    if not channel_list_response:
-        logger.error('错误：返回的数据为空')
-        sys.exit(1)
+            if channel_list_response and channel_list_response.get('channellist'):
+                channel_list.extend(channel_list_response['channellist'])
 
-    if not channel_list_response.get('channellist'):
-        logger.error('错误：channellist 数据为空')
-        sys.exit(1)
     if not os.path.exists('sources'):
         os.mkdir('sources')
     # 保存响应数据到文件
     with open('sources/channel_list_data.json', 'w', encoding='UTF-8') as f:
-        json.dump(channel_list_response, f, ensure_ascii=False)
+        json.dump(channel_list, f, ensure_ascii=False)
 
-    return channel_list_response['channellist']
+    return channel_list
 
 
 def get_local_list():
@@ -216,24 +300,20 @@ def get_double_list():
     return sources
 
 
-def build_channel_info(channel_list_data, all_channels_data):
-    sources = []
-    for item in channel_list_data:
-        hwcode = item['channelcode']
-        channel_info = next((ch for ch in all_channels_data if ch['params'].get(
-            'hwcode') == hwcode), None)
-        if not channel_info:
-            continue
+def build_channel_info(channel_url_list, all_channels_data):
+    for channel_data in all_channels_data:
+        channel_list = channel_data.get('channel_list', [])
+        for channel in channel_list:
+            code = channel.get('hwcode', None)
+            itemTitle = channel.get('itemTitle', None)
+            if code:
+                channel_url = [item for item in channel_url_list if item.get(
+                    "channelcode") == code]
+                if channel_url and len(channel_url) > 0:
+                    channel['url'] = channel_url[0]['timeshifturl']
+                    channel['logo'] = build_channel_logo_name(itemTitle)
 
-        channel_name = channel_info['title']
-        timeshift_url = item['timeshifturl']
-        sources.append({
-            'name': channel_name.replace(" ", ""),
-            'url': timeshift_url,
-            'is_hd': False
-        })
-
-    return sources
+    return all_channels_data
 
 
 def build_channel_name(name):
@@ -394,6 +474,118 @@ def build_channel_name(name):
     return name
 
 
+def build_channel_logo_name(name: str):
+    if name:
+        # 删除特定文字
+        name = name.replace("cctv", "CCTV")
+        name = name.replace("中央", "CCTV")
+        name = name.replace("央视", "CCTV")
+        name = name.replace("测试", "")
+        name = name.replace("超高", "高清")
+        name = name.replace("超清", "高清")
+        name = name.replace("HD", "高清")
+        name = name.replace("标清", "")
+        name = name.replace("频道", "")
+        name = name.replace("-", "")
+        name = name.replace(" ", "")
+        name = name.replace("PLUS", "+")
+        name = name.replace("＋", "+")
+        name = name.replace("(", "")
+        name = name.replace(")", "")
+        name = name.replace("测试", "")
+        name = re.sub(r"CCTV(\d+)台", r"CCTV\1&", name)
+        name = re.sub(r'\d+', lambda x: x.group() + '&', name)
+        name = name.replace("CCTV1综合", "CCTV1&")
+        name = name.replace("CCTV2财经", "CCTV2&")
+        name = name.replace("CCTV3综艺", "CCTV3&")
+        name = name.replace("CCTV4国际", "CCTV4&")
+        name = name.replace("CCTV4中文国际", "CCTV4&")
+        name = name.replace("CCTV4欧洲", "CCTV4&")
+        name = name.replace("CCTV5体育", "CCTV5&")
+        name = name.replace("CCTV6电影", "CCTV6&")
+        name = name.replace("CCTV7军事", "CCTV7&")
+        name = name.replace("CCTV7军农", "CCTV7&")
+        name = name.replace("CCTV7农业", "CCTV7&")
+        name = name.replace("CCTV7国防军事", "CCTV7&")
+        name = name.replace("CCTV8电视剧", "CCTV8&")
+        name = name.replace("CCTV9记录", "CCTV9&")
+        name = name.replace("CCTV9纪录", "CCTV9&")
+        name = name.replace("CCTV10科教", "CCTV10&")
+        name = name.replace("CCTV11戏曲", "CCTV11&")
+        name = name.replace("CCTV12社会与法", "CCTV12&")
+        name = name.replace("CCTV13新闻", "CCTV13&")
+        name = name.replace("CCTV新闻", "CCTV13&")
+        name = name.replace("CCTV14少儿", "CCTV14&")
+        name = name.replace("CCTV15音乐", "CCTV15&")
+        name = name.replace("CCTV16奥林匹克", "CCTV16&")
+        name = name.replace("CCTV17农业农村", "CCTV17&")
+        name = name.replace("CCTV17农业", "CCTV17&")
+        name = name.replace("CCTV5+体育赛视", "CCTV5+&")
+        name = name.replace("CCTV5+体育赛事", "CCTV5+&")
+        name = name.replace("CCTV5+体育", "CCTV5+&")
+        if "CCTV-1&" in name or "CCTV1&" in name:
+            name = "CCTV1"
+
+        if "CCTV-2&" in name or "CCTV2&" in name:
+            name = "CCTV2"
+
+        if "CCTV-3&" in name or "CCTV3&" in name:
+            name = "CCTV3"
+
+        if "CCTV-4&" in name or "CCTV4&" in name:
+            iname = "CCTV4"
+
+        if ("CCTV-5&" in name or "CCTV5&" in name) and not ("CCTV-5&+" in name or "CCTV5&+" in name):
+            name = "CCTV5"
+        elif ("CCTV-5&+" in name or "CCTV5&+" in name):
+            name = "CCTV5+"
+
+        if "CCTV-6&" in name or "CCTV6&" in name:
+            name = "CCTV6"
+
+        if "CCTV-7&" in name or "CCTV7&" in name:
+            name = "CCTV7"
+
+        if "CCTV-8&" in name or "CCTV8&" in name:
+            name = "CCTV8"
+
+        if "CCTV-9&" in name or "CCTV9&" in name:
+            name = "CCTV8"
+
+        if "CCTV-10&" in name or "CCTV10&" in name:
+            name = "CCTV10"
+
+        if "CCTV-11&" in name or "CCTV11&" in name:
+            name = "CCTV11"
+
+        if "CCTV-12&" in name or "CCTV12&" in name:
+            name = "CCTV12"
+
+        if "CCTV-13&" in name or "CCTV13&" in name:
+            name = "CCTV13"
+
+        if "CCTV-14&" in name or "CCTV14&" in name:
+            name = "CCTV14"
+
+        if "CCTV-15&" in name or "CCTV15&" in name:
+            name = "CCTV15"
+
+        if "CCTV-16&" in name or "CCTV16&" in name:
+            name = "CCTV16"
+
+        if "CCTV-17&" in name or "CCTV17&" in name:
+            name = "CCTV17"
+
+        name = name.replace('&', '').upper()
+
+        if '广东4K' in name:
+            name = '广东卫视'
+        if '4K' in name:
+            name = name.split('4K')[0]
+
+    return name
+
+
 def build_channel_name_hd(name):
     name = re.sub(r'4K超高清', '', name)
     name = re.sub(r'高清', '', name)
@@ -446,26 +638,25 @@ def build_channel_sources(channel_sources):
 
 def build_json_file(channel_name, dict_sources):  # 保存json数据
     if dict_sources is not None and len(dict_sources) > 0:
-        have_channel = False
-        for key, value in dict_sources.items():
-            for item in value:
-                have_channel = True
-        if have_channel:
-            if not os.path.exists('sources'):
-                os.mkdir('sources')
-            json_string = json.dumps(dict_sources, ensure_ascii=False)
-            with open(f"sources/{channel_name}.json", "w", encoding='utf-8') as file:
-                file.write(json_string)
+        if not os.path.exists('sources'):
+            os.mkdir('sources')
+        json_string = json.dumps(dict_sources, ensure_ascii=False)
+        with open(f"sources/{channel_name}.json", "w", encoding='utf-8') as file:
+            file.write(json_string)
 
 
 def build_txt_file(channel_name, dict_sources):  # 保存txt数据
     if dict_sources is not None and len(dict_sources) > 0:
         txt_string = ''
-        for key, value in dict_sources.items():
+        for dict_source in dict_sources:
+            key = dict_source.get('channel_type_title', '')
+            value = dict_source.get('channel_list', '')
             txt_string += f'{key},#genre#\n'
             for item in value:
-                txt_string += f"{item['name']},{item['url']}\n"
-        if len(txt_string) > 0:
+                if item.get('url', None):
+                    have_channel = True
+                    txt_string += f"{item["itemTitle"]},{item['url']}\n"
+        if have_channel:
             if not os.path.exists('sources'):
                 os.mkdir('sources')
             with open(f"sources/{channel_name}.txt", "w", encoding='utf-8') as file:
@@ -476,10 +667,13 @@ def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
     if dict_sources is not None and len(dict_sources) > 0:
         m3u8_string = '#EXTM3U x-tvg-url="https://epg.zsdc.eu.org/t.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"\n'
         have_channel = False
-        for key, value in dict_sources.items():
+        for dict_source in dict_sources:
+            key = dict_source.get('channel_type_title', '')
+            value = dict_source.get('channel_list', '')
             for item in value:
-                have_channel = True
-                m3u8_string += f'#EXTINF:-1 tvg-id="{item["name"]}" tvg-name="{item["name"]}" tvg-logo="https://live.fanmingming.cn/tv/{item["name"]}.png" group-title="{key}",{item["name"]}\n{item["url"]}\n'
+                if item.get('url', None):
+                    have_channel = True
+                    m3u8_string += f'#EXTINF:-1 tvg-id="{item["itemId"]}" tvg-name="{item["itemTitle"]}" tvg-logo="https://gh-proxy.org/https://github.com/fanmingming/live/blob/main/tv/{item["logo"]}.png" group-title="{key}",{item["itemTitle"]}\n{item["url"]}\n'
         if have_channel:
             if not os.path.exists('sources'):
                 os.mkdir('sources')
@@ -612,8 +806,8 @@ def get_video_resolution(url: str, headers: dict = None) -> str | None:
 
     except Exception as ex:
         print(f'出错-{ex}')
-    finally:
-        return width, height
+
+    return width, height
 
 
 if __name__ == "__main__":
@@ -638,23 +832,23 @@ if __name__ == "__main__":
 
     logger = init_logger(config['logPath'])
 
-    channels_data, channel_codes_str = get_all_channels()
+    channel_codes, all_channel_list = get_channelIndex(True)
 
     access_token = get_access_token()
 
-    channels_list = get_channel_list(access_token, channel_codes_str)
+    channels_list = get_channel_list(access_token, channel_codes)
 
-    channels_sources = build_channel_info(channels_list, channels_data)
+    channels_sources = build_channel_info(channels_list, all_channel_list)
 
-    local_sources = get_local_list()
+    # local_sources = get_local_list()
 
-    channels_sources.extend(local_sources)
+    # channels_sources.extend(local_sources)
 
-    check_source_ishd_by_name(channels_sources)
-    check_sources_ishd(channels_sources)
+    # check_source_ishd_by_name(channels_sources)
+    # check_sources_ishd(channels_sources)
 
-    dict_sources = build_channel_sources(channels_sources)
+    # dict_sources = build_channel_sources(channels_sources)
 
-    build_json_file(province_code, dict_sources)
-    build_txt_file(province_code, dict_sources)
-    build_m3u8_file(province_code, dict_sources)
+    build_json_file(province_code, channels_sources)
+    build_txt_file(province_code, channels_sources)
+    build_m3u8_file(province_code, channels_sources)
