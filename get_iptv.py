@@ -655,7 +655,7 @@ def build_txt_file(channel_name, dict_sources):  # 保存txt数据
             for item in value:
                 if item.get('url', None):
                     have_channel = True
-                    txt_string += f"{item["itemTitle"]},{item['url']}\n"
+                    txt_string += f"{item['itemTitle']},{item['url']}\n"
         if have_channel:
             if not os.path.exists('sources'):
                 os.mkdir('sources')
