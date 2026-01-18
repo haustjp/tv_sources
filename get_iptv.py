@@ -500,6 +500,7 @@ def build_channel_logo_name(name: str):
         name = name.replace("CCTV3综艺", "CCTV3&")
         name = name.replace("CCTV4国际", "CCTV4&")
         name = name.replace("CCTV4中文国际", "CCTV4&")
+        name = name.replace("CCTV4高清", "CCTV4&")
         name = name.replace("CCTV4欧洲", "CCTV4&")
         name = name.replace("CCTV5体育", "CCTV5&")
         name = name.replace("CCTV6电影", "CCTV6&")
