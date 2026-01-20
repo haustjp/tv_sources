@@ -581,6 +581,9 @@ def build_channel_logo_name(name: str):
 
         name = name.replace('&', '').upper()
 
+        if '东南卫视' in name:
+            name = '东南卫视'
+
         if '广东4K' in name:
             name = '广东卫视'
         if '4K' in name:
