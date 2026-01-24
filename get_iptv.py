@@ -477,6 +477,8 @@ def build_channel_name(name):
 def build_channel_logo_name(name: str):
     if name:
         # 删除特定文字
+        if name =='CCTV-4中文国际':
+            t=1
         name = name.replace("cctv", "CCTV")
         name = name.replace("中央", "CCTV")
         name = name.replace("央视", "CCTV")
@@ -496,6 +498,7 @@ def build_channel_logo_name(name: str):
         name = name.replace(")", "")
         name = name.replace("测试", "")
         name = re.sub(r"CCTV(\d+)台", r"CCTV\1&", name)
+        name = name.replace("CCTV4中文国际", "CCTV4")
         name = re.sub(r'\d+', lambda x: x.group() + '&', name)
         name = name.replace("CCTV1综合", "CCTV1&")
         name = name.replace("CCTV2财经", "CCTV2&")
