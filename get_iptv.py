@@ -443,7 +443,8 @@ def build_channel_name(name):
 
         if "CCTV-17&" in name or "CCTV17&" in name:
             name = "CCTV-17"
-
+        
+        name = name.replace('-', '').upper()
         name = name.replace('&', '').upper()
 
         if '东南卫视' in name:
