@@ -1,6 +1,6 @@
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 import json
 import requests
 import re
@@ -23,6 +23,7 @@ timeout: int = int(5)
 isTestSpeed = bool(False)
 onlyHd = bool(False)
 localUrl: str = None
+forver_auth_info: str = None
 
 headers = {
     'host': '120.87.12.38:8083',
@@ -310,10 +311,35 @@ def build_channel_info(channel_url_list, all_channels_data):
                 channel_url = [item for item in channel_url_list if item.get(
                     "channelcode") == code]
                 if channel_url and len(channel_url) > 0:
-                    channel['url'] = channel_url[0]['timeshifturl']
+                    channel['url'] = build_forver_url_auth(
+                        channel_url[0]['timeshifturl'])
                     channel['logo'] = build_channel_logo_name(itemTitle)
+                    channel['tvg-name'] = build_channel_name(itemTitle)
 
     return all_channels_data
+
+
+def build_forver_url_auth(url: str):
+    if forver_auth_info is not None and len(forver_auth_info) <= 0:
+        return url
+
+    parsed = urlparse(url)
+    path_parts = parsed.path.strip('/').split('/')
+    if path_parts:
+        path_parts = path_parts[:-1]
+
+    new_parsed = urlparse(forver_auth_info)
+    new_path_parts = new_parsed.path.strip('/').split('/')
+    if new_path_parts:
+        path_parts.extend(new_path_parts)
+
+    new_path = '/' + '/'.join(path_parts)
+
+    new_parsed = parsed._replace(path=new_path, query=new_parsed.query)
+
+    new_url = urlunparse(new_parsed)
+
+    return new_url
 
 
 def build_channel_name(name):
@@ -365,120 +391,80 @@ def build_channel_name(name):
         name = name.replace("CCTV5+体育赛视", "CCTV5+&")
         name = name.replace("CCTV5+体育赛事", "CCTV5+&")
         name = name.replace("CCTV5+体育", "CCTV5+&")
+
         if "CCTV-1&" in name or "CCTV1&" in name:
-            if "高清" in name:
-                name = "CCTV-1 综合 高清"
-            else:
-                name = "CCTV-1 综合"
+            name = "CCTV-1"
 
         if "CCTV-2&" in name or "CCTV2&" in name:
-            if "高清" in name:
-                name = "CCTV-2 财经 高清"
-            else:
-                name = "CCTV-2 财经"
+            name = "CCTV-2"
 
         if "CCTV-3&" in name or "CCTV3&" in name:
-            if "高清" in name:
-                name = "CCTV-3 综艺 高清"
-            else:
-                name = "CCTV-3 综艺"
+            name = "CCTV-3"
 
         if "CCTV-4&" in name or "CCTV4&" in name:
-            if "高清" in name:
-                name = "CCTV-4 中文国际 高清"
-            else:
-                name = "CCTV-4 中文国际"
+            name = "CCTV-4"
 
         if ("CCTV-5&" in name or "CCTV5&" in name) and not ("CCTV-5&+" in name or "CCTV5&+" in name):
-            if "高清" in name:
-                name = "CCTV-5 体育 高清"
-            else:
-                name = "CCTV-5 体育"
+            name = "CCTV-5"
+
         elif ("CCTV-5&+" in name or "CCTV5&+" in name):
-            if "高清" in name:
-                name = "CCTV-5+ 体育赛事 高清"
-            else:
-                name = "CCTV-5+ 体育赛事"
+            name = "CCTV-5+"
 
         if "CCTV-6&" in name or "CCTV6&" in name:
-            if "高清" in name:
-                name = "CCTV-6 电影 高清"
-            else:
-                name = "CCTV-6 电影"
+            name = "CCTV-6"
 
         if "CCTV-7&" in name or "CCTV7&" in name:
-            if "高清" in name:
-                name = "CCTV-7 军事农业 高清"
-            else:
-                name = "CCTV-7 军事农业"
+            name = "CCTV-7"
 
         if "CCTV-8&" in name or "CCTV8&" in name:
-            if "高清" in name:
-                name = "CCTV-8 电视剧 高清"
-            else:
-                name = "CCTV-8 电视剧"
-
+            name = "CCTV-8"
         if "CCTV-9&" in name or "CCTV9&" in name:
-            if "高清" in name:
-                name = "CCTV-9 纪录 高清"
-            else:
-                name = "CCTV-9 纪录"
+            name = "CCTV-9 "
 
         if "CCTV-10&" in name or "CCTV10&" in name:
-            if "高清" in name:
-                name = "CCTV-10 科教 高清"
-            else:
-                name = "CCTV-10 科教"
+            name = "CCTV-10"
 
         if "CCTV-11&" in name or "CCTV11&" in name:
-            if "高清" in name:
-                name = "CCTV-11 戏曲 高清"
-            else:
-                name = "CCTV-11 戏曲"
+            name = "CCTV-11"
 
         if "CCTV-12&" in name or "CCTV12&" in name:
-            if "高清" in name:
-                name = "CCTV-12 社会与法 高清"
-            else:
-                name = "CCTV-12 社会与法"
+            name = "CCTV-12"
 
         if "CCTV-13&" in name or "CCTV13&" in name:
-            if "高清" in name:
-                name = "CCTV-13 新闻 高清"
-            else:
-                name = "CCTV-13 新闻"
+            name = "CCTV-13"
 
         if "CCTV-14&" in name or "CCTV14&" in name:
-            if "高清" in name:
-                name = "CCTV-14 少儿 高清"
-            else:
-                name = "CCTV-14 少儿"
+            name = "CCTV-14"
 
         if "CCTV-15&" in name or "CCTV15&" in name:
-            if "高清" in name:
-                name = "CCTV-15 音乐 高清"
-            else:
-                name = "CCTV-15 音乐"
+            name = "CCTV-15"
 
         if "CCTV-16&" in name or "CCTV16&" in name:
-            if "高清" in name:
-                name = "CCTV-16 奥林匹克 高清"
-            else:
-                name = "CCTV-16 奥林匹克"
+            name = "CCTV-16 "
 
         if "CCTV-17&" in name or "CCTV17&" in name:
-            if "高清" in name:
-                name = "CCTV-17 农业农村 高清"
-            else:
-                name = "CCTV-17 农业农村"
+            name = "CCTV-17"
+
+        name = name.replace('&', '').upper()
+
+        if '东南卫视' in name:
+            name = '东南卫视'
+
+        if '广东4K' in name:
+            name = '广东卫视'
+        if '4K' in name:
+            name = name.split('4K')[0]
+
+        name = name.replace("高清", "")
+
     return name
 
 
 def build_channel_logo_name(name: str):
     if name:
         # 删除特定文字
-        if name =='CCTV-4中文国际':
-            t=1
+        if name == 'CCTV-4中文国际':
+            t = 1
         name = name.replace("cctv", "CCTV")
         name = name.replace("中央", "CCTV")
         name = name.replace("央视", "CCTV")
@@ -595,56 +581,6 @@ def build_channel_logo_name(name: str):
     return name
 
 
-def build_channel_name_hd(name):
-    name = re.sub(r'4K超高清', '', name)
-    name = re.sub(r'高清', '', name)
-    name = re.sub(r'-', '', name)
-    name = re.sub(r'超清', '', name)
-    name = name.replace('福建东南卫视', '东南卫视')
-    if 'CCTV' in name:
-        result = re.findall(r'(CCTV\d+\+?)', name)
-        name = ''.join(result)
-
-    return name
-
-
-def build_channel_sources(channel_sources):
-    if onlyHd:
-        channel_sources = [item for item in channel_sources if item['is_hd']]
-    source_types = {
-        '央视频道': [],
-        '卫视频道': [],
-        '高清频道': [],
-        '其他频道': []}
-    if onlyHd:
-        source_types = {
-            '央视频道': [],
-            '卫视频道': [],
-            '其他频道': []}
-
-    if channel_sources and len(channel_sources) > 0:
-        for channel_source in channel_sources:
-            if onlyHd:
-                channel_source['name'] = build_channel_name_hd(
-                    channel_source['name'])
-            else:
-                channel_source['name'] = build_channel_name(
-                    channel_source['name'])
-            # channel_source_copy = copy.deepcopy(channel_source)
-            # source_types['全部'].append(channel_source_copy)
-
-            if channel_source['is_hd'] and not onlyHd:
-                source_types['高清频道'].append(channel_source)
-            if ('CCTV' in channel_source['name'] or 'CGTN' in channel_source['name']):
-                source_types['央视频道'].append(channel_source)
-            elif '卫视' in channel_source['name']:
-                source_types['卫视频道'].append(channel_source)
-            else:
-                source_types['其他频道'].append(channel_source)
-
-    return source_types
-
-
 def build_json_file(channel_name, dict_sources):  # 保存json数据
     if dict_sources is not None and len(dict_sources) > 0:
         if not os.path.exists('sources'):
@@ -682,7 +618,7 @@ def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
             for item in value:
                 if item.get('url', None):
                     have_channel = True
-                    m3u8_string += f'#EXTINF:-1 tvg-id="{item["itemId"]}" tvg-name="{item["itemTitle"]}" tvg-logo="https://gh-proxy.org/https://github.com/fanmingming/live/blob/main/tv/{item["logo"]}.png" group-title="{key}",{item["itemTitle"]}\n{item["url"]}\n'
+                    m3u8_string += f'#EXTINF:-1 tvg-id="{item["itemId"]}" tvg-name="{item["tvg-name"]}" tvg-logo="https://gh-proxy.org/https://github.com/fanmingming/live/blob/main/tv/{item["logo"]}.png" group-title="{key}",{item["itemTitle"]}\n{item["url"]}\n'
         if have_channel:
             if not os.path.exists('sources'):
                 os.mkdir('sources')
@@ -838,6 +774,8 @@ if __name__ == "__main__":
         onlyHd = bool(config['onlyHd'])
     if 'localUrl' in config:
         localUrl = str(config['localUrl'])
+    if 'forver_auth_info' in config:
+        forver_auth_info = str(config['forver_auth_info'])
 
     logger = init_logger(config['logPath'])
 
