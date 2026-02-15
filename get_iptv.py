@@ -312,7 +312,8 @@ def build_channel_info(channel_url_list, all_channels_data):
                     "channelcode") == code]
                 if channel_url and len(channel_url) > 0:
                     url = channel_url[0]['timeshifturl']
-                    channel['url'] = build_forver_url_auth(url)
+                    # channel['url'] = build_forver_url_auth(url)
+                    channel['url'] = url
                     channel['logo'] = build_channel_logo_name(itemTitle)
                     channel['tvg-name'] = build_channel_name(itemTitle)
 
