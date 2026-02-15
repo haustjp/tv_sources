@@ -1,6 +1,6 @@
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
 import json
 import requests
 import re
@@ -311,7 +311,8 @@ def build_channel_info(channel_url_list, all_channels_data):
                 channel_url = [item for item in channel_url_list if item.get(
                     "channelcode") == code]
                 if channel_url and len(channel_url) > 0:
-                    channel['url'] = channel_url[0]['timeshifturl']
+                    url = channel_url[0]['timeshifturl']
+                    channel['url'] = build_forver_url_auth(url)
                     channel['logo'] = build_channel_logo_name(itemTitle)
                     channel['tvg-name'] = build_channel_name(itemTitle)
 
@@ -322,21 +323,15 @@ def build_forver_url_auth(url: str):
     if forver_auth_info is not None and len(forver_auth_info) <= 0:
         return url
 
-    parsed = urlparse(url)
-    path_parts = parsed.path.strip('/').split('/')
-    if path_parts:
-        path_parts = path_parts[:-1]
+    parsed_url = urlparse(url)
 
-    new_parsed = urlparse(forver_auth_info)
-    new_path_parts = new_parsed.path.strip('/').split('/')
-    if new_path_parts:
-        path_parts.extend(new_path_parts)
+    params = parse_qs(parsed_url.query)
+    params['accountinfo'] = forver_auth_info
 
-    new_path = '/' + '/'.join(path_parts)
+    new_query = urlencode(params, doseq=True)
 
-    new_parsed = parsed._replace(path=new_path, query=new_parsed.query)
-
-    new_url = urlunparse(new_parsed)
+    new_parsed_url = parsed_url._replace(query=new_query)
+    new_url = urlunparse(new_parsed_url)
 
     return new_url
 
@@ -443,7 +438,7 @@ def build_channel_name(name):
 
         if "CCTV-17&" in name or "CCTV17&" in name:
             name = "CCTV-17"
-        
+
         name = name.replace('-', '').upper()
         name = name.replace('&', '').upper()
 
