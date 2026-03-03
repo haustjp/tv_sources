@@ -1,6 +1,6 @@
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
-from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
+from urllib.parse import urlparse, urlunparse, parse_qs, urlencode, unquote
 import json
 import requests
 import re
@@ -312,8 +312,8 @@ def build_channel_info(channel_url_list, all_channels_data):
                     "channelcode") == code]
                 if channel_url and len(channel_url) > 0:
                     url = channel_url[0]['timeshifturl']
-                    # channel['url'] = build_forver_url_auth(url)
-                    channel['url'] = url
+                    channel['url'] = build_forver_url_auth(url)
+                    # channel['url'] = url
                     channel['logo'] = build_channel_logo_name(itemTitle)
                     channel['tvg-name'] = build_channel_name(itemTitle)
 
@@ -321,19 +321,37 @@ def build_channel_info(channel_url_list, all_channels_data):
 
 
 def build_forver_url_auth(url: str):
-    if forver_auth_info is not None and len(forver_auth_info) <= 0:
-        return url
-
+    new_segment = '01.m3u8'
+    url = unquote(url)
     parsed_url = urlparse(url)
 
     params = parse_qs(parsed_url.query)
-    params['accountinfo'] = forver_auth_info
+    accountinfo = params['accountinfo']
+    path_parts = parsed_url.path.rstrip('/').split('/')
+    # 替换最后一个路径部分
+    if path_parts:
+        path_parts[-1] = new_segment
+    else:
+        path_parts = [new_segment]
+
+    # 处理accountinfo
+    accountinfos = accountinfo[0].rstrip(':').split(':')
+
+    if accountinfos:
+        accountinfos[0] = accountinfos[0].replace(' ', '+')
+        accountinfo = f'{accountinfos[0]},END'
+
+    params = {
+        'fmt': 'ts2hls,244,01.m3u8',
+        'accountinfo': accountinfo,
+        'tenantId': '8601'
+    }
 
     new_query = urlencode(params, doseq=True)
-
-    new_parsed_url = parsed_url._replace(query=new_query)
+    new_path = '/'.join(path_parts)
+    new_parsed_url = parsed_url._replace(path=new_path, query=new_query)
     new_url = urlunparse(new_parsed_url)
-
+    new_url = unquote(new_url)
     return new_url
 
 
