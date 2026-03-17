@@ -1,5 +1,6 @@
 from logging.handlers import TimedRotatingFileHandler
 from logging import Logger
+from datetime import datetime
 from urllib.parse import urlparse, urlunparse, parse_qs, urlencode, unquote
 import json
 import requests
@@ -317,7 +318,28 @@ def build_channel_info(channel_url_list, all_channels_data):
                     channel['logo'] = build_channel_logo_name(itemTitle)
                     channel['tvg-name'] = build_channel_name(itemTitle)
 
+    # EXTINF:-1 ,广东综艺4K
+
+    item = {
+        "itemId": "10000100000000060000000001154677",
+        "itemTitle": "广东综艺4K",
+        "dataLink": "http://120.87.12.38:8083/epg/api/channel/10000100000000060000000001154677.json",
+        "hwcode": "10000100000000060000000001154677",
+        "url": "http://120.87.4.5:80/PLTV/88888973/224/3221226174/10000100000000060000000001154677_0.smil/01.m3u8?fmt=ts2hls,83,01.m3u8,0,28893,0,0&accountinfo=Wti4h1vlszvIgmJ2Rn+JT30YqhIlb959YafU65xwPQuFI6KpBBcFipVQNWSpm9U4cljBwkAKGt2Lq1W8IgjWjgzcX+uhk0/ut3dCvLMCowks7JFSNmqxY+Vs2cx118+R:20181110091937,END&GuardEncType=2",
+        "logo": "广东综艺",
+        "tvg-name": "广东综艺4K"
+    }
+
+    append_channel(all_channels_data, '广东', item)
+
     return all_channels_data
+
+
+def append_channel(data, title, item):
+    for d in data:
+        if d["channel_type_title"] == title:
+            d["channel_list"].insert(0, item)
+            break
 
 
 def build_forver_url_auth(url: str):
@@ -637,6 +659,10 @@ def build_m3u8_file(channel_name, dict_sources):  # 保存m3u8数据
             if not os.path.exists('sources'):
                 os.mkdir('sources')
             with open(f"sources/{channel_name}.m3u", "w", encoding='utf-8') as file:
+                file.write(m3u8_string)
+            current_datetime = datetime.now()
+            formatted_date = current_datetime.strftime("%Y-%m-%d")
+            with open(f"sources/{channel_name}_{formatted_date}.m3u", "w", encoding='utf-8') as file:
                 file.write(m3u8_string)
 
 
